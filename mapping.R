@@ -3,6 +3,56 @@
 # jcoliver@email.arizona.edu
 # 2016-11-16
 
+rm(list = ls())
+
+# install.packages("gstat")
+# install.packages("sp")
+# install.packages("raster")
+library("gstat")
+library("sp")
+library("raster")
+all.data <- read.delim(file = "data/test-data.txt")
+
+# Create a subset of the data with only three columns, which MUST be named x, y, z
+viceroy.data <- data.frame(x = all.data$longitude, 
+                           y = all.data$latitude, 
+                           z = all.data$viceroy)
+
+# Convert data to SpatialPointsDataFrame
+coordinates(object = viceroy.data) <- ~x+y
+
+num.pixels <- 500
+map.grid <- expand.grid(x = seq(from = floor(min(coordinates(viceroy.data)[, 1])),
+                                to = ceiling(max(coordinates(viceroy.data)[, 1])),
+                                length.out = num.pixels),
+                        y = seq(from = floor(min(coordinates(viceroy.data)[, 2])),
+                                to = ceiling(max(coordinates(viceroy.data)[, 2])),
+                                length.out = num.pixels))
+
+grid.points <- SpatialPixels(SpatialPoints((map.grid)))
+spatial.grid <- as(grid.points, "SpatialGrid")
+
+viceroy.idw <- idw(formula = z ~ 1, 
+                   locations = viceroy.data, 
+                   newdata = spatial.grid, 
+                   idp = 2)
+
+spplot(viceroy.idw["var1.pred"])
+plot(viceroy.idw)
+
+viceroy.raster <- raster(x = viceroy.idw)
+plot(viceroy.raster, 
+     ylim = c(26, 30))
+
+##### ##### ##### ##### #####
+# IDW interpolation.
+
+geog2.idw <- idw(z ~ 1, geog2, grd, idp=6)
+
+spplot(geog2.idw["var1.pred"])
+
+
+
 # See:
 # https://mgimond.github.io/Spatial/interpolation-in-r.html
 # https://en.wikipedia.org/wiki/Inverse_distance_weighting
@@ -14,7 +64,9 @@
 # sudo apt-get install gfortran
 # sudo apt-get install liblapack-dev liblapack3 libopenblas-base libopenblas-dev
 
-# http://people.oregonstate.edu/~knausb/R_group/maps_idw.r
+# from http://people.oregonstate.edu/~knausb/R_group/maps_idw.r
+# also need library("sp")
+
 # Maps and Inverse Distance Weighted
 # interpolation in R.
 #
