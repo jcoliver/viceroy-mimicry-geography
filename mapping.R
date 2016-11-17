@@ -3,14 +3,23 @@
 # jcoliver@email.arizona.edu
 # 2016-11-16
 
+# For ubuntu 
+# sudo apt-get install gfortran
+# sudo apt-get install liblapack-dev liblapack3 libopenblas-base libopenblas-dev
+# sudo apt-get install libgdal1-dev libproj-dev
+
 rm(list = ls())
 
 # install.packages("gstat")
 # install.packages("sp")
 # install.packages("raster")
-library("gstat")
+# install.packages("maps")
+# install.packages("rgdal")
+library("gstat") # For IDW
 library("sp")
-library("raster")
+library("raster") # To convert IDW to raster format
+library("maps")
+library("rgdal")
 all.data <- read.delim(file = "data/test-data.txt")
 
 # Create a subset of the data with only three columns, which MUST be named x, y, z
@@ -22,12 +31,25 @@ viceroy.data <- data.frame(x = all.data$longitude,
 coordinates(object = viceroy.data) <- ~x+y
 
 num.pixels <- 500
+# Grid needs to be expanded to encompass all of florida; will crop later
 map.grid <- expand.grid(x = seq(from = floor(min(coordinates(viceroy.data)[, 1])),
                                 to = ceiling(max(coordinates(viceroy.data)[, 1])),
                                 length.out = num.pixels),
                         y = seq(from = floor(min(coordinates(viceroy.data)[, 2])),
                                 to = ceiling(max(coordinates(viceroy.data)[, 2])),
                                 length.out = num.pixels))
+
+
+# x -87.62571 -80.05091
+# y  24.95638  31.00316
+
+map.grid <- expand.grid(x = seq(from = -87, 
+                                to = -80, 
+                                length.out = num.pixels),
+                        y = seq(from = 24, 
+                                to = 31, 
+                                length.out = num.pixels))
+
 
 grid.points <- SpatialPixels(SpatialPoints((map.grid)))
 spatial.grid <- as(grid.points, "SpatialGrid")
@@ -37,21 +59,47 @@ viceroy.idw <- idw(formula = z ~ 1,
                    newdata = spatial.grid, 
                    idp = 2)
 
+########################################
+# Just a first try a plotting
 spplot(viceroy.idw["var1.pred"])
+
+########################################
+# Using native plot
 plot(viceroy.idw)
 
+########################################
+# Converting first to raster, then plotting
 viceroy.raster <- raster(x = viceroy.idw)
-plot(viceroy.raster, 
-     ylim = c(26, 30))
+plot(viceroy.raster, ylim = c(26, 30))
 
-##### ##### ##### ##### #####
-# IDW interpolation.
+########################################
+# Using map, then plotting raster, then locations
+map("state", regions = "florida", lwd = 2)
+viceroy.raster <- raster(x = viceroy.idw)
+plot(viceroy.raster, add = TRUE)
+points(x = viceroy.data$x, y = viceroy.data$y, pch = 19, cex = 0.7)
 
-geog2.idw <- idw(z ~ 1, geog2, grd, idp=6)
+########################################
+# Trying rgdal to read in florida...
+states.shp <- readOGR(dsn = "data/shapefiles", layer = "states")
+florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
+viceroy.raster <- raster(x = viceroy.idw)
 
-spplot(geog2.idw["var1.pred"])
+viceroy.cropped <- crop(viceroy.raster, extent(florida.shp))
+viceroy.masked <- mask(viceroy.cropped, florida.shp)
 
+plot(florida.shp)
+plot(viceroy.masked, add = TRUE, col = heat.colors(n = 50))
 
+# VVVVVVV This is graph we want!!!
+png(file = "output/prelim-test.png")
+plot(viceroy.masked, 
+     col = heat.colors(n = 50),
+     xaxt = "n",
+     yaxt = "n", 
+     bty = "n",
+     main = "Viceroy relative abundance")
+dev.off()
 
 # See:
 # https://mgimond.github.io/Spatial/interpolation-in-r.html
@@ -59,10 +107,6 @@ spplot(geog2.idw["var1.pred"])
 # http://www.geo.ut.ee/aasa/LOOM02331/R_idw_interpolation.html
 # http://people.oregonstate.edu/~knausb/R_group/maps_idw.r
 # https://cran.r-project.org/web/packages/gstat/gstat.pdf
-
-# For ubuntu 
-# sudo apt-get install gfortran
-# sudo apt-get install liblapack-dev liblapack3 libopenblas-base libopenblas-dev
 
 # from http://people.oregonstate.edu/~knausb/R_group/maps_idw.r
 # also need library("sp")
