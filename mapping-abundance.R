@@ -54,6 +54,8 @@ twinevine.data <- data.frame(coord.data,
                              z = abundance.data$Number.Twinevine.Plants/max.twinevine)
 
 # Convert data to SpatialPointsDataFrame
+########################################
+# GeographyData function starts here
 coordinates(object = viceroy.data) <- ~x+y
 coordinates(object = queen.data) <- ~x+y
 coordinates(object = twinevine.data) <- ~x+y
@@ -93,12 +95,17 @@ twinevine.idw <- idw(formula = z ~ 1,
                  newdata = spatial.grid,
                  idp = num.permutations)
 
+# GeographyData function ends here
+########################################
+
 # states shapefile from:
 # https://www.arcgis.com/home/item.html?id=f7f805eb65eb4ab787a0a3e1116ca7e5
 # all contents unzipped & placed in data/shapefiles
 states.shp <- readOGR(dsn = "data/shapefiles", layer = "states")
 florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
 
+########################################
+# RasterAndReshape function starts here
 viceroy.raster <- raster(x = viceroy.idw)
 queen.raster <- raster(x = queen.idw)
 twinevine.raster <- raster(x = twinevine.idw)
@@ -113,6 +120,14 @@ queen.masked <- mask(x = queen.cropped, mask = florida.shp)
 twinevine.cropped <- crop(x = twinevine.raster, y = extent(florida.shp))
 twinevine.masked <- mask(x = twinevine.cropped, mask = florida.shp)
 
+# RasterAndReshape function ends here
+########################################
+
+
+########################################
+# PlotMap function starts here
+
+# if a list of parameters ends up being passed, may need to also pass ylab = ""
 # Create the plot
 plot(viceroy.masked, 
      col = rev(heat.colors(n = 50)), # reversing the color vector so red = high
@@ -150,3 +165,5 @@ points(x = twinevine.data$x,
        pch = 19,
        cex = 0.6)
 
+# PlotMap function ends here
+########################################
