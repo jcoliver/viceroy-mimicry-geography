@@ -19,7 +19,7 @@ GeographyData <- function(xyzdata, xlim = numeric(2L), ylim = numeric(2L),
   }
   
   # Convert data to SpatialPointsDataFrame
-  coordinates(object = xyxdata) <- ~x+y
+  coordinates(object = xyzdata) <- ~x+y
   
   map.grid <- expand.grid(x = seq(from = xlim[1], 
                                   to = xlim[2], 

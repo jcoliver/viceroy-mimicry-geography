@@ -8,7 +8,12 @@ rm(list = ls())
 ################################################################################
 # SUMMARY
 # Use latitude & longitude coordinates with some continuous variable to create 
-# heatmap type image
+# four maps:
+# 1. Queen absolute abundance
+# 2. Viceroy absolute abundance
+# 3. Twinevine absolute abundance
+# 4. Willow absolute abundance
+# All is scaled relative to it's own max?
 # See also:
 # https://mgimond.github.io/Spatial/interpolation-in-r.html
 # https://en.wikipedia.org/wiki/Inverse_distance_weighting
@@ -31,6 +36,7 @@ library("gstat") # For IDW
 library("raster") # To convert IDW to raster format
 library("sp") # To set spatial coordinates
 library("rgdal") # For reading in shapefile of states
+source(file = "functions/mapping-functions.R")
 
 # Read data with latitude, longitude, and whatever variable(s) to graph
 abundance.data <- read.delim(file = "data/abundance-data.txt")
@@ -49,9 +55,19 @@ queen.data <- data.frame(coord.data,
                          z = abundance.data$Number.Queen.Adults / (abundance.data$Number.Queen.Adults + abundance.data$Number.Viceroy.Adults))
 
 max.twinevine <- max(abundance.data$Number.Twinevine.Plants)
-
 twinevine.data <- data.frame(coord.data, 
                              z = abundance.data$Number.Twinevine.Plants/max.twinevine)
+
+max.willow <- max(abundance.data$Number.Carolina.Willow.Plants)
+willow.data <- data.frame(coord.data,
+                          z = abundance.data$Number.Carolina.Willow.Plants/max.willow)
+
+
+# x: -84, -80
+# y: 24, 31
+long.limits <- c(-84, -80)
+lat.limits <- c(24, 31)
+viceroy.idw <- GeographyData(xyzdata = viceroy.data, xlim = long.limits, ylim = lat.limits)
 
 # Convert data to SpatialPointsDataFrame
 ########################################
@@ -68,6 +84,8 @@ num.pixels <- 500
 # x -87.62571 -80.05091
 # y  24.95638  31.00316
 # Update: Don't need panhandle, so western extent is -84
+# x: -84, -80
+# y: 24, 31
 
 map.grid <- expand.grid(x = seq(from = -84, 
                                 to = -80, 
