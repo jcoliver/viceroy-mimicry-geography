@@ -4,10 +4,22 @@
 # 2016-11-29
 
 ################################################################################
-GeographyData <- function(xyzdata, xlim = numeric(2L), ylim = numeric(2L), 
+NormalizeData <- function(x) {
+  max.x <- max(x, na.rm = TRUE)
+  min.x <- min(x, na.rm = TRUE)
+  norm.x <- (x - min.x) / (max.x - min.x)
+  return(norm.x)
+}
+
+################################################################################
+GeografyData <- function(xyzdata, xlim = numeric(2L), ylim = numeric(2L), 
                           num.pixels = 500, num.permutations = 2) {
   if (!require("sp")) {
-    stop("GeographyData requires the sp package; processing stopped.")
+    stop("GeografyData requires the sp package; processing stopped.")
+  }
+  
+  if (!require("gstat")) {
+    stop("GeografyData requires the gstat package; processing stopped.")
   }
   
   if (xlim[1] > xlim[2]) {
