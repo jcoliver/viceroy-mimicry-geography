@@ -68,6 +68,18 @@ willow.data <- data.frame(coord.data,
 long.limits <- c(-84, -80)
 lat.limits <- c(24, 31)
 viceroy.idw <- GeographyData(xyzdata = viceroy.data, xlim = long.limits, ylim = lat.limits)
+queen.idw <- GeographyData(xyzdata = queen.data, xlim = long.limits, ylim = lat.limits)
+
+# ADD THREE OTHER DATA HERE
+
+states.shp <- readOGR(dsn = "data/shapefiles", layer = "states")
+florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
+
+viceroy.raster <- RasterAndReshape(idw.data = viceroy.idw, shape = florida.shp)
+
+# RASTER THREE OTHER DATA HERE
+
+PlotMap(geo.data = viceroy.raster, point.data = viceroy.data, main.title = "Viceroy Abundance")
 
 # Convert data to SpatialPointsDataFrame
 ########################################
