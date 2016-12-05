@@ -55,7 +55,7 @@ RasterAndReshape <- function(idw.data, shape) {
 }
 
 ################################################################################
-PlotMap <- function(geo.data, main.title = "", 
+PlotMap <- function(geo.data, point.data, main.title = "", 
                     col.palette = rev(heat.colors(n = 50)), point.pch = 19,
                     point.col = "black", point.cex = 0.6) {
   plot(geo.data,
@@ -65,8 +65,8 @@ PlotMap <- function(geo.data, main.title = "",
        bty = "n",
        main = main.title)
 
-  points(x = geo.data$x,
-         y = geo.data$y,
+  points(x = point.data$x,
+         y = point.data$y,
          col = point.col,
          pch = point.pch,
          cex = point.cex)
