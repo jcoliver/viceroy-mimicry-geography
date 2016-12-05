@@ -8,192 +8,78 @@ rm(list = ls())
 ################################################################################
 # SUMMARY
 # Use latitude & longitude coordinates with some continuous variable to create 
-# four maps:
-# 1. Queen absolute abundance
-# 2. Viceroy absolute abundance
-# 3. Twinevine absolute abundance
-# 4. Willow absolute abundance
-# All is scaled relative to it's own max?
-# See also:
-# https://mgimond.github.io/Spatial/interpolation-in-r.html
-# https://en.wikipedia.org/wiki/Inverse_distance_weighting
-# http://www.geo.ut.ee/aasa/LOOM02331/R_idw_interpolation.html
-# http://people.oregonstate.edu/~knausb/R_group/maps_idw.r
+# abundance maps for viceroys, willow, queens, and twinevine
 
 ################################################################################
 # SETUP
-# For ubuntu, a number of additional packages may need to be installed:
-# sudo apt-get install gfortran
-# sudo apt-get install liblapack-dev liblapack3
-# sudo apt-get install libopenblas-base libopenblas-dev
-# sudo apt-get install libgdal1-dev libproj-dev
+# Load dependancies
+# Read in data
+# Prepare data
 
-# install.packages("gstat")
-# install.packages("raster")
-# install.packages("sp")
+# Load dependancies
 # install.packages("rgdal")
-library("gstat") # For IDW
-library("raster") # To convert IDW to raster format
-library("sp") # To set spatial coordinates
 library("rgdal") # For reading in shapefile of states
 source(file = "functions/mapping-functions.R")
 
+# Read in data
 # Read data with latitude, longitude, and whatever variable(s) to graph
 abundance.data <- read.delim(file = "data/abundance-data.txt")
 
-# Create a subset of the data with only three columns, 
-# which MUST be named x, y, z
+# Read in shapefile for subsequent masking and pull out Florida
+states.shp <- readOGR(dsn = "data/shapefiles", layer = "states")
+florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
 
+# Prepare data
+# Create a subset of the data with only three columns, which MUST be 
+# named x, y, z
+
+################################################################################
+# First a data frame with latitude and longitude coordinates of sites, we can 
+# re-use this for each variable we want to graph, as site coordinates are 
+# constant
 coord.data <- data.frame(x = abundance.data$Longitude,
                          y = abundance.data$Latitude)
 
-
+# Now create a three-column data frame for each, with the z-column the value to 
+# plot; normalizing here so min = 0 and max = 1
 viceroy.data <- data.frame(coord.data,
-                           z = abundance.data$Number.Viceroy.Adults / (abundance.data$Number.Queen.Adults + abundance.data$Number.Viceroy.Adults))
+                           z = NormalizeData(x = abundance.data$Number.Viceroy.Adults))
 
 queen.data <- data.frame(coord.data, 
-                         z = abundance.data$Number.Queen.Adults / (abundance.data$Number.Queen.Adults + abundance.data$Number.Viceroy.Adults))
+                         z = NormalizeData(x = abundance.data$Number.Queen.Adults))
 
-max.twinevine <- max(abundance.data$Number.Twinevine.Plants)
 twinevine.data <- data.frame(coord.data, 
-                             z = abundance.data$Number.Twinevine.Plants/max.twinevine)
+                             z = NormalizeData(x = abundance.data$Number.Twinevine.Plants))
 
-max.willow <- max(abundance.data$Number.Carolina.Willow.Plants)
 willow.data <- data.frame(coord.data,
-                          z = abundance.data$Number.Carolina.Willow.Plants/max.willow)
+                          z = NormalizeData(x = abundance.data$Number.Carolina.Willow.Plants))
 
-
-# x: -84, -80
-# y: 24, 31
+# Set the limit of IDW mapping, here it is approximately the peninsula of 
+# Florida
 long.limits <- c(-84, -80)
 lat.limits <- c(24, 31)
-viceroy.idw <- GeographyData(xyzdata = viceroy.data, xlim = long.limits, ylim = lat.limits)
-queen.idw <- GeographyData(xyzdata = queen.data, xlim = long.limits, ylim = lat.limits)
 
-# ADD THREE OTHER DATA HERE
+# Run inverse-distance weighting to get values for map; the coarseness and point 
+# influence can be changed by using values other than defaults for num.pixels 
+# and num.permutations parameters
+viceroy.idw <- GeografyData(xyzdata = viceroy.data, xlim = long.limits, ylim = lat.limits)
+queen.idw <- GeografyData(xyzdata = queen.data, xlim = long.limits, ylim = lat.limits)
+willow.idw <- GeografyData(xyzdata = willow.data, xlim = long.limits, ylim = lat.limits)
+twinevine.idw <- GeografyData(xyzdata = twinevine.data, xlim = long.limits, ylim = lat.limits)
 
-states.shp <- readOGR(dsn = "data/shapefiles", layer = "states")
-florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
-
+# Convert the IDW data to raster format, and restrict to geographic boundaries 
+# (i.e. the shoreline) of Florida
 viceroy.raster <- RasterAndReshape(idw.data = viceroy.idw, shape = florida.shp)
+queen.raster <- RasterAndReshape(idw.data = queen.idw, shape = florida.shp)
+willow.raster <- RasterAndReshape(idw.data = willow.idw, shape = florida.shp)
+twinevine.raster <- RasterAndReshape(idw.data = twinevine.idw, shape = florida.shp)
 
-# RASTER THREE OTHER DATA HERE
-
+# Plot the maps in a 2 x 2 grid
+pdf(file = "output/Abundance-maps.pdf", useDingbats = FALSE)
+par(mfrow = c(2, 2))
 PlotMap(geo.data = viceroy.raster, point.data = viceroy.data, main.title = "Viceroy Abundance")
-
-# Convert data to SpatialPointsDataFrame
-########################################
-# GeographyData function starts here
-coordinates(object = viceroy.data) <- ~x+y
-coordinates(object = queen.data) <- ~x+y
-coordinates(object = twinevine.data) <- ~x+y
-
-# Resolution of heatmap
-num.pixels <- 500
-
-# Grid based roughly on the extent of Florida
-# Florida shapefile extent:
-# x -87.62571 -80.05091
-# y  24.95638  31.00316
-# Update: Don't need panhandle, so western extent is -84
-# x: -84, -80
-# y: 24, 31
-
-map.grid <- expand.grid(x = seq(from = -84, 
-                                to = -80, 
-                                length.out = num.pixels),
-                        y = seq(from = 24, 
-                                to = 31, 
-                                length.out = num.pixels))
-
-grid.points <- SpatialPixels(SpatialPoints((map.grid)))
-spatial.grid <- as(grid.points, "SpatialGrid")
-
-num.permutations <- 2
-viceroy.idw <- idw(formula = z ~ 1, 
-                   locations = viceroy.data, 
-                   newdata = spatial.grid, 
-                   idp = num.permutations)
-
-queen.idw <- idw(formula = z ~ 1,
-                 locations = queen.data,
-                 newdata = spatial.grid,
-                 idp = num.permutations)
-
-twinevine.idw <- idw(formula = z ~ 1,
-                 locations = twinevine.data,
-                 newdata = spatial.grid,
-                 idp = num.permutations)
-
-# GeographyData function ends here
-########################################
-
-# states shapefile from:
-# https://www.arcgis.com/home/item.html?id=f7f805eb65eb4ab787a0a3e1116ca7e5
-# all contents unzipped & placed in data/shapefiles
-states.shp <- readOGR(dsn = "data/shapefiles", layer = "states")
-florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
-
-########################################
-# RasterAndReshape function starts here
-viceroy.raster <- raster(x = viceroy.idw)
-queen.raster <- raster(x = queen.idw)
-twinevine.raster <- raster(x = twinevine.idw)
-
-# Crop & mask the IDW to the shape of Florida
-viceroy.cropped <- crop(x = viceroy.raster, y = extent(florida.shp))
-viceroy.masked <- mask(x = viceroy.cropped, mask = florida.shp)
-
-queen.cropped <- crop(x = queen.raster, y = extent(florida.shp))
-queen.masked <- mask(x = queen.cropped, mask = florida.shp)
-
-twinevine.cropped <- crop(x = twinevine.raster, y = extent(florida.shp))
-twinevine.masked <- mask(x = twinevine.cropped, mask = florida.shp)
-
-# RasterAndReshape function ends here
-########################################
-
-
-########################################
-# PlotMap function starts here
-
-# if a list of parameters ends up being passed, may need to also pass ylab = ""
-# Create the plot
-plot(viceroy.masked, 
-     col = rev(heat.colors(n = 50)), # reversing the color vector so red = high
-     xaxt = "n",
-     yaxt = "n", 
-     bty = "n",
-     main = "Viceroy relative abundance")
-# Add sampling locations to plot
-points(x = viceroy.data$x,
-       y = viceroy.data$y,
-       pch = 19,
-       cex = 0.6)
-
-plot(queen.masked, 
-     col = rev(heat.colors(n = 50)), # reversing the color vector so red = high
-     xaxt = "n",
-     yaxt = "n", 
-     bty = "n",
-     main = "Queen relative abundance")
-# Add sampling locations to plot
-points(x = queen.data$x,
-       y = queen.data$y,
-       pch = 19,
-       cex = 0.6)
-
-plot(twinevine.masked, 
-     col = rev(heat.colors(n = 50)), # reversing the color vector so red = high
-     xaxt = "n",
-     yaxt = "n", 
-     bty = "n",
-     main = "Twinevine scaled abundance")
-# Add sampling locations to plot
-points(x = twinevine.data$x,
-       y = twinevine.data$y,
-       pch = 19,
-       cex = 0.6)
-
-# PlotMap function ends here
-########################################
+PlotMap(geo.data = willow.raster, point.data = willow.data, main.title = "Willow Abundance")
+PlotMap(geo.data = queen.raster, point.data = queen.data, main.title = "Queen Abundance")
+PlotMap(geo.data = twinevine.raster, point.data = twinevine.data, main.title = "Twinevine Abundance")
+par(mfrow = c(1, 1))
+dev.off()
