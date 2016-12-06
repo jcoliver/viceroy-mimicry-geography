@@ -7,8 +7,8 @@ rm(list = ls())
 
 ################################################################################
 # SUMMARY
-# Use latitude & longitude coordinates with some continuous variable to create 
-# abundance maps for viceroys, willow, queens, and twinevine
+# Use latitude & longitude coordinates to create maps of abundances of viceroys, 
+# willow, queens, and twinevine
 
 ################################################################################
 # SETUP
