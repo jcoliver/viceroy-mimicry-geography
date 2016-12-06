@@ -33,26 +33,39 @@ florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
 # Create a subset of the data with only three columns, which MUST be 
 # named x, y, z
 
-################################################################################
 # First a data frame with latitude and longitude coordinates of sites, we can 
 # re-use this for each variable we want to graph, as site coordinates are 
 # constant
 coord.data <- data.frame(x = abundance.data$Longitude,
                          y = abundance.data$Latitude)
 
+
 # Now create a three-column data frame for each, with the z-column the value to 
-# plot; normalizing here so min = 0 and max = 1
+# plot
 viceroy.data <- data.frame(coord.data,
-                           z = NormalizeData(x = abundance.data$Number.Viceroy.Adults))
+                           z = abundance.data$Number.Viceroy.Adults)
 
 queen.data <- data.frame(coord.data, 
-                         z = NormalizeData(x = abundance.data$Number.Queen.Adults))
+                         z = abundance.data$Number.Queen.Adults)
 
 twinevine.data <- data.frame(coord.data, 
-                             z = NormalizeData(x = abundance.data$Number.Twinevine.Plants))
+                             z = abundance.data$Number.Twinevine.Plants)
 
 willow.data <- data.frame(coord.data,
-                          z = NormalizeData(x = abundance.data$Number.Carolina.Willow.Plants))
+                          z = abundance.data$Number.Carolina.Willow.Plants)
+
+# Here we normalize so min = 0 and max = 1
+# viceroy.data <- data.frame(coord.data,
+#                            z = NormalizeData(x = abundance.data$Number.Viceroy.Adults))
+# 
+# queen.data <- data.frame(coord.data, 
+#                          z = NormalizeData(x = abundance.data$Number.Queen.Adults))
+# 
+# twinevine.data <- data.frame(coord.data, 
+#                              z = NormalizeData(x = abundance.data$Number.Twinevine.Plants))
+# 
+# willow.data <- data.frame(coord.data,
+#                           z = NormalizeData(x = abundance.data$Number.Carolina.Willow.Plants))
 
 # Set the limit of IDW mapping, here it is approximately the peninsula of 
 # Florida
