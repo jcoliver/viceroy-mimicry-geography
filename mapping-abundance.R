@@ -11,6 +11,21 @@ rm(list = ls())
 # willow, queens, and twinevine
 
 ################################################################################
+# SPECIFICS
+# Add information unique to this set of maps
+data.file <- "data/abundance-data.txt"
+plots <- data.frame(
+  variables = c("Number.Viceroy.Adults", 
+                "Number.Carolina.Willow.Plants", 
+                "Number.Queen.Adults", 
+                "Number.Twinevine.Plants"),
+  plot.titles = c("Viceroy Abundance", 
+                  "Willow Abundance", 
+                  "Queen Abundance", 
+                  "Twinevine Abundance"),
+  stringsAsFactors = FALSE)
+
+################################################################################
 # SETUP
 # Load dependancies
 # Read in data
@@ -21,13 +36,42 @@ rm(list = ls())
 library("rgdal") # For reading in shapefile of states
 source(file = "functions/mapping-functions.R")
 
-# Read in data
-# Read data with latitude, longitude, and whatever variable(s) to graph
-abundance.data <- read.delim(file = "data/abundance-data.txt")
-
 # Read in shapefile for subsequent masking and pull out Florida
 states.shp <- readOGR(dsn = "data/shapefiles", layer = "states")
 florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
+
+# Set the limit of IDW mapping, here it is approximately the peninsula of 
+# Florida
+long.limits <- c(-84, -80)
+lat.limits <- c(24, 31)
+
+# Read in data
+# Read data with latitude, longitude, and whatever variable(s) to graph
+plot.data <- read.delim(file = data.file)
+
+# Prepare data
+# Create a subset of the data with only three columns, which MUST be 
+# named x, y, z
+
+# First a data frame with latitude and longitude coordinates of sites, we can 
+# re-use this for each variable we want to graph, as site coordinates are 
+# constant
+coord.data <- data.frame(x = plot.data$Longitude,
+                         y = plot.data$Latitude)
+
+data.list <- list()
+
+for (d in 1:nrow(plots)) {
+  data.list[[d]] <- data.frame(coord.data,
+                               z = plot.data[, plots$variables[d]])
+}
+
+
+##### specifics
+
+# Read in data
+# Read data with latitude, longitude, and whatever variable(s) to graph
+abundance.data <- read.delim(file = "data/abundance-data.txt")
 
 # Prepare data
 # Create a subset of the data with only three columns, which MUST be 
@@ -39,6 +83,10 @@ florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
 coord.data <- data.frame(x = abundance.data$Longitude,
                          y = abundance.data$Latitude)
 
+
+################################################################################
+# PLOT
+# Prepare the data and plot on maps
 
 # Now create a three-column data frame for each, with the z-column the value to 
 # plot
@@ -54,23 +102,6 @@ twinevine.data <- data.frame(coord.data,
 willow.data <- data.frame(coord.data,
                           z = abundance.data$Number.Carolina.Willow.Plants)
 
-# Here we normalize so min = 0 and max = 1
-# viceroy.data <- data.frame(coord.data,
-#                            z = NormalizeData(x = abundance.data$Number.Viceroy.Adults))
-# 
-# queen.data <- data.frame(coord.data, 
-#                          z = NormalizeData(x = abundance.data$Number.Queen.Adults))
-# 
-# twinevine.data <- data.frame(coord.data, 
-#                              z = NormalizeData(x = abundance.data$Number.Twinevine.Plants))
-# 
-# willow.data <- data.frame(coord.data,
-#                           z = NormalizeData(x = abundance.data$Number.Carolina.Willow.Plants))
-
-# Set the limit of IDW mapping, here it is approximately the peninsula of 
-# Florida
-long.limits <- c(-84, -80)
-lat.limits <- c(24, 31)
 
 # Run inverse-distance weighting to get values for map; the coarseness and point 
 # influence can be changed by using values other than defaults for num.pixels 
