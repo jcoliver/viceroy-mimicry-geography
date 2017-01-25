@@ -8,22 +8,37 @@ rm(list = ls())
 ################################################################################
 # SUMMARY
 # Use latitude & longitude coordinates to create maps of chemical defense in 
-# viceroys (volatile & non-volatile phenolics) and willow chemistry
+# viceroys (volatile & non-volatile phenolics)
+
+# Total.Phenolics	
+# Salicin	
+# Salicortin	
+# Tremulacin	
+
+# Total.Volatiles	
+# Salicylaldehyde	
+# Benzaldehyde
 
 ################################################################################
 # SPECIFICS
 # Add information unique to this set of maps
 data.file <- "data/chemistry-viceroy-data.txt"
-output.file <- "output/Abundance-maps.pdf"
+output.file <- "output/Viceroy-chemistry-maps.pdf"
 plots <- data.frame(
-  variables = c("Number.Viceroy.Adults", 
-                "Number.Carolina.Willow.Plants", 
-                "Number.Queen.Adults", 
-                "Number.Twinevine.Plants"),
-  plot.titles = c("Viceroy Abundance", 
-                  "Willow Abundance", 
-                  "Queen Abundance", 
-                  "Twinevine Abundance"),
+  variables = c("Total.Phenolics", 
+                "Salicin", 
+                "Salicortin", 
+                "Tremulacin",
+                "Total.Volatiles",
+                "Salicylaldehyde",
+                "Benzaldehyde"),
+  plot.titles = c("Total Phenolics", 
+                  "Salicin", 
+                  "Salicortin", 
+                  "Tremulacin",
+                  "Total Volatiles",
+                  "Salicylaldehyde",
+                  "Benzaldehyde"),
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
 
