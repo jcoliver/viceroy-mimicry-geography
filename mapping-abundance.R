@@ -14,6 +14,7 @@ rm(list = ls())
 # SPECIFICS
 # Add information unique to this set of maps
 data.file <- "data/abundance-data.txt"
+output.file <- "output/Abundance-maps.pdf"
 plots <- data.frame(
   variables = c("Number.Viceroy.Adults", 
                 "Number.Carolina.Willow.Plants", 
@@ -24,6 +25,7 @@ plots <- data.frame(
                   "Queen Abundance", 
                   "Twinevine Abundance"),
   stringsAsFactors = FALSE)
+plot.dims <- c(2, 2) # two rows, two columns
 
 ################################################################################
 # SETUP
@@ -50,8 +52,8 @@ lat.limits <- c(24, 31)
 plot.data <- read.delim(file = data.file)
 
 # Prepare data
-# Create a subset of the data with only three columns, which MUST be 
-# named x, y, z
+# Will ultimately need a subset of the data with only three columns, which 
+# MUST be named x, y, z
 
 # First a data frame with latitude and longitude coordinates of sites, we can 
 # re-use this for each variable we want to graph, as site coordinates are 
@@ -59,13 +61,53 @@ plot.data <- read.delim(file = data.file)
 coord.data <- data.frame(x = plot.data$Longitude,
                          y = plot.data$Latitude)
 
-data.list <- list()
+################################################################################
+# PLOT
+# Loop over each data object, transforming as necessary and adding to multi-
+# figure plot
 
+# Open pipe to pdf
+pdf(file = output.file, useDingbats = FALSE)
+
+# Setup desired dimensions
+par(mfrow = plot.dims)
+
+# Loop over data
 for (d in 1:nrow(plots)) {
-  data.list[[d]] <- data.frame(coord.data,
-                               z = plot.data[, plots$variables[d]])
+  # Create three-column data frame
+  current.xyz <- data.frame(coord.data,
+                              z = plot.data[, plots$variables[d]])
+  # Run inverse-distance weighting to get values for map; the coarseness and point 
+  # influence can be changed by using values other than defaults for num.pixels 
+  # and num.permutations parameters
+  current.idw <- GeografyData(xyzdata = current.xyz, xlim = long.limits, ylim = lat.limits)
+  
+  # Convert the IDW data to raster format, and restrict to geographic boundaries 
+  # (i.e. the shoreline) of Florida
+  current.raster <- RasterAndReshape(idw.data = current.idw, shape = florida.shp)
+  
+  # Draw the plot
+  PlotMap(geo.data = current.raster, point.data = current.xyz, main.title = plots$plot.titles[d])
 }
+par(mfrow = c(1, 1))
+dev.off()
 
+
+
+
+# Run inverse-distance weighting to get values for map; the coarseness and point 
+# influence can be changed by using values other than defaults for num.pixels 
+# and num.permutations parameters
+viceroy.idw <- GeografyData(xyzdata = viceroy.data, xlim = long.limits, ylim = lat.limits)
+
+# Convert the IDW data to raster format, and restrict to geographic boundaries 
+# (i.e. the shoreline) of Florida
+viceroy.raster <- RasterAndReshape(idw.data = viceroy.idw, shape = florida.shp)
+
+# Plot the maps in a 2 x 2 grid
+pdf(file = "output/Abundance-maps.pdf", useDingbats = FALSE)
+par(mfrow = c(2, 2))
+PlotMap(geo.data = viceroy.raster, point.data = viceroy.data, main.title = "Viceroy Abundance")
 
 ##### specifics
 
