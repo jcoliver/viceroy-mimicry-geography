@@ -1,4 +1,4 @@
-# Graphing data for viceroy paper
+# Graphing abundance data for viceroy paper
 # Jeffrey C. Oliver
 # jcoliver@email.arizona.edu
 # 2016-11-16
@@ -14,7 +14,7 @@ rm(list = ls())
 # SPECIFICS
 # Add information unique to this set of maps
 data.file <- "data/abundance-data.txt"
-output.file <- "output/Abundance-maps.pdf"
+output.file <- "output/Abundance-maps"
 plots <- data.frame(
   variables = c("Number.Viceroy.Adults", 
                 "Number.Carolina.Willow.Plants", 
@@ -26,6 +26,8 @@ plots <- data.frame(
                   "Twinevine Abundance"),
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
+file.format <- "pdf" # "jpg"
+output.file <- paste0(output.file, ".", file.format)
 
 ################################################################################
 # SETUP
@@ -160,8 +162,13 @@ queen.raster <- RasterAndReshape(idw.data = queen.idw, shape = florida.shp)
 willow.raster <- RasterAndReshape(idw.data = willow.idw, shape = florida.shp)
 twinevine.raster <- RasterAndReshape(idw.data = twinevine.idw, shape = florida.shp)
 
-# Plot the maps in a 2 x 2 grid
-pdf(file = "output/Abundance-maps.pdf", useDingbats = FALSE)
+# Send plot to appropriate formatter
+if (file.format == "pdf") {
+  pdf(file = output.file, useDingbats = FALSE)
+} else if (file.format == "jpg") {
+  jpeg(filename = output.file)
+}
+
 par(mfrow = c(2, 2))
 PlotMap(geo.data = viceroy.raster, point.data = viceroy.data, main.title = "Viceroy Abundance")
 PlotMap(geo.data = willow.raster, point.data = willow.data, main.title = "Willow Abundance")

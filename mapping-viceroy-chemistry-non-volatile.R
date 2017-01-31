@@ -1,4 +1,4 @@
-# Graphing willow chemistry data for viceroy paper
+# Graphing viceroy chemistry data for viceroy paper
 # Jeff Oliver
 # jcoliver@email.arizona.edu
 # 2016-12-05
@@ -8,18 +8,18 @@ rm(list = ls())
 ################################################################################
 # SUMMARY
 # Use latitude & longitude coordinates to create maps of chemical defense in 
-# willows (non-volatile phenolics)
+# viceroys (non-volatile phenolics)
 
-# Total.Phenolics
-# Salicin
-# Salicortin
-# Tremulacin
+# Total.Phenolics	
+# Salicin	
+# Salicortin	
+# Tremulacin	
 
 ################################################################################
 # SPECIFICS
 # Add information unique to this set of maps
-data.file <- "data/chemistry-willow-data.txt"
-output.file <- "output/Willow-chemistry-maps"
+data.file <- "data/chemistry-viceroy-data.txt"
+output.file <- "output/Viceroy-non-volatile-chemistry-maps"
 plots <- data.frame(
   variables = c("Total.Phenolics", 
                 "Salicin", 

@@ -1,4 +1,4 @@
-# INSERT CODE DESCRIPTION
+# Graphing palatability data for viceroy paper
 # Jeff Oliver
 # jcoliver@email.arizona.edu
 # 2016-12-05
@@ -17,7 +17,7 @@ rm(list = ls())
 # SPECIFICS
 # Add information unique to this set of maps
 data.file <- "data/palatability-data.txt"
-output.file <- "output/Palatability-maps.pdf"
+output.file <- "output/Palatability-maps"
 plots <- data.frame(
   variables = c("Mantid.Learning", 
                 "Mantid.Memory.Retention"),
@@ -25,6 +25,8 @@ plots <- data.frame(
                   "Mantid Memory Retention"),
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
+file.format <- "png" # "pdf" or "png"
+output.file <- paste0(output.file, ".", file.format)
 
 ################################################################################
 # SETUP
@@ -65,8 +67,12 @@ coord.data <- data.frame(x = plot.data$Longitude,
 # Loop over each data object, transforming as necessary and adding to multi-
 # figure plot
 
-# Open pipe to pdf
-pdf(file = output.file, useDingbats = FALSE)
+# Send plot to appropriate formatter
+if (file.format == "pdf") {
+  pdf(file = output.file, useDingbats = FALSE)
+} else if (file.format == "png") {
+  png(filename = output.file, width = 1200, height = 1200, units = "px", res = 150)
+}
 
 # Setup desired dimensions
 par(mfrow = plot.dims)

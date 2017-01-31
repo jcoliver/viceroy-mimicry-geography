@@ -1,4 +1,4 @@
-# INSERT CODE DESCRIPTION
+# Graphing viceroy chemistry data for viceroy paper
 # Jeff Oliver
 # jcoliver@email.arizona.edu
 # 2016-12-05
@@ -8,12 +8,7 @@ rm(list = ls())
 ################################################################################
 # SUMMARY
 # Use latitude & longitude coordinates to create maps of chemical defense in 
-# viceroys (volatile & non-volatile phenolics)
-
-# Total.Phenolics	
-# Salicin	
-# Salicortin	
-# Tremulacin	
+# viceroys (volatile phenolics)
 
 # Total.Volatiles	
 # Salicylaldehyde	
@@ -23,24 +18,18 @@ rm(list = ls())
 # SPECIFICS
 # Add information unique to this set of maps
 data.file <- "data/chemistry-viceroy-data.txt"
-output.file <- "output/Viceroy-chemistry-maps.pdf"
+output.file <- "output/Viceroy-volatile-chemistry-maps"
 plots <- data.frame(
-  variables = c("Total.Phenolics", 
-                "Salicin", 
-                "Salicortin", 
-                "Tremulacin",
-                "Total.Volatiles",
+  variables = c("Total.Volatiles",
                 "Salicylaldehyde",
                 "Benzaldehyde"),
-  plot.titles = c("Total Phenolics", 
-                  "Salicin", 
-                  "Salicortin", 
-                  "Tremulacin",
-                  "Total Volatiles",
+  plot.titles = c("Total Volatiles",
                   "Salicylaldehyde",
                   "Benzaldehyde"),
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
+file.format <- "png" # "pdf" or "png"
+output.file <- paste0(output.file, ".", file.format)
 
 ################################################################################
 # SETUP
@@ -81,8 +70,12 @@ coord.data <- data.frame(x = plot.data$Longitude,
 # Loop over each data object, transforming as necessary and adding to multi-
 # figure plot
 
-# Open pipe to pdf
-pdf(file = output.file, useDingbats = FALSE)
+# Send plot to appropriate formatter
+if (file.format == "pdf") {
+  pdf(file = output.file, useDingbats = FALSE)
+} else if (file.format == "png") {
+  png(filename = output.file, width = 1200, height = 1200, units = "px", res = 150)
+}
 
 # Setup desired dimensions
 par(mfrow = plot.dims)
