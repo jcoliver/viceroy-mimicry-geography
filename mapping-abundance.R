@@ -68,6 +68,21 @@ coord.data <- data.frame(x = plot.data$Longitude,
 # Loop over each data object, transforming as necessary and adding to multi-
 # figure plot
 
+# Trying some alternative colors...
+# install.packages("RColorBrewer")
+library("RColorBrewer")
+# Blues
+# plot.colors <- colorRampPalette(colors = brewer.pal(n = 9, name = "Blues"))(50)
+# Greens
+# plot.colors <- colorRampPalette(colors = c("#FFFFFF", "#009900"))(50)
+# Red Yellow Blue
+# plot.colors <- rev(colorRampPalette(colors = brewer.pal(n = 11, name = "RdYlBu"))(50))
+# Purple/Blue
+# nine.colors <- brewer.pal(n = 9, name = "BuPu")
+# plot.colors <- colorRampPalette(colors = nine.colors[1:7])(50)
+# Orange/Blue
+plot.colors <- colorRampPalette(colors = c("#FF4000", "#6600CC"))(50)
+
 # Send plot to appropriate formatter
 if (file.format == "pdf") {
   pdf(file = output.file, useDingbats = FALSE)
@@ -93,7 +108,10 @@ for (d in 1:nrow(plots)) {
   current.raster <- RasterAndReshape(idw.data = current.idw, shape = florida.shp)
   
   # Draw the plot
-  PlotMap(geo.data = current.raster, point.data = current.xyz, main.title = plots$plot.titles[d])
+  PlotMap(geo.data = current.raster, 
+          point.data = current.xyz, 
+          main.title = plots$plot.titles[d],
+          col.palette = plot.colors)
 }
 par(mfrow = c(1, 1))
 dev.off()
