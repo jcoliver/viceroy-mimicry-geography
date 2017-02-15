@@ -4,6 +4,7 @@
 # 2016-12-05
 
 rm(list = ls())
+source(file = "mapping-globals.R")
 
 ################################################################################
 # SUMMARY
@@ -28,7 +29,10 @@ plots <- data.frame(
                   "Benzaldehyde"),
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
-file.format <- "png" # "pdf" or "png"
+
+# Settings from mapping-globals.R
+plot.colors <- global.vars$map.colors
+file.format <- global.vars$output.format
 output.file <- paste0(output.file, ".", file.format)
 
 ################################################################################
@@ -95,7 +99,10 @@ for (d in 1:nrow(plots)) {
   current.raster <- RasterAndReshape(idw.data = current.idw, shape = florida.shp)
   
   # Draw the plot
-  PlotMap(geo.data = current.raster, point.data = current.xyz, main.title = plots$plot.titles[d])
+  PlotMap(geo.data = current.raster, 
+          point.data = current.xyz, 
+          main.title = plots$plot.titles[d],
+          col.palette = plot.colors)
 }
 par(mfrow = c(1, 1))
 dev.off()

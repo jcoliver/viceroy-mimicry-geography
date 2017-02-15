@@ -4,6 +4,7 @@
 # 2016-11-16
 
 rm(list = ls())
+source(file = "mapping-globals.R")
 
 ################################################################################
 # SUMMARY
@@ -26,7 +27,10 @@ plots <- data.frame(
                   "Twinevine Abundance"),
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
-file.format <- "png" # "pdf" or "png"
+
+# Settings from mapping-globals.R
+plot.colors <- global.vars$map.colors
+file.format <- global.vars$output.format
 output.file <- paste0(output.file, ".", file.format)
 
 ################################################################################
@@ -67,21 +71,6 @@ coord.data <- data.frame(x = plot.data$Longitude,
 # PLOT
 # Loop over each data object, transforming as necessary and adding to multi-
 # figure plot
-
-# Trying some alternative colors...
-# install.packages("RColorBrewer")
-library("RColorBrewer")
-# Blues
-# plot.colors <- colorRampPalette(colors = brewer.pal(n = 9, name = "Blues"))(50)
-# Greens
-# plot.colors <- colorRampPalette(colors = c("#FFFFFF", "#009900"))(50)
-# Red Yellow Blue
-# plot.colors <- rev(colorRampPalette(colors = brewer.pal(n = 11, name = "RdYlBu"))(50))
-# Purple/Blue
-# nine.colors <- brewer.pal(n = 9, name = "BuPu")
-# plot.colors <- colorRampPalette(colors = nine.colors[1:7])(50)
-# Orange/Blue
-plot.colors <- colorRampPalette(colors = c("#FF4000", "#6600CC"))(50)
 
 # Send plot to appropriate formatter
 if (file.format == "pdf") {
