@@ -4,14 +4,6 @@
 # 2016-11-29
 
 ################################################################################
-NormalizeData <- function(x) {
-  max.x <- max(x, na.rm = TRUE)
-  min.x <- min(x, na.rm = TRUE)
-  norm.x <- (x - min.x) / (max.x - min.x)
-  return(norm.x)
-}
-
-################################################################################
 GeografyData <- function(xyzdata, xlim = numeric(2L), ylim = numeric(2L), 
                           num.pixels = 500, num.permutations = 2) {
   if (!require("sp")) {
@@ -82,4 +74,69 @@ PlotMap <- function(geo.data, point.data, main.title = "",
          col = point.col,
          pch = point.pch,
          cex = point.cex)
+}
+
+################################################################################
+MakeFloridaMap <- function(plot.data, variable.name, variable.text,
+                           map.shade.colors, map.point.colors = "black") {
+  #' What is needed to draw a single map?
+  #' + Input (data) file name
+  #' + Variable to plot (column name)
+  #' + Variable name & scale for axis
+  #' + Colors
+  #'   + Map shading
+  #'   + Points
+  if(!require("rgdal")) {
+    stop("MakeFloridaMap requires the rgdal package; processing stopped.")
+  }
+  
+  # Read in shapefile for subsequent masking and pull out Florida
+  states.shp <- readOGR(dsn = "data/shapefiles", layer = "states")
+  florida.shp <- states.shp[states.shp@data$STATE_NAME == "Florida", ]
+  
+  # Set the limit of IDW mapping, here it is approximately the peninsula of 
+  # Florida
+  long.limits <- c(-84, -80)
+  lat.limits <- c(24, 31)
+ 
+  # First a data frame with latitude and longitude coordinates of sites
+  coord.data <- data.frame(x = plot.data$Longitude,
+                           y = plot.data$Latitude)
+  
+  # Create three-column data frame
+  current.xyz <- data.frame(coord.data,
+                            z = plot.data[, variable.name])
+  
+  # Run inverse-distance weighting to get values for map; the coarseness and point 
+  # influence can be changed by using values other than defaults for num.pixels 
+  # and num.permutations parameters
+  current.idw <- GeografyData(xyzdata = current.xyz, xlim = long.limits, ylim = lat.limits)
+  
+  # Convert the IDW data to raster format, and restrict to geographic boundaries 
+  # (i.e. the shoreline) of Florida
+  current.raster <- RasterAndReshape(idw.data = current.idw, shape = florida.shp)
+  
+  # Draw the plot
+  PlotMap(geo.data = current.raster, 
+          point.data = current.xyz, 
+          col.palette = map.shade.colors)
+  #  return(map.plot)
+}
+
+################################################################################
+MakeBoxplot <- function(boxplot.data, y.axis.label = "") {
+  if(!require("ggplot2")) {
+    stop("MakeBoxplot requires the ggplot2 package; processing stopped.")
+  }
+  
+  # Either abstract aes parameters, or do check for those columns in barplot.data data frame
+  box.plot <- ggplot(data = boxplot.data, 
+                     aes(x = group, y = values, fill = group)) +
+    geom_boxplot() + 
+    scale_fill_manual(values = c("white", "black")) +
+    labs(y = y.axis.label) + 
+    theme(axis.title.x = element_blank(), # no title on x
+          axis.ticks.x = element_blank(), # no label on x
+          legend.position = "none") # no legend
+  box.plot
 }
