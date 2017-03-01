@@ -34,8 +34,8 @@ plots <- data.frame(
 plot.dims <- c(2, 2) # two rows, two columns
 
 # Settings from mapping-globals.R
-plot.colors <- global.vars$map.colors
-file.format <- global.vars$output.format
+plot.colors <- mapping.globals$map.colors
+file.format <- mapping.globals$output.format
 output.file <- paste0(output.file, ".", file.format)
 
 ################################################################################
