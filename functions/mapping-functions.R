@@ -60,8 +60,8 @@ RasterAndReshape <- function(idw.data, shape) {
 
 ################################################################################
 PlotMap <- function(geo.data, point.data, main.title = "", 
-                    col.palette = rev(heat.colors(n = 50)), point.pch = 19,
-                    point.col = "black", point.cex = 0.6) {
+                    col.palette = rev(heat.colors(n = 50)), point.pch = 21,
+                    point.col = "black", point.cex = 0.6, point.bg = "black") {
   plot(geo.data,
        col = col.palette,
        xaxt = "n",
@@ -72,13 +72,15 @@ PlotMap <- function(geo.data, point.data, main.title = "",
   points(x = point.data$x,
          y = point.data$y,
          col = point.col,
+         bg = point.bg,
          pch = point.pch,
          cex = point.cex)
 }
 
 ################################################################################
 MakeFloridaMap <- function(plot.data, variable.name, variable.text,
-                           map.shade.colors, map.point.colors = "black") {
+                           map.shade.colors, map.point.colors = "black",
+                           map.point.bg = "black", map.point.cex = 0.8) {
   #' What is needed to draw a single map?
   #' + Input (data) file name
   #' + Variable to plot (column name)
@@ -119,7 +121,10 @@ MakeFloridaMap <- function(plot.data, variable.name, variable.text,
   # Draw the plot
   PlotMap(geo.data = current.raster, 
           point.data = current.xyz, 
-          col.palette = map.shade.colors)
+          col.palette = map.shade.colors,
+          point.col = map.point.colors,
+          point.bg = map.point.bg,
+          point.cex = map.point.cex)
   #  return(map.plot)
 }
 
