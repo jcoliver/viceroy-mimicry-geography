@@ -4,7 +4,7 @@
 # 2017-02-22
 
 rm(list = ls())
-source(file = "barcharts-globals.R")
+source(file = "plotting-globals.R")
 
 ################################################################################
 # SUMMARY
@@ -35,8 +35,8 @@ plot.dims <- c(2, 2) # two rows, two columns
 
 plot.data <- read.delim(file = data.file)
 
-north.values <- plot.data[plot.data$Site.Name %in% boxplot.globals$north.pops, plots$variables[1]]
-south.values <- plot.data[plot.data$Site.Name %in% boxplot.globals$south.pops, plots$variables[1]]
+north.values <- plot.data[plot.data$Site.Name %in% plotting.globals$north.pops, plots$variables[1]]
+south.values <- plot.data[plot.data$Site.Name %in% plotting.globals$south.pops, plots$variables[1]]
 
 boxplot.data <- data.frame(group = c(rep(x = "north", times = length(north.values)), rep(x = "south", times = length(south.values))),
                            values = c(north.values, south.values))

@@ -5,8 +5,7 @@
 
 rm(list = ls())
 source(file = "functions/mapping-functions.R")
-source(file = "mapping-globals.R")
-source(file = "boxplot-globals.R")
+source(file = "plotting-globals.R")
 
 ################################################################################
 # SUMMARY
@@ -20,7 +19,7 @@ plot.data <- read.delim(file = data.file)
 output.file <- "output/Abundance-two-panel"
 variable.name <- "Number.Viceroy.Adults"
 variable.text <- "Viceroy Adults"
-map.shade.colors <- mapping.globals$map.colors
+map.shade.colors <- plotting.globals$map.colors
 map.point.colors <- "black"
 
 par(mfrow = c(1, 2))
@@ -29,8 +28,8 @@ MakeFloridaMap(plot.data = plot.data,
                variable.text = variable.text,
                map.shade.colors = map.shade.colors)
 
-north.values <- plot.data[plot.data$Site.Name %in% boxplot.globals$north.pops, variable.name]
-south.values <- plot.data[plot.data$Site.Name %in% boxplot.globals$south.pops, variable.name]
+north.values <- plot.data[plot.data$Site.Name %in% plotting.globals$north.pops, variable.name]
+south.values <- plot.data[plot.data$Site.Name %in% plotting.globals$south.pops, variable.name]
 
 boxplot.data <- data.frame(group = c(rep(x = "north", times = length(north.values)), rep(x = "south", times = length(south.values))),
                            values = c(north.values, south.values))

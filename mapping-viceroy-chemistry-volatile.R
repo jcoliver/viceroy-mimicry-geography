@@ -4,7 +4,7 @@
 # 2016-12-05
 
 rm(list = ls())
-source(file = "mapping-globals.R")
+source(file = "plotting-globals.R")
 
 ################################################################################
 # SUMMARY
@@ -30,9 +30,9 @@ plots <- data.frame(
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
 
-# Settings from mapping-globals.R
-plot.colors <- mapping.globals$map.colors
-file.format <- mapping.globals$output.format
+# Settings from plotting-globals.R
+plot.colors <- plotting.globals$map.colors
+file.format <- plotting.globals$output.format
 output.file <- paste0(output.file, ".", file.format)
 
 ################################################################################
