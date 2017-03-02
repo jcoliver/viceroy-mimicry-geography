@@ -21,11 +21,13 @@ variable.name <- "Total.Volatiles"
 variable.text <- "Total Volatiles (units)"
 map.point.colors <- "black"
 
-par(mfrow = c(1, 2))
+par(mfrow = c(2, 2))
 # map.data <- ddply(.data = plot.data,
 #                   .variables = "Site.Name",
 #                   .fun = function(x) mean(x[, variable.name]))
 
+
+par(mar = c(0, 0, 0, 0))
 point.fill <- rep(x = "black", times = nrow(x = plot.data))
 point.fill[plot.data$Site.Name %in% plotting.globals$north.pops] <- "white"
 
@@ -34,12 +36,12 @@ MakeFloridaMap(plot.data = plot.data,
                variable.text = variable.text,
                map.shade.colors = plotting.globals$map.colors,
                map.point.colors = map.point.colors,
-               map.point.bg = point.fill,
-               map.point.cex = 0.9)
+               map.point.bg = point.fill)
 
 north.values <- plot.data[plot.data$Site.Name %in% plotting.globals$north.pops, variable.name]
 south.values <- plot.data[plot.data$Site.Name %in% plotting.globals$south.pops, variable.name]
 
+par(mar = c(1, 3, 1, 1))
 boxplot.data <- data.frame(group = c(rep(x = "North", times = length(north.values)), rep(x = "South", times = length(south.values))),
                            values = c(north.values, south.values))
 
@@ -50,7 +52,7 @@ rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")[4], col =
        "#DDDDDD", border = NA)
 boxplot(boxplot.data$values ~ boxplot.data$group, 
         add = TRUE,
-        ylab = variable.text,
+        ylab = "",
         yaxt = "n",
         xaxt = "n",
         bg = c("#666666"),
@@ -58,10 +60,11 @@ boxplot(boxplot.data$values ~ boxplot.data$group,
         col = c("white", "black"), 
         frame = FALSE,
         las = 1)
-axis(side = 1, at = c(1, 2), labels = c("North", "South"), las = 1, lwd = 0)
+axis(side = 1, at = c(1, 2), labels = c("North", "South"), las = 1, lwd = 0, line = -0.5)
 axis(side = 2, las = 1)
+title(ylab = variable.text, line = 2)
 
-par(mfrow = c(1, 1))
+par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
 
 
 ################################################################################

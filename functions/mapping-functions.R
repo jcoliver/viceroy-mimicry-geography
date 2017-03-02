@@ -59,16 +59,29 @@ RasterAndReshape <- function(idw.data, shape) {
 }
 
 ################################################################################
-PlotMap <- function(geo.data, point.data, main.title = "", 
+PlotMap <- function(geo.data, point.data, main.title = "", legend.label = "",
+                    legend.label.cex = 0.8,
                     col.palette = rev(heat.colors(n = 50)), point.pch = 21,
-                    point.col = "black", point.cex = 0.6, point.bg = "black") {
+                    point.col = "black", point.cex = 0.9, point.bg = "black") {
+  # A new plot object, sans legend
   plot(geo.data,
        col = col.palette,
        xaxt = "n",
        yaxt = "n",
        bty = "n",
-       main = main.title)
-
+       main = main.title,
+       box = FALSE,
+       legend = FALSE)
+  # Now just add legend
+  plot(geo.data,
+       smallplot = c(0.18, 0.2, 0.2, .6),
+       legend.only = TRUE,
+       col = col.palette,
+       bty = "n",
+       box = FALSE,
+       ylab = NULL,
+       legend.args = list(text = legend.label, side = 2, cex = legend.label.cex))
+  # Add points
   points(x = point.data$x,
          y = point.data$y,
          col = point.col,
@@ -121,6 +134,7 @@ MakeFloridaMap <- function(plot.data, variable.name, variable.text,
   # Draw the plot
   PlotMap(geo.data = current.raster, 
           point.data = current.xyz, 
+          legend.label = variable.text,
           col.palette = map.shade.colors,
           point.col = map.point.colors,
           point.bg = map.point.bg,
