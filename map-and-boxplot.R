@@ -89,34 +89,3 @@ for (variable in 1:nrow(vars)) {
 par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
 
 dev.off()
-
-################################################################################
-# BELOW HERE LIES FAILED ATTEMPT AT COMBINING BASE GRAPHICS WITH GGPLOT
-# IT DID NOT GO WELL
-
-# Using the gridBase package
-library("grid")
-library("ggplot2")
-library("gridBase")
-
-# Setup
-plot.new()
-#grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Map
-pushViewport(viewport(layout.pos.col = 1))
-#par(fig = gridFIG(), new = TRUE)
-par(omi=gridOMI()) # not likely right
-MakeFloridaMap(plot.data = plot.data,
-               variable.name = variable.name,
-               variable.text = variable.text,
-               map.shade.colors = plotting.globals$map.colors)
-popViewport()
-
-# Boxplot
-pushViewport(viewport(layout.pos.col = 2)) # ERRORS here
-box.plot <- MakeBoxplot(boxplot.data = boxplot.data,
-            y.axis.label = variable.text)
-print(box.plot, newpage = FALSE)
-popViewport()
