@@ -92,7 +92,7 @@ PlotMap <- function(geo.data, point.data, main.title = "", legend.label = "",
 
 ################################################################################
 MakeFloridaMap <- function(plot.data, variable.name, variable.text,
-                           map.shade.colors, map.point.colors = "black",
+                           map.shade.colors, map.point.outline = "black",
                            map.point.bg = "black", map.point.cex = 0.8) {
   #' What is needed to draw a single map?
   #' + Input (data) file name
@@ -140,22 +140,4 @@ MakeFloridaMap <- function(plot.data, variable.name, variable.text,
           point.bg = map.point.bg,
           point.cex = map.point.cex)
   #  return(map.plot)
-}
-
-################################################################################
-MakeBoxplot <- function(boxplot.data, y.axis.label = "") {
-  if(!require("ggplot2")) {
-    stop("MakeBoxplot requires the ggplot2 package; processing stopped.")
-  }
-  
-  # Either abstract aes parameters, or do check for those columns in barplot.data data frame
-  box.plot <- ggplot(data = boxplot.data, 
-                     aes(x = group, y = values, fill = group)) +
-    geom_boxplot() + 
-    scale_fill_manual(values = c("white", "black")) +
-    labs(y = y.axis.label) + 
-    theme(axis.title.x = element_blank(), # no title on x
-          axis.ticks.x = element_blank(), # no label on x
-          legend.position = "none") # no legend
-  box.plot
 }
