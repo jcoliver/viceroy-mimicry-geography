@@ -9,8 +9,6 @@ rm(list = ls())
 # SUMMARY
 # Creates two plots, a map on the left and a boxplot on the right
 
-# An edit we don't want (test of git revert)
-
 ################################################################################
 # SPECIFICS
 # Add information unique to this set of figures
