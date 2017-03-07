@@ -136,7 +136,7 @@ MakeFloridaMap <- function(plot.data, variable.name, variable.text,
           point.data = current.xyz, 
           legend.label = variable.text,
           col.palette = map.shade.colors,
-          point.col = map.point.colors,
+          point.col = map.point.outline,
           point.bg = map.point.bg,
           point.cex = map.point.cex)
   #  return(map.plot)
