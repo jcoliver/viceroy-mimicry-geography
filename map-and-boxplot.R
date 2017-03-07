@@ -39,7 +39,7 @@ plot.data <- read.delim(file = data.file)
 # Set color values for graphics
 map.point.outline <- "black"
 map.point.cex <- 1.2 # May need to be adjusted depending on output format
-group.cols <- c("black", "white")
+group.cols <- c("white", "black")
 group.alt.cols <- rev(group.cols)
 group.fill <- rep(x = group.cols[1], times = nrow(x = plot.data))
 group.fill[plot.data$Site.Name %in% plotting.globals$north.pops] <- group.cols[2]
@@ -79,8 +79,9 @@ for (variable in 1:nrow(vars)) {
                  variable.text = variable.text,
                  map.shade.colors = plotting.globals$map.colors,
                  map.point.outline = map.point.outline,
-                 map.point.bg = group.fill,
-                 map.point.cex = map.point.cex)
+                 map.point.cex = map.point.cex,
+                 groups = plotting.globals$groups,
+                 group.cols = group.cols)
   
   # Boxplot
   par(mar = c(1.5, 3, 1, 1))
@@ -99,8 +100,8 @@ for (variable in 1:nrow(vars)) {
               group.name = group.name,
               variable.name = variable.name,
               variable.text = variable.text,
-              col.middle.bar = group.cols,
-              col.boxes = group.alt.cols,
+              col.middle.bar = group.alt.cols,
+              col.boxes = group.cols,
               xlabs = factor(x = names(plotting.globals$groups)))
 
 }
