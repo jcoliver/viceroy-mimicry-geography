@@ -93,14 +93,9 @@ PlotMap <- function(geo.data, point.data, main.title = "", legend.label = "",
 ################################################################################
 MakeFloridaMap <- function(plot.data, variable.name, variable.text,
                            map.shade.colors, map.point.outline = "black",
-                           map.point.bg = "black", map.point.cex = 0.8) {
-  #' What is needed to draw a single map?
-  #' + Input (data) file name
-  #' + Variable to plot (column name)
-  #' + Variable name & scale for axis
-  #' + Colors
-  #'   + Map shading
-  #'   + Points
+                           map.point.bg = "black", map.point.cex = 0.8, 
+                           groups = list(), group.cols = c("white", "black"),
+                           color.by = "Site.Name") {
   if(!require("rgdal")) {
     stop("MakeFloridaMap requires the rgdal package; processing stopped.")
   }
@@ -130,7 +125,13 @@ MakeFloridaMap <- function(plot.data, variable.name, variable.text,
   # Convert the IDW data to raster format, and restrict to geographic boundaries 
   # (i.e. the shoreline) of Florida
   current.raster <- RasterAndReshape(idw.data = current.idw, shape = florida.shp)
-  
+
+  # Need to update map.point.bg with group membership
+  map.point.bg <- rep(x = group.cols[1], times = nrow(x = plot.data))
+  for (one.group in 2:length(groups)) {
+    map.point.bg[plot.data[, color.by] %in% groups[[one.group]]] <- group.cols[one.group]
+  }
+
   # Draw the plot
   PlotMap(geo.data = current.raster, 
           point.data = current.xyz, 
@@ -139,5 +140,4 @@ MakeFloridaMap <- function(plot.data, variable.name, variable.text,
           point.col = map.point.outline,
           point.bg = map.point.bg,
           point.cex = map.point.cex)
-  #  return(map.plot)
 }
