@@ -4,15 +4,42 @@
 # 2017-03-03
 
 ################################################################################
-MakeBoxplot <- function(boxplot.data, 
-                        group.name,
+BoxplotData <- function(plot.data,
+                            group.name,
+                            grouping.var,
+                            variable.name,
+                            groups) {
+  
+  boxplot.data <- plot.data[, c(grouping.var, variable.name)]
+  boxplot.data$group <- NA
+  for (one.group in 1:length(groups)) {
+    this.group <- names(groups)[one.group]
+    group.members <- boxplot.data[, grouping.var] %in% groups[[one.group]]
+    boxplot.data[group.members, group.name] <- this.group
+  }
+  
+  return(boxplot.data)
+  
+}
+
+################################################################################
+MakeBoxplot <- function(plot.data, 
                         variable.name,
                         variable.text,
                         col.middle.bar,
                         col.boxes,
-                        xlabs) { 
+                        xlabs,
+                        groups,
+                        grouping.var) { 
 
+  group.name <- "group"
 
+  boxplot.data <- BoxplotData (plot.data = plot.data,
+                              group.name = group.name,
+                              grouping.var = grouping.var,
+                              variable.name = variable.name,
+                              groups = groups)
+    
   # Initial plotting area, so we can draw a grey background and overlay boxplot on top
   boxplot(boxplot.data[, variable.name] ~ boxplot.data[, group.name], 
           frame = FALSE,

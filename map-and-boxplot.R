@@ -23,6 +23,10 @@ vars <- data.frame(var.name <- c("Total.Volatiles",
                    stringsAsFactors = FALSE)
 
 ################################################################################
+# SHOULD NOT NEED TO EDIT ANYTHING BELOW HERE
+################################################################################
+
+################################################################################
 # SETUP
 # Load source files
 # Read in data
@@ -79,22 +83,15 @@ for (variable in 1:nrow(vars)) {
   par(mar = c(1.5, 3, 1, 1))
 
   group.by <- "Site.Name"
-  group.name <- "group"
-  boxplot.data <- plot.data[, c(group.by, variable.name)]
-  boxplot.data$group <- NA
-  for (one.group in 1:length(plotting.globals$groups)) {
-    this.group <- names(plotting.globals$groups)[one.group]
-    group.members <- boxplot.data[, group.by] %in% plotting.globals$groups[[one.group]]
-    boxplot.data[group.members, group.name] <- this.group
-  }
 
-  MakeBoxplot(boxplot.data = boxplot.data,
-              group.name = group.name,
+  MakeBoxplot(plot.data = plot.data,
               variable.name = variable.name,
               variable.text = variable.text,
+              grouping.var = group.by,
               col.middle.bar = plotting.globals$group.alt.cols,
               col.boxes = plotting.globals$group.cols,
-              xlabs = factor(x = names(plotting.globals$groups)))
+              xlabs = factor(x = names(plotting.globals$groups)),
+              groups = plotting.globals$groups)
 
 }
 
