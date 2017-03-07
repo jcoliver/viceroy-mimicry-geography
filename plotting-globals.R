@@ -25,3 +25,8 @@ plotting.globals$south.pops <- c("Cornwell", "Lake Istokpoga", "Lehigh Acres", "
 plotting.globals$north.pops <- c("Jena", "Gainesville", "Cedar Key", "Leesburg")
 plotting.globals$groups <- list(North = c("Jena", "Gainesville", "Cedar Key", "Leesburg"),
                                 South = c("Cornwell", "Lake Istokpoga", "Lehigh Acres", "Corkscrew"))
+
+plotting.globals$map.point.outline <- "black"
+plotting.globals$map.point.cex <- 1.2 # May need to be adjusted depending on output format
+plotting.globals$group.cols <- c("white", "black")
+plotting.globals$group.alt.cols <- rev(plotting.globals$group.cols)
