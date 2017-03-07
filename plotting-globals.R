@@ -23,3 +23,5 @@ if (!require(package = "RColorBrewer")) {
 }
 plotting.globals$south.pops <- c("Cornwell", "Lake Istokpoga", "Lehigh Acres", "Corkscrew")
 plotting.globals$north.pops <- c("Jena", "Gainesville", "Cedar Key", "Leesburg")
+plotting.globals$groups <- list(North = c("Jena", "Gainesville", "Cedar Key", "Leesburg"),
+                                South = c("Cornwell", "Lake Istokpoga", "Lehigh Acres", "Corkscrew"))
