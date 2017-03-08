@@ -1,7 +1,7 @@
-# Two-panel plot (map + boxplot)
+# Two-panel plot (map + boxplot) of viceroy non-volatiles
 # Jeffrey C. Oliver
 # jcoliver@email.arizona.edu
-# 2017-02-28
+# 2017-03-07
 
 rm(list = ls())
 
@@ -12,14 +12,16 @@ rm(list = ls())
 ################################################################################
 # SPECIFICS
 # Add information unique to this set of figures
-data.file <- "data/chemistry-viceroy-data.txt"
-output.file <- "output/Volatiles-two-panel"
-vars <- data.frame(var.name <- c("Total.Volatiles",
-                                 "Salicylaldehyde",
-                                 "Benzaldehyde"),
-                   var.text <- c("Total Volatiles (units)",
-                                 "Salicylaldehyde (units)",
-                                 "Benzaldehyde (units)"),
+data.file <- "data/chemistry-willow-data.txt"
+output.file <- "output/Willow-non-volatile-two-panel"
+vars <- data.frame(var.name <- c("Total.Phenolics",
+                                 "Salicin",
+                                 "Salicortin",
+                                 "Tremulacin"),
+                   var.text <- c("Total Phenolics (units)",
+                                 "Salicin (units)",
+                                 "Salicortin (units)",
+                                 "Tremulacin (units)"),
                    stringsAsFactors = FALSE)
 
 ################################################################################
