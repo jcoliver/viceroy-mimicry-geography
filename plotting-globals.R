@@ -21,8 +21,6 @@ if (!require(package = "RColorBrewer")) {
   # Orange/Blue
   # plotting.globals$map.colors <- colorRampPalette(colors = c("#FF4000", "#6600CC"))(50)
 }
-plotting.globals$south.pops <- c("Cornwell", "Lake Istokpoga", "Lehigh Acres", "Corkscrew")
-plotting.globals$north.pops <- c("Jena", "Gainesville", "Cedar Key", "Leesburg")
 plotting.globals$groups <- list(North = c("Jena", "Gainesville", "Cedar Key", "Leesburg"),
                                 South = c("Cornwell", "Lake Istokpoga", "Lehigh Acres", "Corkscrew"))
 
