@@ -74,7 +74,7 @@ PlotMap <- function(geo.data, point.data, main.title = "", legend.label = "",
        legend = FALSE)
   # Now just add legend
   plot(geo.data,
-       smallplot = c(0.18, 0.2, 0.2, .6),
+       smallplot = c(0.18, 0.21, 0.2, .6),
        legend.only = TRUE,
        col = col.palette,
        bty = "n",
