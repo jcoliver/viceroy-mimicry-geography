@@ -13,7 +13,7 @@ rm(list = ls())
 # SPECIFICS
 # Add information unique to this set of figures
 data.file <- "data/chemistry-viceroy-data.txt"
-output.file <- "output/Volatiles-two-panel"
+output.file <- "output/Viceroy-volatile-two-panel"
 vars <- data.frame(var.name <- c("Total.Volatiles",
                                  "Salicylaldehyde",
                                  "Benzaldehyde"),
