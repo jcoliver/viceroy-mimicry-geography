@@ -18,10 +18,10 @@ vars <- data.frame(var.name <- c("Total.Phenolics",
                                  "Salicin",
                                  "Salicortin",
                                  "Tremulacin"),
-                   var.text <- c("Total Phenolics (units)",
-                                 "Salicin (units)",
-                                 "Salicortin (units)",
-                                 "Tremulacin (units)"),
+                   var.text <- c("Total Phenolics (mg/g)",
+                                 "Salicin (mg/g)",
+                                 "Salicortin (mg/g)",
+                                 "Tremulacin (mg/g)"),
                    stringsAsFactors = FALSE)
 
 ################################################################################

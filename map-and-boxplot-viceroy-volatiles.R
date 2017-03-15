@@ -17,9 +17,9 @@ output.file <- "output/Viceroy-volatile-two-panel"
 vars <- data.frame(var.name <- c("Total.Volatiles",
                                  "Salicylaldehyde",
                                  "Benzaldehyde"),
-                   var.text <- c("Total Volatiles (units)",
-                                 "Salicylaldehyde (units)",
-                                 "Benzaldehyde (units)"),
+                   var.text <- c("Total Volatiles (uL/mL)",
+                                 "Salicylaldehyde (uL/mL)",
+                                 "Benzaldehyde (uL/mL)"),
                    stringsAsFactors = FALSE)
 
 ################################################################################

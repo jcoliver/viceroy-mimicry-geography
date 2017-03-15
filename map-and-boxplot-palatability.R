@@ -16,12 +16,9 @@ data.file <- "data/palatability-data.txt"
 output.file <- "output/Palatability-two-panel"
 vars <- data.frame(var.name <- c("Mantid.Learning",
                                  "Mantid.Memory.Retention"),
-                   var.text <- c("Mantid Learning (units)",
-                                 "Mantid Memory Retention (units)"),
+                   var.text <- c("Mantid Learning (# Trials)",
+                                 "Mantid Memory Retention (# Trials)"),
                    stringsAsFactors = FALSE)
-
-# NOTE: given that we want the mantid learning colors reversed, there are some
-# additional edits below here!!!
 
 ################################################################################
 # SHOULD NOT NEED TO EDIT ANYTHING BELOW HERE
@@ -71,17 +68,10 @@ for (variable in 1:nrow(vars)) {
   # Map
   par(mar = c(0, 0, 0, 0))
 
-  # NOTE DEVIATION HERE, for Mantid.Learning
-  map.shade.colors <- plotting.globals$map.colors
-  if (variable.name == "Mantid.Learning") {
-    map.shade.colors <- rev(map.shade.colors)
-  }
-  # END DEVIATION
-    
   MakeFloridaMap(plot.data = plot.data,
                  variable.name = variable.name,
                  variable.text = variable.text,
-                 map.shade.colors = map.shade.colors,
+                 map.shade.colors = plotting.globals$map.colors,
                  map.point.outline = plotting.globals$map.point.outline,
                  map.point.cex = plotting.globals$map.point.cex,
                  groups = plotting.globals$groups,
