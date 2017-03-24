@@ -28,27 +28,14 @@ separate.files <- TRUE
 ################################################################################
 
 ################################################################################
-# SETUP
-# Load source files
-# Read in data
-# Prepare data
-
-source(file = "plotting-globals.R")
-
-# Read in data
-# Read data with latitude, longitude, and whatever variable(s) to graph
-plot.data <- read.delim(file = data.file)
-
-# Prep output file name
-file.format <- plotting.globals$output.format
-output.file <- paste0(output.file, ".", file.format)
-
-################################################################################
 # PLOT
 # If plotting to separate files:
 #   Loop over each variable
 #   Call TwoPanelPlot
 # If all plots going to a single file:
+#   Load source files
+#   Read in data
+#   Prepare data
 #   Set file format
 #   Setup multi-panel plot dimensions
 #   Loop over each variable to plot
@@ -68,8 +55,18 @@ if (separate.files) {
   }
   
 } else {
+  # Load dependancies
   source(file = "functions/mapping-functions.R")
   source(file = "functions/boxplot-functions.R")
+  source(file = "plotting-globals.R")
+  
+  # Read data with latitude, longitude, and whatever variable(s) to graph
+  plot.data <- read.delim(file = data.file)
+  
+  # Prep output file name
+  file.format <- plotting.globals$output.format
+  output.file <- paste0(output.file, ".", file.format)
+  
   # Set file format
   if (file.format == "pdf") {
     pdf(file = output.file, useDingbats = FALSE)
