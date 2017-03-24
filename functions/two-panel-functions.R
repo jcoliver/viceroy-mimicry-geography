@@ -3,16 +3,6 @@
 # jcoliver@email.arizona.edu
 # 2017-03-24
 
-# Parameters needed:
-# data.file
-# output.file
-# vars <- data.frame(var.name <- c("Total.Volatiles",
-#                                  "Salicylaldehyde",
-#                                  "Benzaldehyde"),
-#                    var.text <- c("Total Volatiles (uL/mL)",
-#                                  "Salicylaldehyde (uL/mL)",
-#                                  "Benzaldehyde (uL/mL)"),
-#                    stringsAsFactors = FALSE)
 source(file = "functions/mapping-functions.R")
 source(file = "functions/boxplot-functions.R")
 source(file = "plotting-globals.R")
@@ -24,13 +14,13 @@ TwoPanelPlot <- function(datafile, outputfile, varname, vartext, delim = "\t") {
   
   # Prep output file name
   file.format <- plotting.globals$output.format
-  output.file <- paste0(outputfile, ".", file.format)
+  output.filename <- paste0(outputfile, ".", file.format)
   
   # Open pipe to appropriate graphics device
   if (file.format == "pdf") {
-    pdf(file = output.file, useDingbats = FALSE)
+    pdf(file = output.filename, useDingbats = FALSE)
   } else if (file.format == "png") {
-    png(filename = output.file, width = 1200, height = 1200, units = "px", res = 150)
+    png(filename = output.filename, width = 1200, height = 1200, units = "px", res = 150)
   }
   
   par(mfrow = c(1, 2))
