@@ -23,7 +23,7 @@ TwoPanelPlot <- function(datafile, outputfile, varname, vartext, delim = "\t") {
     png(filename = output.filename, width = 1200, height = 1200, units = "px", res = 150)
   }
   
-  par(mfrow = c(1, 2))
+  par(mfrow = c(2, 2))
 
     
   variable.name <- varname
