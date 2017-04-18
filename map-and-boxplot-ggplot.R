@@ -70,8 +70,16 @@ for (one.group in 2:length(groups)) {
 
 map.plot <- ggplot(data = dataDF, aes(x = x, y = y)) +
   geom_tile(aes(fill = z)) + 
+  scale_fill_gradient(low = "#F7FBFF", high = "#08306B", guide = "colorbar") +
   coord_equal() +
-  geom_point(data = current.xyz, aes(x = x, y = y, color = map.point.bg)) +
+  geom_point(data = plot.data[plot.data$Site.Name %in% groups$North, ],
+             aes(x = Longitude, y = Latitude, color = "NorthPointColor")) +
+  geom_point(data = plot.data[plot.data$Site.Name %in% groups$South, ],
+             aes(x = Longitude, y = Latitude, color = "SouthPointColor")) +
+  scale_color_manual(name = element_blank(), 
+                     guide = FALSE, # Turns off legend
+                     values = c("white", "black")) +
+  # geom_point(data = current.xyz, aes(x = x, y = y)) +
   # To get north / south point coloring, use separate geom_point
   # calls for each group, color = "north" / "south", and define the 
   # values for north & south in a call to scale_color_manual
