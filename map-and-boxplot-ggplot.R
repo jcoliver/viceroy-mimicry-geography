@@ -70,39 +70,28 @@ for (one.group in 2:length(groups)) {
 
 map.plot <- ggplot(data = dataDF, aes(x = x, y = y)) +
   geom_tile(aes(fill = z)) + 
-  scale_fill_gradient(low = "#F7FBFF", high = "#08306B", guide = "colorbar") +
+  scale_fill_gradient(low = "#F7FBFF", high = "#08306B", guide = "colorbar", name = variable.name) +
   coord_equal() +
   geom_point(data = plot.data[plot.data$Site.Name %in% groups$North, ],
-             aes(x = Longitude, y = Latitude, color = "NorthPointColor")) +
+             aes(x = Longitude, y = Latitude), 
+             fill = "white", 
+             color = "black", 
+             shape = 21,
+             size = 2) +
   geom_point(data = plot.data[plot.data$Site.Name %in% groups$South, ],
-             aes(x = Longitude, y = Latitude, color = "SouthPointColor")) +
-  scale_color_manual(name = element_blank(), 
-                     guide = FALSE, # Turns off legend
-                     values = c("white", "black")) +
-  # geom_point(data = current.xyz, aes(x = x, y = y)) +
-  # To get north / south point coloring, use separate geom_point
-  # calls for each group, color = "north" / "south", and define the 
-  # values for north & south in a call to scale_color_manual
-  # See: https://www.r-bloggers.com/geom_point-legend-with-custom-colors-in-ggplot/
-  # geom_point(aes(x = data$"1940",
-  #                color = "1940"), # these can be any string, they just need to be unique identifiers
-  #            size = 4,
-  #            shape = 15) +
-  # geom_point(aes(x = data$"1960",
-  #                color = "1960"),
-  #            size = 4,
-  #            shape = 15) +
-  # scale_color_manual(name = element_blank()
-  #                    labels = c(1940, 1960),
-  #                    values = colors)
-  # theme(legend.position = "none")
-
-  
+             aes(x = Longitude, y = Latitude), 
+             fill = "black", 
+             color = "black", 
+             shape = 21,
+             size = 2) +
   theme_void()
-  # geom_path(data = florida.shp, aes(x = long, y = lat))
-  
+
 print(map.plot)
 
+ggsave(filename = "output/test-ggplot-map.pdf")
+
+
+## Raster example
 ggplot(data = rastDF, aes(x = x, y = y)) + 
   geom_tile(aes(fill = totSawIDW)) + coord_equal() +
   geom_path(data = standBounds, aes(x = long, 
