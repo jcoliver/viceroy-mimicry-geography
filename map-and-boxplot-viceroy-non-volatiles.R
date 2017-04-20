@@ -14,6 +14,7 @@ rm(list = ls())
 # Add information unique to this set of figures
 data.file <- "data/chemistry-viceroy-data.txt"
 output.file <- "output/Viceroy-non-volatile-two-panel"
+# output.file <- "~/Desktop/Test-inset"
 vars <- data.frame(var.name <- c("Total.Phenolics",
                                  "Salicin",
                                  "Salicortin",
@@ -50,10 +51,14 @@ if (separate.files) {
   for (variable in 1:nrow(vars)) {
     outfile <- paste0(output.file, "-", vars$var.name[variable])
     
-    TwoPanelPlot(datafile = data.file, 
-                 outputfile = outfile, 
-                 varname = vars$var.name[variable], 
+    TwoPanelPlot(datafile = data.file,
+                 outputfile = outfile,
+                 varname = vars$var.name[variable],
                  vartext = vars$var.text[variable])
+    # MapWithInsetBoxplot(datafile = data.file,
+    #                     outputfile = outfile,
+    #                     varname = vars$var.name[variable],
+    #                     vartext = vars$var.text[variable])
   }
   
 } else {
