@@ -1,4 +1,4 @@
-# Two-panel plot (map + boxplot) of viceroy non-volatiles
+# Four panel plot of insect and host plant abundances
 # Jeffrey C. Oliver
 # jcoliver@email.arizona.edu
 # 2017-03-07
@@ -7,7 +7,10 @@ rm(list = ls())
 
 ################################################################################
 # SUMMARY
-# Creates two plots, a map on the left and a boxplot on the right
+# Creates abundance maps for insects (viceroys & queens) and their respective 
+# host plants (willows & twinevine); insects as ~rows, plants as columns:
+# | Viceroy | Willow    |
+# | Queen   | Twinevine |
 
 ################################################################################
 # SPECIFICS
@@ -23,7 +26,8 @@ vars <- data.frame(var.name <- c("Number.Viceroy.Adults",
                                  "Queens (# inds.)", 
                                  "Twinevines (# inds.)"),
                    stringsAsFactors = FALSE)
-separate.files <- TRUE
+separate.files <- FALSE
+multi.panel.dims <- c(2,2)
 
 ################################################################################
 # SHOULD NOT NEED TO EDIT ANYTHING BELOW HERE
@@ -32,6 +36,7 @@ separate.files <- TRUE
 ################################################################################
 # PLOT
 source(file = "functions/mapping-functions.R")
+source(file = "plotting-globals.R")
 # If plotting to separate files:
 #   Loop over each variable
 #   Call MakeFloridaMap
@@ -45,31 +50,31 @@ source(file = "functions/mapping-functions.R")
 #     Draw map
 
 plot.data <- read.table(file = data.file, header = TRUE, sep = "\t")
+file.format <- plotting.globals$output.format
 
 if (separate.files) {
   
-
   for (variable in 1:nrow(vars)) {
-    outfile <- paste0(output.file, "-", vars$var.name[variable])
+    outfile <- paste0(output.file, "-", vars$var.name[variable], ".", file.format)
 
-    
+    # Set file format
+    if (file.format == "pdf") {
+      pdf(file = outfile, useDingbats = FALSE)
+    } else if (file.format == "png") {
+      png(filename = outfile, width = 1200, height = 1200, units = "px", res = 150)
+    }
+
     MakeFloridaMap(plot.data = plot.data,
-                   variable.name = variable.name,
-                   variable.text = variable.text,
+                   variable.name = vars$var.name[variable],
+                   variable.text = vars$var.text[variable],
                    map.shade.colors = plotting.globals$map.colors,
                    map.point.outline = plotting.globals$map.point.outline,
                    map.point.cex = plotting.globals$map.point.cex,
                    groups = plotting.globals$groups,
                    group.cols = plotting.globals$group.cols)
     
-    TwoPanelPlot(datafile = data.file,
-                 outputfile = outfile,
-                 varname = vars$var.name[variable],
-                 vartext = vars$var.text[variable])
-    # MapWithInsetBoxplot(datafile = data.file,
-    #                     outputfile = outfile,
-    #                     varname = vars$var.name[variable],
-    #                     vartext = vars$var.text[variable])
+    # Close pipe to graphics device
+    dev.off()
   }
   
 } else {
@@ -80,7 +85,6 @@ if (separate.files) {
   plot.data <- read.delim(file = data.file)
   
   # Prep output file name
-  file.format <- plotting.globals$output.format
   output.file <- paste0(output.file, ".", file.format)
   
   # Set file format
@@ -91,7 +95,7 @@ if (separate.files) {
   }
   
   # Setup multi-panel plot dimensions
-  par(mfrow = c(nrow(vars), 2))
+  par(mfrow = multi.panel.dims)
   
   # Loop over each variable to plot
   for (variable in 1:nrow(vars)) {
@@ -109,25 +113,12 @@ if (separate.files) {
                    map.point.cex = plotting.globals$map.point.cex,
                    groups = plotting.globals$groups,
                    group.cols = plotting.globals$group.cols)
-    
-    # Boxplot
-    par(mar = c(1.5, 3, 1, 1))
-    
-    group.by <- "Site.Name"
-    
-    MakeBoxplot(plot.data = plot.data,
-                variable.name = variable.name,
-                variable.text = variable.text,
-                grouping.var = group.by,
-                col.middle.bar = plotting.globals$group.alt.cols,
-                col.boxes = plotting.globals$group.cols,
-                xlabs = factor(x = names(plotting.globals$groups)),
-                groups = plotting.globals$groups)
-    
+
   }
   
   # Reset graphical parameters to default values
   par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+  # par(mfrow = c(1,1))
   
   # Close pipe to graphics device
   dev.off()
