@@ -11,6 +11,8 @@ rm(list = ls())
 # host plants (willows & twinevine); insects as ~rows, plants as columns:
 # | Viceroy | Willow    |
 # | Queen   | Twinevine |
+# Used svg graphics device, as pdf masking of maps was not working well when 
+# translating pdf -> svg -> pdf
 
 ################################################################################
 # SPECIFICS
@@ -28,6 +30,7 @@ vars <- data.frame(var.name <- c("Number.Viceroy.Adults",
                    stringsAsFactors = FALSE)
 separate.files <- FALSE
 multi.panel.dims <- c(2,2)
+file.format <- "svg"
 
 ################################################################################
 # SHOULD NOT NEED TO EDIT ANYTHING BELOW HERE
@@ -50,7 +53,6 @@ source(file = "plotting-globals.R")
 #     Draw map
 
 plot.data <- read.table(file = data.file, header = TRUE, sep = "\t")
-file.format <- plotting.globals$output.format
 
 if (separate.files) {
   
@@ -62,6 +64,8 @@ if (separate.files) {
       pdf(file = outfile, useDingbats = FALSE)
     } else if (file.format == "png") {
       png(filename = outfile, width = 1200, height = 1200, units = "px", res = 150)
+    } else if (file.format == "svg") {
+      svg(filename = outfile)
     }
 
     MakeFloridaMap(plot.data = plot.data,
@@ -92,6 +96,8 @@ if (separate.files) {
     pdf(file = output.file, useDingbats = FALSE)
   } else if (file.format == "png") {
     png(filename = output.file, width = 1200, height = 1200, units = "px", res = 150)
+  } else if (file.format == "svg") {
+    svg(filename = output.file)
   }
   
   # Setup multi-panel plot dimensions
