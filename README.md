@@ -9,7 +9,9 @@
         | Viceroy | Willow    |
         | Queen   | Twinevine |
     + Size: Half column width (full column width?)
-    + Status: **none**
+    + Status: 
+        + _Draft_ on OSF; created from single image pdf output
+        + svg/figure-1.svg
 + Figure 2
     + Description: Chemical defense (non- volatile) in viceroys and willows, 
     shown as both a map and an inset boxplot
