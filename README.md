@@ -10,7 +10,7 @@
         | Queen   | Twinevine |
     + Size: Half column width (full column width?)
     + Status: 
-        + _Draft_ on OSF; created from single image pdf output
+        + _Draft_ on OSF; created from single image svg output
         + svg/figure-1.svg
 + Figure 2
     + Description: Chemical defense (non- volatile) in viceroys and willows, 
