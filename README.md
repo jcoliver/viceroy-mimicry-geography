@@ -1,4 +1,36 @@
-# README for figures in Viceroy manuscript
+# README for figures & stats in Viceroy manuscript
+
+## Stats
++ Section: Species abundance across Florida
+    + Topic: abundances
+    + Method: We are using count data to predict count data; Poisson regression
+    See: http://www.theanalysisfactor.com/generalized-linear-models-in-r-part-6-poisson-regression-count-variables/
+        + Viceroys & willows in all sites - what are these tests?
+        + Viceroy abundance ~ Queen abundance
+        + Queen abundance ~ twinevine abundance
++ Section: Viceroy butterfly and larval host plant chemical defenses
+    + Topic: chemistry
+    + Note: Much of these appear to have been t-tests; North vs. South.
+    We can use actual abundances rather than categorization?
+    + Method: Linear regression
+        + Viceroy total (non-volatile) phenolics ~ Queen abundance
+        + Viceroy salicin ~ Queen abundance
+        + Viceroy salicortin ~ Queen abundance
+        + Viceroy tremulacin ~ Queen abundance
+        + Total volatile phenolics ~ Queen abundance
+        + Benzaldhyde ~ Queen abundance
+        + Salicylaldehyde ~ Queen abundance
+        + Willow total (non-volatile) phenolics ~ Queen abundance
+        + Willow salicin ~ Queen abundance
+        + Willow salicortin ~ Queen abundance
+        + Willow tremulacin ~ Queen abundance
++ Section: Predator behavioral responses to viceroy butterflies
+    + Topic: predator behavior
+    + Note: Much of these appear to have been t-tests; North vs. South.
+    We can use actual abundances rather than categorization?
+    + Method: Linear regression
+        + Aversion learning ~ Queen abundance
+        + Memory retention ~ Queen abundance
 
 ## Figure list
 + Figure 1
