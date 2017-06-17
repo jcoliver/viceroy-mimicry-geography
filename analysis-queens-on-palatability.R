@@ -1,4 +1,4 @@
-# Analyzing Queen abundance on viceroy non-volatile chemical defense
+# Analyzing Queen abundance on viceroy palatability
 # Jeffrey C. Oliver
 # jcoliver@email.arizona.edu
 # 2017-06-16
