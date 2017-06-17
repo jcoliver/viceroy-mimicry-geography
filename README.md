@@ -1,36 +1,52 @@
-# README for figures & stats in Viceroy manuscript
+# README for statistical analyses and data visualization in Viceroy manuscript
 
-## Stats
+## Statistical Analyses
 + Section: Species abundance across Florida
     + Topic: abundances
     + Method: We are using count data to predict count data; Poisson regression
     See: http://www.theanalysisfactor.com/generalized-linear-models-in-r-part-6-poisson-regression-count-variables/
         + Viceroys & willows in all sites - what are these tests?
         + Viceroy abundance ~ Queen abundance
+            + Analysis script: analysis-queens-on-viceroy-abundance.R
+            + Output file: output/analysis-results/queens-on-viceroy-abundance.txt
         + Queen abundance ~ twinevine abundance
+            + Analysis script: analysis-twinevine-on-queen-abundance.R
+            + Output file: output/analysis-results/twinevine-on-queen-abundance.txt
 + Section: Viceroy butterfly and larval host plant chemical defenses
     + Topic: chemistry
-    + Note: Much of these appear to have been t-tests; North vs. South.
-    We can use actual abundances rather than categorization?
-    + Method: Linear regression
-        + Viceroy total (non-volatile) phenolics ~ Queen abundance
-        + Viceroy salicin ~ Queen abundance
-        + Viceroy salicortin ~ Queen abundance
-        + Viceroy tremulacin ~ Queen abundance
-        + Total volatile phenolics ~ Queen abundance
-        + Benzaldhyde ~ Queen abundance
-        + Salicylaldehyde ~ Queen abundance
-        + Willow total (non-volatile) phenolics ~ Queen abundance
-        + Willow salicin ~ Queen abundance
-        + Willow salicortin ~ Queen abundance
-        + Willow tremulacin ~ Queen abundance
+    + Method: Linear mixed-effect model (with site & year as random effects)
+        + Viceroy non-volatile phenolics
+            + Analysis script: analysis-queens-on-non-volatiles-viceroys.R
+            + Output file: output/analysis-results/queens-on-non-volatiles-viceroys.txt
+            + Models
+                + Viceroy total (non-volatile) phenolics ~ Queen abundance
+                + Viceroy salicin ~ Queen abundance
+                + Viceroy salicortin ~ Queen abundance
+                + Viceroy tremulacin ~ Queen abundance
+        + Viceroy volatile phenolics
+            + Analysis script: analysis-queens-on-volatiles-viceroys.R
+            + Output file: output/analysis-results/queens-on-volatiles-viceroys.txt
+            + Models
+                + Viceroy total volatile phenolics ~ Queen abundance
+                + Viceroy benzaldhyde ~ Queen abundance
+                + Viceroy salicylaldehyde ~ Queen abundance
+        + Willow non-volatile phenolics
+            + Analysis script: analysis-queens-on-non-volatiles-willows.R
+            + Output file: output/analysis-results/queens-on-non-volatiles-willows.txt
+            + Models
+                + Willow total (non-volatile) phenolics ~ Queen abundance
+                + Willow salicin ~ Queen abundance
+                + Willow salicortin ~ Queen abundance
+                + Willow tremulacin ~ Queen abundance
 + Section: Predator behavioral responses to viceroy butterflies
-    + Topic: predator behavior
-    + Note: Much of these appear to have been t-tests; North vs. South.
-    We can use actual abundances rather than categorization?
-    + Method: Linear regression
-        + Aversion learning ~ Queen abundance
-        + Memory retention ~ Queen abundance
+    + Topic: palatability
+    + Method: Linear mixed-effect model (with site & year as random effects)
+        + Predator behavior
+            + Analysis script: analysis-queens-on-palatability.R
+            + Output file: output/analysis-results/queens-on-palatability.txt
+            + Models
+                + Aversion learning ~ Queen abundance
+                + Memory retention ~ Queen abundance
 
 ## Figure list
 + Figure 1
