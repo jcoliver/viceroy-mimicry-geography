@@ -1,6 +1,15 @@
 # README for statistical analyses and data visualization in Viceroy manuscript
 
 ## Statistical Analyses
++ Question: Should **year** or **date** be used for random effect? Current code uses the 
+latter. Should the former (year) be more appropriate, it can be extracted via:
+
+```
+all.data$Year <- factor(substr(x = as.character(all.data$Collection.Date), 
+                        start = nchar(as.character(all.data$Collection.Date)) - 1, 
+                        stop = nchar(as.character(all.data$Collection.Date))))
+```
+
 + Section: Species abundance across Florida
     + Topic: abundances
     + Method: We are using count data to predict count data; Poisson regression
