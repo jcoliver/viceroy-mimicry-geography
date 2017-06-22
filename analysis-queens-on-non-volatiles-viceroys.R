@@ -36,6 +36,8 @@ all.data <- merge(x = chem.data,
 
 # Data frame to hold results
 model.results <- data.frame(response = responses,
+                            coeff = NA,
+                            std.err = NA,
                             df = NA,
                             t = NA,
                             p = NA)
@@ -46,7 +48,7 @@ for (response.index in 1:length(responses)) {
   chem.model <- lmer(eval(as.name(response)) ~ Number.Queen.Adults + (1|Site.Name) + (1|Collection.Date),
                      data = all.data)
   chem.summary <- summary(chem.model)
-  model.results[response.index, c(2:4)] <- chem.summary$coefficients[2, c(3:5)]
+  model.results[response.index, c(2:6)] <- chem.summary$coefficients[2, c(1:5)]
 }
 
 write.table(x = model.results, 
