@@ -22,5 +22,5 @@ viceroy.model <- glmer(Number.Viceroy.Adults ~ Number.Queen.Adults + + (1|Site.N
 viceroy.summary <- summary(viceroy.model)
 
 sink(file = output.file)
-viceroy.summary
+print(viceroy.summary)
 sink()
