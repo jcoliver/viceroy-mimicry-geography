@@ -1,20 +1,11 @@
 # README for statistical analyses and data visualization in Viceroy manuscript
 
 ## Statistical Analyses
-+ Question: Should **year** or **date** be used for random effect? Current code uses the 
-latter. Should the former (year) be more appropriate, it can be extracted via:
-
-```
-all.data$Year <- factor(substr(x = as.character(all.data$Collection.Date), 
-                        start = nchar(as.character(all.data$Collection.Date)) - 1, 
-                        stop = nchar(as.character(all.data$Collection.Date))))
-```
 
 + Section: Species abundance across Florida
     + Topic: abundances
     + Method: We are using count data to predict count data; Poisson regression
     See: http://www.theanalysisfactor.com/generalized-linear-models-in-r-part-6-poisson-regression-count-variables/
-        + Viceroys & willows in all sites - what are these tests?
         + Viceroy abundance ~ Queen abundance
             + Analysis script: analysis-queens-on-viceroy-abundance.R
             + Output file: output/analysis-results/queens-on-viceroy-abundance.txt
@@ -24,7 +15,7 @@ all.data$Year <- factor(substr(x = as.character(all.data$Collection.Date),
 + Section: Viceroy butterfly and larval host plant chemical defenses
     + Topic: chemistry
     + Method: Linear mixed-effect model (with site & year as random effects)
-        + Viceroy non-volatile phenolics
+        + Queen abundance on **viceroy non-volatile phenolics**
             + Analysis script: analysis-queens-on-non-volatiles-viceroys.R
             + Output file: output/analysis-results/queens-on-non-volatiles-viceroys.txt
             + Models
@@ -32,14 +23,14 @@ all.data$Year <- factor(substr(x = as.character(all.data$Collection.Date),
                 + Viceroy salicin ~ Queen abundance
                 + Viceroy salicortin ~ Queen abundance
                 + Viceroy tremulacin ~ Queen abundance
-        + Viceroy volatile phenolics
+        + Queen abundance on **viceroy volatile phenolics**
             + Analysis script: analysis-queens-on-volatiles-viceroys.R
             + Output file: output/analysis-results/queens-on-volatiles-viceroys.txt
             + Models
                 + Viceroy total volatile phenolics ~ Queen abundance
                 + Viceroy benzaldhyde ~ Queen abundance
                 + Viceroy salicylaldehyde ~ Queen abundance
-        + Willow non-volatile phenolics
+        + Queen abundance on **willow non-volatile phenolics**
             + Analysis script: analysis-queens-on-non-volatiles-willows.R
             + Output file: output/analysis-results/queens-on-non-volatiles-willows.txt
             + Models
@@ -47,10 +38,31 @@ all.data$Year <- factor(substr(x = as.character(all.data$Collection.Date),
                 + Willow salicin ~ Queen abundance
                 + Willow salicortin ~ Queen abundance
                 + Willow tremulacin ~ Queen abundance
+        + Twinevine abundance on **viceroy volatile and non-volatile phenolics**
+            + Analysis script: analysis-twinevine-on-viceroy-phenolics.R
+            + Output file: output/analysis-results/twinevine-on-non-viceroy-phenolics.txt
+            + Models
+                + Viceroy total (non-volatile) phenolics ~ twinevine abundance
+                + Viceroy salicin ~ twinevine abundance
+                + Viceroy salicortin ~ twinevine abundance
+                + Viceroy tremulacin ~ twinevine abundance
+                + Viceroy total volatile phenolics ~ twinevine abundance
+                + Viceroy benzaldhyde ~ twinevine abundance
+                + Viceroy salicylaldehyde ~ twinevine abundance
+        + Willow non-volatiles on **viceroy non-volatile phenolics**
+            + Analysis script: analysis-willows-on-non-volatiles-viceroys.R
+            + Output file: output/analysis-results/willows-on-non-volatiles-viceroys.txt
+            + Note: There were two willows sampled per date. Predictor for a date is the 
+            average value of the willow compound for that date.
+            + Models
+                + Viceroy total (non-volatile) phenolics ~ willow total (non-volatile) phenolics
+                + Viceroy salicin ~ willow salicin
+                + Viceroy salicortin ~ willow salicortin
+                + Viceroy tremulacin ~ willow tremulacin
 + Section: Predator behavioral responses to viceroy butterflies
     + Topic: palatability
     + Method: Linear mixed-effect model (with site & year as random effects)
-        + Predator behavior
+        + Queen abundance on **predator behavior**
             + Analysis script: analysis-queens-on-palatability.R
             + Output file: output/analysis-results/queens-on-palatability.txt
             + Models
@@ -58,6 +70,7 @@ all.data$Year <- factor(substr(x = as.character(all.data$Collection.Date),
                 + Memory retention ~ Queen abundance
 
 ## Figure list
+
 + Figure 1
     + Description: Abundance maps for insects (viceroys & queens) and their 
     respective host plants (willows & twinevine)
