@@ -34,9 +34,9 @@ all.data <- merge(x = chem.data,
 
 # Data frame to hold results
 model.results <- data.frame(response = responses,
-                            coeff = NA,
-                            df = NA,
-                            t = NA,
+                            NumDF = NA,
+                            DenDF = NA,
+                            F.value = NA,
                             p = NA)
 
 # Iterate over all response variables and run model
@@ -44,8 +44,11 @@ for (response.index in 1:length(responses)) {
   response <- responses[response.index]
   chem.model <- lmer(eval(as.name(response)) ~ Number.Queen.Adults + (1|Site.Name) + (1|Collection.Date),
                      data = all.data)
-  chem.summary <- summary(chem.model)
-  model.results[response.index, c(2:ncol(model.results))] <- chem.summary$coefficients[2, c(1, 3:5)]
+  chem.anova <- anova(chem.model)
+  model.results$NumDF[response.index] <- chem.anova$NumDF
+  model.results$DenDF[response.index] <- chem.anova$DenDF
+  model.results$F.value[response.index] <- chem.anova$F.value
+  model.results$p[response.index] <- chem.anova$`Pr(>F)`
 }
 
 write.table(x = model.results, 
