@@ -20,7 +20,9 @@ output.file <- "output/analysis-results/queens-on-viceroy-abundance.txt"
 viceroy.model <- glmer(Number.Viceroy.Adults ~ Number.Queen.Adults + + (1|Site.Name) + (1|Observation.Date),
                        data = abundance.data, family = poisson)
 viceroy.summary <- summary(viceroy.model)
+viceroy.anova <- anova(viceroy.model)
 
 sink(file = output.file)
 print(viceroy.summary)
+print(viceroy.anova)
 sink()
