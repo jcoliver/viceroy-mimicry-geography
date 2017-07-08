@@ -65,6 +65,7 @@ all.data <- merge(x = willow.ave.data,
 
 # Data frame to hold results
 model.results <- data.frame(compound = compounds,
+                            coeff = NA,
                             NumDF = NA,
                             DenDF = NA,
                             F.value = NA,
@@ -76,6 +77,8 @@ for (compound.index in 1:length(compounds)) {
   predictor <- paste0("w.", compounds[compound.index])
   chem.model <- lmer(eval(as.name(response)) ~ eval(as.name(predictor)) + (1|Site.Name) + (1|Collection.Date),
                      data = all.data)
+  chem.summary <- summary(chem.model)
+  model.results$coeff[compound.index] <- chem.summary$coefficients[2, 1]
   chem.anova <- anova(chem.model)
   model.results$NumDF[compound.index] <- chem.anova$NumDF
   model.results$DenDF[compound.index] <- chem.anova$DenDF
