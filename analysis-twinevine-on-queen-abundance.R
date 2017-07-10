@@ -20,7 +20,9 @@ output.file <- "output/analysis-results/twinevine-on-queen-abundance.txt"
 queen.model <- glmer(Number.Queen.Adults ~ Number.Twinevine.Plants + + (1|Site.Name) + (1|Observation.Date),
                        data = abundance.data, family = poisson)
 queen.summary <- summary(queen.model)
+queen.anova <- anova(queen.model)
 
 sink(file = output.file)
 print(queen.summary)
+print(queen.anova)
 sink()
