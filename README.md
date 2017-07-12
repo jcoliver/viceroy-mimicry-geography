@@ -8,16 +8,16 @@
     See: http://www.theanalysisfactor.com/generalized-linear-models-in-r-part-6-poisson-regression-count-variables/
         + Viceroy abundance ~ Queen abundance
             + Analysis script: analysis-queens-on-viceroy-abundance.R
-            + Output file: output/analysis-results/queens-on-viceroy-abundance.txt
+            + Output file: output/analysis/queens-on-viceroy-abundance.txt
         + Queen abundance ~ twinevine abundance
             + Analysis script: analysis-twinevine-on-queen-abundance.R
-            + Output file: output/analysis-results/twinevine-on-queen-abundance.txt
+            + Output file: output/analysis/twinevine-on-queen-abundance.txt
 + Section: Viceroy butterfly and larval host plant chemical defenses
     + Topic: chemistry
     + Method: Linear mixed-effect model (with site & year as random effects)
         + Queen abundance on **viceroy non-volatile phenolics**
             + Analysis script: analysis-queens-on-non-volatiles-viceroys.R
-            + Output file: output/analysis-results/queens-on-non-volatiles-viceroys.txt
+            + Output file: output/analysis/queens-on-non-volatiles-viceroys.txt
             + Models
                 + Viceroy total (non-volatile) phenolics ~ Queen abundance
                 + Viceroy salicin ~ Queen abundance
@@ -25,14 +25,14 @@
                 + Viceroy tremulacin ~ Queen abundance
         + Queen abundance on **viceroy volatile phenolics**
             + Analysis script: analysis-queens-on-volatiles-viceroys.R
-            + Output file: output/analysis-results/queens-on-volatiles-viceroys.txt
+            + Output file: output/analysis/queens-on-volatiles-viceroys.txt
             + Models
                 + Viceroy total volatile phenolics ~ Queen abundance
                 + Viceroy benzaldhyde ~ Queen abundance
                 + Viceroy salicylaldehyde ~ Queen abundance
         + Queen abundance on **willow non-volatile phenolics**
             + Analysis script: analysis-queens-on-non-volatiles-willows.R
-            + Output file: output/analysis-results/queens-on-non-volatiles-willows.txt
+            + Output file: output/analysis/queens-on-non-volatiles-willows.txt
             + Models
                 + Willow total (non-volatile) phenolics ~ Queen abundance
                 + Willow salicin ~ Queen abundance
@@ -40,7 +40,7 @@
                 + Willow tremulacin ~ Queen abundance
         + Twinevine abundance on **viceroy volatile and non-volatile phenolics**
             + Analysis script: analysis-twinevine-on-viceroy-phenolics.R
-            + Output file: output/analysis-results/twinevine-on-non-viceroy-phenolics.txt
+            + Output file: output/analysis/twinevine-on-non-viceroy-phenolics.txt
             + Models
                 + Viceroy total (non-volatile) phenolics ~ twinevine abundance
                 + Viceroy salicin ~ twinevine abundance
@@ -51,7 +51,7 @@
                 + Viceroy salicylaldehyde ~ twinevine abundance
         + Willow non-volatiles on **viceroy non-volatile phenolics**
             + Analysis script: analysis-willows-on-non-volatiles-viceroys.R
-            + Output file: output/analysis-results/willows-on-non-volatiles-viceroys.txt
+            + Output file: output/analysis/willows-on-non-volatiles-viceroys.txt
             + Note: There were two willows sampled per date. Predictor for a date is the 
             average value of the willow compound for that date.
             + Models
@@ -64,7 +64,7 @@
     + Method: Linear mixed-effect model (with site & year as random effects)
         + Queen abundance on **predator behavior**
             + Analysis script: analysis-queens-on-palatability.R
-            + Output file: output/analysis-results/queens-on-palatability.txt
+            + Output file: output/analysis/queens-on-palatability.txt
             + Models
                 + Aversion learning ~ Queen abundance
                 + Memory retention ~ Queen abundance

@@ -13,7 +13,7 @@ rm(list = ls())
 # SPECIFICS
 # Add information unique to this set of figures
 data.file <- "data/chemistry-viceroy-data.txt"
-output.file <- "output/Viceroy-volatile-two-panel"
+output.file <- "output/visualization/Viceroy-volatile-two-panel"
 vars <- data.frame(var.name <- c("Total.Volatiles",
                                  "Salicylaldehyde",
                                  "Benzaldehyde"),
@@ -58,7 +58,7 @@ if (separate.files) {
   # Load dependancies
   source(file = "functions/mapping-functions.R")
   source(file = "functions/boxplot-functions.R")
-  source(file = "plotting-globals.R")
+  source(file = "scripts/visualization/plotting-globals.R")
   
   # Read data with latitude, longitude, and whatever variable(s) to graph
   plot.data <- read.delim(file = data.file)

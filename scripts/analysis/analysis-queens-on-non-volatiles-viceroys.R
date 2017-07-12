@@ -1,4 +1,4 @@
-# Analyzing Queen abundance on viceroy volatile chemical defense
+# Analyzing Queen abundance on viceroy non-volatile chemical defense
 # Jeffrey C. Oliver
 # jcoliver@email.arizona.edu
 # 2017-06-16
@@ -15,12 +15,13 @@ chem.data <- read.delim(file = "data/chemistry-viceroy-data.txt")
 abundance.data <- read.delim(file = "data/abundance-data.txt")
 
 # Set destination for results
-output.file <- "output/analysis-results/queens-on-volatiles-viceroys.txt"
+output.file <- "output/analysis/queens-on-non-volatiles-viceroys.txt"
 
 # Enumerate the response variables to analyze
-responses <- c("Total.Volatiles",
-               "Salicylaldehyde",
-               "Benzaldehyde")
+responses <- c("Total.Phenolics",
+               "Salicin",
+               "Salicortin",
+               "Tremulacin")
 
 # ----------------      SHOULD NOT NEED TO EDIT BELOW HERE      ----------------
 

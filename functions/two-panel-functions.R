@@ -5,7 +5,7 @@
 
 source(file = "functions/mapping-functions.R")
 source(file = "functions/boxplot-functions.R")
-source(file = "plotting-globals.R")
+source(file = "scripts/visualization/plotting-globals.R")
 
 ################################################################################
 TwoPanelPlot <- function(datafile, outputfile, varname, vartext, delim = "\t") {

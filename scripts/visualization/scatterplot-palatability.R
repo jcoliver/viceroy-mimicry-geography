@@ -18,7 +18,7 @@ colnames(abundance.data)[which(colnames(abundance.data) == "Observation.Date")] 
 all.data <- merge(x = chem.data, 
                   y = abundance.data)
 
-output.file <- "output/Palatability-scatterplot"
+output.file <- "output/visualization/Palatability-scatterplot"
 vars <- data.frame(var.name <- c("Mantid.Learning",
                                  "Mantid.Memory.Retention"),
                    var.text <- c("Mantid Learning (# Trials)",

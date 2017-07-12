@@ -1,35 +1,29 @@
-# Graphing willow chemistry data for viceroy paper
+# Graphing palatability data for viceroy paper
 # Jeff Oliver
 # jcoliver@email.arizona.edu
 # 2016-12-05
 
 rm(list = ls())
-source(file = "plotting-globals.R")
+source(file = "scripts/visualization/plotting-globals.R")
 
 ################################################################################
 # SUMMARY
-# Use latitude & longitude coordinates to create maps of chemical defense in 
-# willows (non-volatile phenolics)
+# Use latitude & longitude coordinates to create maps of palatability in 
+# viceroys (aversion learning & memory retention)
 
-# Total.Phenolics
-# Salicin
-# Salicortin
-# Tremulacin
+# Mantid.Learning
+# Mantid.Memory.Retention
 
 ################################################################################
 # SPECIFICS
 # Add information unique to this set of maps
-data.file <- "data/chemistry-willow-data.txt"
-output.file <- "output/Willow-chemistry-maps"
+data.file <- "data/palatability-data.txt"
+output.file <- "output/visualization/Palatability-maps"
 plots <- data.frame(
-  variables = c("Total.Phenolics", 
-                "Salicin", 
-                "Salicortin", 
-                "Tremulacin"),
-  plot.titles = c("Total Phenolics", 
-                  "Salicin", 
-                  "Salicortin", 
-                  "Tremulacin"),
+  variables = c("Mantid.Learning", 
+                "Mantid.Memory.Retention"),
+  plot.titles = c("Mantid Learning", 
+                  "Mantid Memory Retention"),
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
 
@@ -101,11 +95,17 @@ for (d in 1:nrow(plots)) {
   # (i.e. the shoreline) of Florida
   current.raster <- RasterAndReshape(idw.data = current.idw, shape = florida.shp)
   
+  # For learning (and learning only), we want to reverse the colors
+  this.plot.colors <- plot.colors
+  if (plots$variables[d] == "Mantid.Learning") {
+    this.plot.colors <- rev(plot.colors)
+  }
+  
   # Draw the plot
   PlotMap(geo.data = current.raster, 
           point.data = current.xyz, 
           main.title = plots$plot.titles[d],
-          col.palette = plot.colors)
+          col.palette = this.plot.colors)
 }
 par(mfrow = c(1, 1))
 dev.off()

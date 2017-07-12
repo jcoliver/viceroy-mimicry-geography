@@ -12,12 +12,16 @@ rm(list = ls())
 ################################################################################
 # SPECIFICS
 # Add information unique to this set of figures
-data.file <- "data/palatability-data.txt"
-output.file <- "output/Palatability-two-panel"
-vars <- data.frame(var.name <- c("Mantid.Learning",
-                                 "Mantid.Memory.Retention"),
-                   var.text <- c("Mantid Learning (# Trials)",
-                                 "Mantid Memory Retention (# Trials)"),
+data.file <- "data/chemistry-willow-data.txt"
+output.file <- "output/visualization/Willow-non-volatile-two-panel"
+vars <- data.frame(var.name <- c("Total.Phenolics",
+                                 "Salicin",
+                                 "Salicortin",
+                                 "Tremulacin"),
+                   var.text <- c("Total Phenolics (mg/g)",
+                                 "Salicin (mg/g)",
+                                 "Salicortin (mg/g)",
+                                 "Tremulacin (mg/g)"),
                    stringsAsFactors = FALSE)
 separate.files <- TRUE
 
@@ -46,21 +50,17 @@ if (separate.files) {
   for (variable in 1:nrow(vars)) {
     outfile <- paste0(output.file, "-", vars$var.name[variable])
     
-    TwoPanelPlot(datafile = data.file,
-                 outputfile = outfile,
-                 varname = vars$var.name[variable],
+    TwoPanelPlot(datafile = data.file, 
+                 outputfile = outfile, 
+                 varname = vars$var.name[variable], 
                  vartext = vars$var.text[variable])
-    # MapWithInsetBoxplot(datafile = data.file,
-    #                     outputfile = outfile,
-    #                     varname = vars$var.name[variable],
-    #                     vartext = vars$var.text[variable])
   }
   
 } else {
   # Load dependancies
   source(file = "functions/mapping-functions.R")
   source(file = "functions/boxplot-functions.R")
-  source(file = "plotting-globals.R")
+  source(file = "scripts/visualization/plotting-globals.R")
   
   # Read data with latitude, longitude, and whatever variable(s) to graph
   plot.data <- read.delim(file = data.file)

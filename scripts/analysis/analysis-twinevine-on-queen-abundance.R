@@ -1,4 +1,4 @@
-# Analyzing Queen abundance on viceroy abundance
+# Analyzing twinevine abundance on Queen abundance
 # Jeffrey C. Oliver
 # jcoliver@email.arizona.edu
 # 2017-06-16
@@ -14,15 +14,15 @@ library("lmerTest")
 abundance.data <- read.delim(file = "data/abundance-data.txt")
 
 # Set destination for results
-output.file <- "output/analysis-results/queens-on-viceroy-abundance.txt"
+output.file <- "output/analysis/twinevine-on-queen-abundance.txt"
 
 ################################################################################
-viceroy.model <- glmer(Number.Viceroy.Adults ~ Number.Queen.Adults + + (1|Site.Name) + (1|Observation.Date),
+queen.model <- glmer(Number.Queen.Adults ~ Number.Twinevine.Plants + + (1|Site.Name) + (1|Observation.Date),
                        data = abundance.data, family = poisson)
-viceroy.summary <- summary(viceroy.model)
-viceroy.anova <- anova(viceroy.model)
+queen.summary <- summary(queen.model)
+queen.anova <- anova(queen.model)
 
 sink(file = output.file)
-print(viceroy.summary)
-print(viceroy.anova)
+print(queen.summary)
+print(queen.anova)
 sink()

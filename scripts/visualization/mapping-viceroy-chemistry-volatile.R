@@ -4,7 +4,7 @@
 # 2016-12-05
 
 rm(list = ls())
-source(file = "plotting-globals.R")
+source(file = "scripts/visualization/plotting-globals.R")
 
 ################################################################################
 # SUMMARY
@@ -19,7 +19,7 @@ source(file = "plotting-globals.R")
 # SPECIFICS
 # Add information unique to this set of maps
 data.file <- "data/chemistry-viceroy-data.txt"
-output.file <- "output/Viceroy-volatile-chemistry-maps"
+output.file <- "output/visualization/Viceroy-volatile-chemistry-maps"
 plots <- data.frame(
   variables = c("Total.Volatiles",
                 "Salicylaldehyde",

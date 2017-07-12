@@ -1,30 +1,35 @@
-# Graphing abundance data for viceroy paper
+# Graphing willow chemistry data for viceroy paper
 # Jeff Oliver
 # jcoliver@email.arizona.edu
-# 2016-11-16
+# 2016-12-05
 
 rm(list = ls())
-source(file = "plotting-globals.R")
+source(file = "scripts/visualization/plotting-globals.R")
 
 ################################################################################
 # SUMMARY
-# Use latitude & longitude coordinates to create maps of abundances of viceroys, 
-# willow, queens, and twinevine
+# Use latitude & longitude coordinates to create maps of chemical defense in 
+# willows (non-volatile phenolics)
+
+# Total.Phenolics
+# Salicin
+# Salicortin
+# Tremulacin
 
 ################################################################################
 # SPECIFICS
 # Add information unique to this set of maps
-data.file <- "data/abundance-data.txt"
-output.file <- "output/Abundance-maps"
+data.file <- "data/chemistry-willow-data.txt"
+output.file <- "output/visualization/Willow-chemistry-maps"
 plots <- data.frame(
-  variables = c("Number.Viceroy.Adults", 
-                "Number.Carolina.Willow.Plants", 
-                "Number.Queen.Adults", 
-                "Number.Twinevine.Plants"),
-  plot.titles = c("Viceroy Abundance", 
-                  "Willow Abundance", 
-                  "Queen Abundance", 
-                  "Twinevine Abundance"),
+  variables = c("Total.Phenolics", 
+                "Salicin", 
+                "Salicortin", 
+                "Tremulacin"),
+  plot.titles = c("Total Phenolics", 
+                  "Salicin", 
+                  "Salicortin", 
+                  "Tremulacin"),
   stringsAsFactors = FALSE)
 plot.dims <- c(2, 2) # two rows, two columns
 

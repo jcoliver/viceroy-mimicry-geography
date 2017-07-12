@@ -14,7 +14,7 @@ library("lmerTest")
 abundance.data <- read.delim(file = "data/abundance-data.txt")
 
 # Set destination for results
-output.file <- "output/analysis-results/queens-on-viceroy-abundance.txt"
+output.file <- "output/analysis/queens-on-viceroy-abundance.txt"
 
 ################################################################################
 viceroy.model <- glmer(Number.Viceroy.Adults ~ Number.Queen.Adults + + (1|Site.Name) + (1|Observation.Date),

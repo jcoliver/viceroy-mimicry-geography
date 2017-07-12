@@ -15,7 +15,7 @@ willow.data <- read.delim(file = "data/chemistry-willow-data.txt")
 viceroy.data <- read.delim(file = "data/chemistry-viceroy-data.txt")
 
 # Set destination for results
-output.file <- "output/analysis-results/willows-on-non-volatiles-viceroys.txt"
+output.file <- "output/analysis/willows-on-non-volatiles-viceroys.txt"
 
 # Enumerate the compounds to analyze
 compounds <- c("Total.Phenolics",

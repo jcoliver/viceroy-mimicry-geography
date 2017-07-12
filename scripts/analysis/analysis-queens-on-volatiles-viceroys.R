@@ -1,4 +1,4 @@
-# Analyzing Queen abundance on viceroy palatability
+# Analyzing Queen abundance on viceroy volatile chemical defense
 # Jeffrey C. Oliver
 # jcoliver@email.arizona.edu
 # 2017-06-16
@@ -11,15 +11,16 @@ rm(list = ls())
 library("lmerTest")
 
 # Read in data
-chem.data <- read.delim(file = "data/palatability-data.txt")
+chem.data <- read.delim(file = "data/chemistry-viceroy-data.txt")
 abundance.data <- read.delim(file = "data/abundance-data.txt")
 
 # Set destination for results
-output.file <- "output/analysis-results/queens-on-palatability.txt"
+output.file <- "output/analysis/queens-on-volatiles-viceroys.txt"
 
 # Enumerate the response variables to analyze
-responses <- c("Mantid.Learning",
-               "Mantid.Memory.Retention")
+responses <- c("Total.Volatiles",
+               "Salicylaldehyde",
+               "Benzaldehyde")
 
 # ----------------      SHOULD NOT NEED TO EDIT BELOW HERE      ----------------
 

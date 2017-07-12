@@ -88,7 +88,7 @@ map.plot <- ggplot(data = dataDF, aes(x = x, y = y)) +
 
 print(map.plot)
 
-ggsave(filename = "output/test-ggplot-map.pdf")
+ggsave(filename = "output/visualization/test-ggplot-map.pdf")
 
 
 ## Raster example
