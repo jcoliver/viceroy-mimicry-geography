@@ -41,13 +41,13 @@ MakeBoxplot <- function(plot.data,
                               groups = groups)
     
   # Initial plotting area, so we can draw a grey background and overlay boxplot on top
-  boxplot(boxplot.data[, variable.name] ~ boxplot.data[, group.name], 
+  boxplot(boxplot.data[, variable.name] ~ boxplot.data[, group.name],
           frame = FALSE,
           axes = FALSE)
   
   # Grey rectangle
-  rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")[4], col = 
-         "#DDDDDD", border = NA)
+ rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")[4], col =
+        "#DDDDDD", border = NA)
   
   # Plot data for real
   boxplot(boxplot.data[, variable.name] ~ boxplot.data[, group.name], 

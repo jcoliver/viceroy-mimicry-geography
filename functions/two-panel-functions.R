@@ -81,14 +81,16 @@ MapWithInsetBoxplot <- function(datafile, outputfile, varname, vartext, delim = 
     png(filename = output.filename, width = 1200, height = 1200, units = "px", res = 150)
   }
   
-  par(mfrow = c(2, 2))
 
   variable.name <- varname
   variable.text <- vartext
   
   # Map
-  par(mar = c(0, 0, 0, 0), fig = c(0, 0.6, 0, 1))
-  
+
+  par(fig = c(0, 1, 0, 1))
+  par(new = FALSE)
+  par(fig = c(0, 0.8, 0, 0.8), cex = 1)
+
   MakeFloridaMap(plot.data = plot.data,
                  variable.name = variable.name,
                  variable.text = variable.text,
@@ -99,7 +101,9 @@ MapWithInsetBoxplot <- function(datafile, outputfile, varname, vartext, delim = 
                  group.cols = plotting.globals$group.cols)
   
   # Boxplot
-  par(mar = c(1.5, 3, 1, 1), fig = c(0.6, 1, 0.5, 1), new = TRUE)
+#  par(mar = c(1.5, 3, 1, 1), fig = c(0.6, 1, 0.5, 1), new = TRUE)
+  par(new = TRUE)
+  par(fig = c(0.5, 1.0, 0.4, 1.0), cex = 0.8)
   
   group.by <- "Site.Name"
   
@@ -113,7 +117,9 @@ MapWithInsetBoxplot <- function(datafile, outputfile, varname, vartext, delim = 
               groups = plotting.globals$groups)
   
   # Reset graphical parameters to default values
-  par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1, fig = c(0, 1, 0, 1))
+#  par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1, fig = c(0, 1, 0, 1))
+  par(fig = c(0, 1, 0, 1))
+#  par(defaultpar)
   
   # Close pipe to graphics device
   dev.off()
