@@ -1,0 +1,29 @@
+Alexandrou et al. 2011	doi:10.1038/469041a
+Brower 1958	10.1111/j.1558-5646.1958.tb02926.x
+Clarke and Sheppard 1960	10.1038/hdy.1960.15
+Darst & Cummings 2006	10.1073/pnas.0600625103
+Davis Rabosky et al. 2016	10.1038/ncomms11484
+Dobler and Rowellrahier 1994	10.1007/BF02059597
+Gamberale-Stille et al 2012	10.1111/j.1558-5646.2011.01482.x
+Harper and Pfennig 2008	10.1038/nature06532
+Hilker and Schultz 1994	10.1007/BF02059744
+Joron and Mallet 1998	10.1016/S0169-5347(98)01483-9
+Mallet and Joron 1999	10.1146/annurev.ecolsys.30.1.201
+Moranz and Brower 1998	10.1023/A:1022329702632
+Mullen 2006	10.1016/j.ympev.2006.01.021
+Joron 2008	10.1016/j.cub.2008.04.009
+Pebesma 2004	10.1016/j.cageo.2004.03.012
+Pfennig et al. 2001	10.1038/35066628
+Pfennig et al. 2007	10.1007/s00265-006-0278-x
+Pfennig and Mullen 2010	10.1098/rspb.2010.0586
+Prudic and Oliver 2008	10.1098/rspb.2007.1766
+Prudic et al. 2007 J Chem Ecol	10.1007/s10886-007-9282-5
+Prudic et al. 2007 Behav Ecol	10.1093/beheco/arl046
+Prudic et al 2008	10.1007/s10886-008-9480-9
+Ries and Mullen 2008	10.1111/j.1558-5646.2008.00401.x
+Ritland 1994	10.2307/1941731
+Ritland 1995	10.1007/BF00328621
+Ritland & Brower 1991	10.1038/350497a0
+Rowe and Skelhorn 2005	10.1016/j.anbehav.2004.06.010
+Skelhorn and Rowe 2006	10.1016/j.anbehav.2005.08.011
+Werner et al. 2008	10.1016/j.physbeh.2007.08.002
