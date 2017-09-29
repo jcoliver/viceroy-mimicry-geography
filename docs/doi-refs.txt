@@ -1,4 +1,4 @@
-Alexandrou et al. 2011	doi:10.1038/469041a
+Alexandrou et al. 2011	10.1038/469041a
 Brower 1958	10.1111/j.1558-5646.1958.tb02926.x
 Clarke and Sheppard 1960	10.1038/hdy.1960.15
 Darst & Cummings 2006	10.1073/pnas.0600625103

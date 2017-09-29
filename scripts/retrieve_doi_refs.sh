@@ -19,29 +19,13 @@ LINES=0
 for DOILINE in "${DOILINES[@]}";
 do
   # Pull out value in second column
-  DOI=$(echo $DOILINE | cut -d ' ' -f2)
+  DOI=$(echo $DOILINE | rev | cut -d ' ' -f1 | rev)
 
   # Create URL to pass to curl
-
+  URL=http://dx.doi.org/$DOI
+  
   # Run curl & send to file
+  curl -LH "Accept: application/x-bibtex" $URL >> $OUTFILE
+  echo -e "\n" >> $OUTFILE
 
-done
-
-readarray POSLINES < $ALLELEFREQS
-LINES=0
-for POSLINE in "${POSLINES[@]}";
-do
-  ((LINES++))
-  if [ $LINES -ne 1 ];
-  then
-    # Pull out value in first column
-    POS=$(echo $POSLINE | cut -d ' ' -f1)
-    # Use that to grep the VCF file for the line we're interested in
-    VCFLINE=$(grep -P 'un\t'${POS} $VCFFILE)
-    # Drop everything after "PASS"
-    KEEP=${VCFLINE%PASS*}
-    # And kick out the last two characters (" .")
-    KEEP2=${KEEP::-2}
-    echo $KEEP2 >> $OUTFILE
-  fi
 done
