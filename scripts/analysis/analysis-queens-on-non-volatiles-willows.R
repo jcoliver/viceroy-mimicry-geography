@@ -15,7 +15,7 @@ chem.data <- read.delim(file = "data/chemistry-willow-data.txt")
 abundance.data <- read.delim(file = "data/abundance-data.txt")
 
 # Set destination for results
-output.file <- "output/analysis/queens-on-non-volatiles-willows.txt"
+output.file <- "output/analysis-results/queens-on-non-volatiles-willows.txt"
 
 # Enumerate the response variables to analyze
 responses <- c("Total.Phenolics",

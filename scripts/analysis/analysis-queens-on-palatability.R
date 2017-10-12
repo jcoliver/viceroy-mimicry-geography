@@ -15,7 +15,7 @@ chem.data <- read.delim(file = "data/palatability-data.txt")
 abundance.data <- read.delim(file = "data/abundance-data.txt")
 
 # Set destination for results
-output.file <- "output/analysis/queens-on-palatability.txt"
+output.file <- "output/analysis-results/queens-on-palatability.txt"
 
 # Enumerate the response variables to analyze
 responses <- c("Mantid.Learning",
