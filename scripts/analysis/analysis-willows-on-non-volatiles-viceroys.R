@@ -59,6 +59,8 @@ colnames(viceroy.data)[3:6] <- paste0("v.",colnames(viceroy.data[3:6]))
 all.data <- merge(x = willow.ave.data,
                   y = viceroy.data)
 
+all.data$Year <- factor(format(as.Date(as.character(all.data$Collection.Date), format = "%d-%b-%y"), "%Y"))
+
 ################################################################################
 # ANALYSES
 # Run linear model, with Site.Name and Collection.Date as random effects
@@ -75,7 +77,7 @@ model.results <- data.frame(compound = compounds,
 for (compound.index in 1:length(compounds)) {
   response <- paste0("v.", compounds[compound.index])
   predictor <- paste0("w.", compounds[compound.index])
-  chem.model <- lmer(eval(as.name(response)) ~ eval(as.name(predictor)) + (1|Site.Name) + (1|Collection.Date),
+  chem.model <- lmer(eval(as.name(response)) ~ eval(as.name(predictor)) + (1|Site.Name) + (1|Year),
                      data = all.data)
   chem.summary <- summary(chem.model)
   model.results$coeff[compound.index] <- chem.summary$coefficients[2, 1]

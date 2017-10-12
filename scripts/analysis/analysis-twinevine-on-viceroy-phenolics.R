@@ -33,6 +33,8 @@ colnames(abundance.data)[which(colnames(abundance.data) == "Observation.Date")] 
 all.data <- merge(x = chem.data, 
                   y = abundance.data)
 
+all.data$Year <- factor(format(as.Date(as.character(all.data$Collection.Date), format = "%d-%b-%y"), "%Y"))
+
 ################################################################################
 # ANALYSES
 # Run linear model, with Site.Name and Collection.Date as random effects
@@ -48,7 +50,7 @@ model.results <- data.frame(response = responses,
 # Iterate over all response variables and run model
 for (response.index in 1:length(responses)) {
   response <- responses[response.index]
-  chem.model <- lmer(eval(as.name(response)) ~ Number.Twinevine.Plants + (1|Site.Name) + (1|Collection.Date),
+  chem.model <- lmer(eval(as.name(response)) ~ Number.Twinevine.Plants + (1|Site.Name) + (1|Year),
                      data = all.data)
   chem.summary <- summary(chem.model)
   model.results$coeff[response.index] <- chem.summary$coefficients[2, 1]
