@@ -27,4 +27,5 @@ Ritland 1995	10.1007/BF00328621
 Ritland & Brower 1991	10.1038/350497a0
 Rowe and Skelhorn 2005	10.1016/j.anbehav.2004.06.010
 Skelhorn and Rowe 2006	10.1016/j.anbehav.2005.08.011
+Soetens et al 1998	10.1016/S0305-1978(98)00039-8
 Werner et al. 2008	10.1016/j.physbeh.2007.08.002
