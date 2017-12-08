@@ -19,8 +19,8 @@ output.file <- "output/analysis-results/queens-on-viceroy-abundance.txt"
 abundance.data$Year <- factor(format(as.Date(as.character(abundance.data$Observation.Date), format = "%d-%b-%y"), "%Y"))
 
 ################################################################################
-viceroy.model <- glmer(Number.Viceroy.Adults ~ Number.Queen.Adults + + (1|Site.Name) + (1|Year),
-                       data = abundance.data, family = poisson)
+viceroy.model <- glmer(Number.Viceroy.Adults ~ Number.Queen.Adults + (1 | Site.Name) + (1|Year),
+                       data = abundance.data, family = poisson(link = "log"))
 viceroy.summary <- summary(viceroy.model)
 viceroy.anova <- anova(viceroy.model)
 
