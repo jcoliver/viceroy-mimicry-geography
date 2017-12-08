@@ -13,8 +13,8 @@ library("lmerTest")
 # Read in data
 abundance.data <- read.delim(file = "data/abundance-data.txt")
 
-# Set destination for results
-output.file <- "output/analysis-results/queens-on-viceroy-abundance.txt"
+# Set destination for images
+
 
 ################################################################################
 viceroy.model <- glmer(Number.Viceroy.Adults ~ Number.Queen.Adults + + (1|Site.Name) + (1|Observation.Date),
@@ -41,11 +41,14 @@ library("ggplot2")
 # Build the base plot, with constants like x & y axis and titles; 
 # also plot points of observed data with geom_point
 base.plot <- ggplot(predicts, aes(x = x, y = y)) +
-  geom_point(alpha = 0.4) +
+  geom_point(aes(color = site, size = 1.25), alpha = 0.8) +
+  scale_size(guide = 'none') + # to avoid a legend for size
+  scale_color_manual(name = "Site", values = c("#0022AA", "#BB0000","#DD0000","#008888","#2F7A52","#EE0000","#0033CC","#AA0000")) +
   xlab(label = "# Queens") + 
   ylab(label = "# Viceroys") +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5))
+base.plot
 
 # Plot the GLM results with a different line for each year
 sites.plot <- base.plot +
