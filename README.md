@@ -1,11 +1,27 @@
-# README for statistical analyses and data visualization in Viceroy manuscript
+# Variation in model abundance drives a mimicry continuum
+## Statistical analyses and data visualization
 
-## Statistical Analyses
+Code for analyzing and visualizing chemical defenses in viceroy butterflies.
 
+## TODO
++ Remove xlsx data file?
++ Change date format in data files and update code
+
+### Structure
++ `data`: tab-delimited data files for analysis
+    + `shapefiles`: shapefiles used for geographic visualization
++ `functions`: generic R functions for analysis and visualization
++ (`output`): not under version control, but assumed as destination for output 
+files
++ `scripts`
+    + `analysis`: linear analysis R code
+    + `visualization`: data and analysis visualization R code
++ `svg`: figure SVG files
+
+### Description
 + Section: Species abundance across Florida
-    + Topic: abundances
-    + Method: We are using count data to predict count data; Poisson regression
-    See: http://www.theanalysisfactor.com/generalized-linear-models-in-r-part-6-poisson-regression-count-variables/
+    + Response: abundances
+    + Method: count data to predict count data; Poisson regression See: http://www.theanalysisfactor.com/generalized-linear-models-in-r-part-6-poisson-regression-count-variables/
         + Viceroy abundance ~ Queen abundance
             + Analysis script: scripts/analysis/analysis-queens-on-viceroy-abundance.R
             + Output file: output/analysis/queens-on-viceroy-abundance.txt
@@ -13,7 +29,7 @@
             + Analysis script: scripts/analysis/analysis-twinevine-on-queen-abundance.R
             + Output file: output/analysis/twinevine-on-queen-abundance.txt
 + Section: Viceroy butterfly and larval host plant chemical defenses
-    + Topic: chemistry
+    + Response: chemistry
     + Method: Linear mixed-effect model (with site & year as random effects)
         + Queen abundance on **viceroy non-volatile phenolics**
             + Analysis script: scripts/analysis/analysis-queens-on-non-volatiles-viceroys.R
@@ -69,47 +85,37 @@
                 + Aversion learning ~ Queen abundance
                 + Memory retention ~ Queen abundance
 
-## Figure list
-
+### Figure list
 + Figure 1
     + Description: Abundance maps for insects (viceroys & queens) and their 
     respective host plants (willows & twinevine)
-    + Code source: map-abundance.R
-    + Shape: 2 x 2, insects as ~rows, plants as columns
+    + Code source: scripts/visualization/map-abundance.R
+    + Shape: 2 x 2:
         | Viceroy | Willow    |
         | Queen   | Twinevine |
-    + Size: Half column width (full column width?)
-    + Status: 
-        + _Draft_ on OSF; created from single image svg output
-        + svg/figure-1.svg
+    + Size: Half column width
+    + Location: svg/figure-1.svg
 + Figure 2
     + Description: Chemical defense (non- volatile) in viceroys and willows, 
     shown as both a map and an inset boxplot
     + Code source:
-        + map-and-boxplot-viceroy-non-volatiles.R
-        + map-and-boxplot-willow-non-volatiles.R
-    + Shape: 4 x 2, chemicals as rows, source (viceroy or willow) as columns
-    + Size: One column width (two column width?)
-    + Status:
-        + _Draft_ on OSF; hand-made from separate image files
-        + svg/figure-2.svg
+        + scripts/visualization/map-and-boxplot-viceroy-non-volatiles.R
+        + scripts/visualization/map-and-boxplot-willow-non-volatiles.R
+    + Shape: 4 x 2
+    + Size: One column width
+    + Location: svg/figure-2.svg
 + Figure 3
     + Description: Palatability of viceroys, shown as both a map and an inset 
     box plot
-    + Code source: map-and-boxplot-palatability.R
+    + Code source: scripts/visualization/map-and-boxplot-palatability.R
     + Shape: 1 x 2
     + Size: One column width (two column width?)
-    + Status:
-        + _Draft_ on OSF; hand-made from separate image files
-        + svg/figure-3.svg
-+ Figure S1:
+    + Location: svg/figure-3.svg
++ Figure ED1:
     + Description: Chemical defense (volatiles) in viceroys, shown as both a 
     map and an inset box plot
-    + Code source: map-and-boxplot-viceroys-volatiles.R
+    + Code source: scripts/visualization/map-and-boxplot-viceroys-volatiles.R
     + Shape: 1 x 3
     + Size: Two column width
-    + Status:
-        + _Draft_ on OSF; hand-made from separate image files
-        + svg/figure-S1.svg
+    + Location: svg/figure-ED1.svg
 
---------------------------------------------------------------------------------

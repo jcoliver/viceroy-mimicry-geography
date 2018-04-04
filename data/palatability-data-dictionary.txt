@@ -1,0 +1,9 @@
+field_name	type	units
+Site.Name	text	NA
+Latitude	float	NA
+Longitude	float	NA
+Collection.Date	date	NA
+Species	text	NA
+Sex	text	NA
+Mantid.Learning	integer	number of trials
+Mantid.Memory.Retention	integer	number of trials

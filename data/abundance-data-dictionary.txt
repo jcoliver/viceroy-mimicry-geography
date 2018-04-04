@@ -1,0 +1,9 @@
+field_name	type	units
+Site.Name	text	NA
+Latitude	float	NA
+Longitude	float	NA
+Observation.Date	date	NA
+Number.Twinevine.Plants	integer	number of individuals
+Number.Carolina.Willow.Plants	integer	number of individuals
+Number.Queen.Adults	integer	number of individuals
+Number.Viceroy.Adults	integer	number of individuals
