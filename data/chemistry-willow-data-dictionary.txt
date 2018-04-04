@@ -5,10 +5,10 @@ Longitude	float	NA
 Collection.Date	date	NA
 Species	text	NA
 Sex	text	NA
-Total.Phenolics	float	uL/mL
-Salicin	float	uL/mL
-Salicortin	float	uL/mL
-Tremulacin	float	uL/mL
+Total.Phenolics	float	mg/g
+Salicin	float	mg/g
+Salicortin	float	mg/g
+Tremulacin	float	mg/g
 Total.Volatiles	float	uL/mL
 Salicylaldehyde	float	uL/mL
 Benzaldehyde	float	uL/mL
