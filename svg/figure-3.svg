@@ -7777,14 +7777,6 @@
          d="m 0,252 252,0 0,252 -252,0 0,-252 z" />
     </clipPath>
     <clipPath
-       id="clipPath27323"
-       clipPathUnits="userSpaceOnUse">
-      <path
-         inkscape:connector-curvature="0"
-         id="path27325"
-         d="m 45.36,302.4 7.56,0 0,100.8 -7.56,0 0,-100.8 z" />
-    </clipPath>
-    <clipPath
        id="clipPath27369"
        clipPathUnits="userSpaceOnUse">
       <path
@@ -7830,14 +7822,6 @@
       <path
          inkscape:connector-curvature="0"
          id="path27593"
-         d="m 252,252 252,0 0,252 -252,0 0,-252 z" />
-    </clipPath>
-    <clipPath
-       id="clipPath27653"
-       clipPathUnits="userSpaceOnUse">
-      <path
-         inkscape:connector-curvature="0"
-         id="path27655"
          d="m 252,252 252,0 0,252 -252,0 0,-252 z" />
     </clipPath>
     <clipPath
@@ -7895,14 +7879,6 @@
          d="m 0,252 252,0 0,252 -252,0 0,-252 z" />
     </clipPath>
     <clipPath
-       id="clipPath27944"
-       clipPathUnits="userSpaceOnUse">
-      <path
-         inkscape:connector-curvature="0"
-         id="path27946"
-         d="m 45.36,302.4 7.56,0 0,100.8 -7.56,0 0,-100.8 z" />
-    </clipPath>
-    <clipPath
        id="clipPath28002"
        clipPathUnits="userSpaceOnUse">
       <path
@@ -7948,14 +7924,6 @@
       <path
          inkscape:connector-curvature="0"
          id="path28226"
-         d="m 252,252 252,0 0,252 -252,0 0,-252 z" />
-    </clipPath>
-    <clipPath
-       id="clipPath28268"
-       clipPathUnits="userSpaceOnUse">
-      <path
-         inkscape:connector-curvature="0"
-         id="path28270"
          d="m 252,252 252,0 0,252 -252,0 0,-252 z" />
     </clipPath>
     <clipPath
@@ -8020,9 +7988,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="308.78394"
-     inkscape:cy="580.10182"
+     inkscape:zoom="0.7"
+     inkscape:cx="47.750979"
+     inkscape:cy="699.00087"
      inkscape:document-units="px"
      inkscape:current-layer="g29318"
      showgrid="false"
@@ -8638,7 +8606,10 @@
       <g
          id="g27265"
          inkscape:label="Palatability-two-panel-Mantid.Learning"
-         transform="matrix(1.25,0,0,-1.25,96.454417,609.58021)">
+         transform="matrix(1.25,0,0,-1.25,96.454417,609.58021)"
+         inkscape:export-filename="/home/jcoliver/Desktop/fig-3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
         <g
            id="g27267" />
         <g
@@ -8703,21 +8674,19 @@
             </g>
           </g>
           <g
-             id="g27319">
+             id="g27321"
+             clip-path="none"
+             transform="translate(3.1738622,0)">
             <g
-               clip-path="url(#clipPath27323)"
-               id="g27321">
-              <g
-                 transform="matrix(7.56,0,0,100.8,45.36,302.4)"
-                 id="g27327">
-                <image
-                   id="image27329"
-                   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkCAYAAABHLFpgAAAABHNCSVQICAgIfAhkiAAAAGRJREFUGJWNj0EOgDAIBHGhFH/jv/z/WS92MYFDb5OZDU0lrvuBiAhkhBTyxjVVh31kSd64hpy7MUBSVi0udzN3pJnVmmqrBnfRuLOtR3EOXlYUcmUF/8Zquu4ZSLv15/Yq330BWzYEt8/kAMgAAAAASUVORK5CYII="
-                   transform="matrix(1,0,0,-1,0,1)"
-                   preserveAspectRatio="none"
-                   height="1"
-                   width="1" />
-              </g>
+               id="g27327"
+               transform="matrix(7.56,0,0,100.8,45.36,302.4)">
+              <image
+                 width="1"
+                 height="1"
+                 preserveAspectRatio="none"
+                 transform="matrix(1,0,0,-1,0,1)"
+                 xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkCAYAAABHLFpgAAAABHNCSVQICAgIfAhkiAAAAGRJREFUGJWNj0EOgDAIBHGhFH/jv/z/WS92MYFDb5OZDU0lrvuBiAhkhBTyxjVVh31kSd64hpy7MUBSVi0udzN3pJnVmmqrBnfRuLOtR3EOXlYUcmUF/8Zquu4ZSLv15/Yq330BWzYEt8/kAMgAAAAASUVORK5CYII="
+                 id="image27329" />
             </g>
           </g>
           <g
@@ -8726,78 +8695,88 @@
                inkscape:connector-curvature="0"
                id="path27333"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,312.48 0,69.13" />
+               d="m 56.093862,312.48 0,69.13" />
             <path
                inkscape:connector-curvature="0"
                id="path27335"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,312.48 5.98,0" />
+               d="m 56.093862,312.48 5.98,0" />
             <path
                inkscape:connector-curvature="0"
                id="path27337"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,335.52 5.98,0" />
+               d="m 56.093862,335.52 5.98,0" />
             <path
                inkscape:connector-curvature="0"
                id="path27339"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,358.57 5.98,0" />
+               d="m 56.093862,358.57 5.98,0" />
             <path
                inkscape:connector-curvature="0"
                id="path27341"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,381.61 5.98,0" />
+               d="m 56.093862,381.61 5.98,0" />
             <text
                id="text27343"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,308.89)">
+               transform="scale(1,-1)"
+               x="63.28307"
+               y="-308.89001">
               <tspan
                  id="tspan27345"
-                 y="0"
-                 x="0">4</tspan>
+                 y="-308.89001"
+                 x="63.28307">4</tspan>
             </text>
             <text
                id="text27347"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,331.93)">
+               transform="scale(1,-1)"
+               x="63.28307"
+               y="-331.92999">
               <tspan
                  id="tspan27349"
-                 y="0"
-                 x="0">6</tspan>
+                 y="-331.92999"
+                 x="63.28307">6</tspan>
             </text>
             <text
                id="text27351"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,354.98)">
+               transform="scale(1,-1)"
+               x="63.28307"
+               y="-354.98001">
               <tspan
                  id="tspan27353"
-                 y="0"
-                 x="0">8</tspan>
+                 y="-354.98001"
+                 x="63.28307">8</tspan>
             </text>
             <text
                id="text27355"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,378.02)">
+               transform="scale(1,-1)"
+               x="63.28307"
+               y="-378.01999">
               <tspan
                  id="tspan27357"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">10</tspan>
+                 y="-378.01999"
+                 x="63.28307 68.843071">10</tspan>
             </text>
             <path
                inkscape:connector-curvature="0"
                id="path27359"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 45.36,302.4 7.56,0 0,100.8 -7.56,0 0,-100.8" />
+               d="m 48.533862,302.4 7.56,0 0,100.8 -7.56,0 0,-100.8" />
             <text
                id="text27361"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(0,1,1,0,42.97,296.24)">
+               transform="matrix(0,1,1,0,0,0)"
+               x="296.23999"
+               y="44.556931">
               <tspan
                  id="tspan27363"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 8.3299999 13.89 19.450001 22.23 24.450001 30.01 32.790001 38.349998 43.91 49.470001 53.049999 58.610001 60.830002 66.389999 71.949997 74.730003 78.059998 83.620003 86.400002 91.309998 94.790001 97.010002 102.57 104.79 109.79">Mantid Learning (# Trials)</tspan>
+                 y="44.556931"
+                 x="296.23999 304.57001 310.13 315.69 318.47 320.69 326.25 329.03 334.59 340.14999 345.70999 349.29001 354.85001 357.07001 362.63 368.19 370.97 374.29999 379.86002 382.64001 387.54999 391.03 393.25 398.81 401.03 406.03">Mantid Learning (# Trials)</tspan>
             </text>
           </g>
           <g
@@ -9141,7 +9120,7 @@
              clip-path="url(#clipPath27591)" />
         </g>
         <g
-           transform="matrix(0.23207904,0,0,0.23207904,36.627435,253.80551)"
+           transform="matrix(0.23207904,0,0,0.23207904,43.932355,249.42257)"
            id="g29069">
           <g
              id="g27525">
@@ -9286,26 +9265,30 @@
             </g>
           </g>
           <g
-             id="g27595">
+             id="g32239">
             <text
+               y="-251.2424"
+               x="317.66956"
                id="text27597"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,330.26,254.39)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27599"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 7.2199998 12.78 16.51 19.290001">North</tspan>
+                 y="-251.2424"
+                 x="317.66956">North</tspan>
             </text>
             <text
+               y="-251.2424"
+               x="411.55954"
                id="text27601"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,424.15,254.39)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27603"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 6.6700001 12.23 17.790001 20.57">South</tspan>
+                 y="-251.2424"
+                 x="411.55954">South</tspan>
             </text>
             <path
                inkscape:connector-curvature="0"
@@ -9348,95 +9331,111 @@
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
                d="m 287.86,469.13 -5.98,0" />
             <text
+               y="-286.1124"
+               x="269.76083"
                id="text27621"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,270.34,289.26)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27623"
-                 y="0"
-                 x="0">2</tspan>
+                 y="-286.1124"
+                 x="269.76083"
+                 style="font-size:19.82988358px">2</tspan>
             </text>
             <text
+               y="-315.4924"
+               x="269.44357"
                id="text27625"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,270.34,318.64)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27627"
-                 y="0"
-                 x="0">4</tspan>
+                 y="-315.4924"
+                 x="269.44357"
+                 style="font-size:19.82988358px">4</tspan>
             </text>
             <text
+               y="-344.87238"
+               x="269.54272"
                id="text27629"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,270.34,348.02)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27631"
-                 y="0"
-                 x="0">6</tspan>
+                 y="-344.87238"
+                 x="269.54272"
+                 style="font-size:19.82988358px">6</tspan>
             </text>
             <text
+               y="-374.25238"
+               x="269.56256"
                id="text27633"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,270.34,377.4)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27635"
-                 y="0"
-                 x="0">8</tspan>
+                 y="-374.25238"
+                 x="269.56256"
+                 style="font-size:19.82988358px">8</tspan>
             </text>
             <text
+               y="-403.63239"
+               x="258.48477"
                id="text27637"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,264.78,406.78)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27639"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">10</tspan>
+                 y="-403.63239"
+                 x="258.48477">10</tspan>
             </text>
             <text
+               y="-433.01239"
+               x="258.72272"
                id="text27641"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,264.78,436.16)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27643"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">12</tspan>
+                 y="-433.01239"
+                 x="258.72272">12</tspan>
             </text>
             <text
+               y="-462.3924"
+               x="258.40546"
                id="text27645"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,264.78,465.54)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan27647"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">14</tspan>
+                 y="-462.3924"
+                 x="258.40546">14</tspan>
             </text>
-          </g>
-          <g
-             id="g27649">
-            <g
-               clip-path="url(#clipPath27653)"
-               id="g27651">
-              <text
-                 id="text27657"
-                 style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="matrix(0,1,1,0,261.56,324.43)">
-                <tspan
-                   id="tspan27659"
-                   sodipodi:role="line"
-                   y="0"
-                   x="0 8.3299999 13.89 19.450001 22.23 24.450001 30.01 32.790001 38.349998 43.91 49.470001 53.049999 58.610001 60.830002 66.389999 71.949997 74.730003 78.059998 83.620003 86.400002 91.309998 94.790001 97.010002 102.57 104.79 109.79">Mantid Learning (# Trials)</tspan>
-              </text>
-            </g>
+            <text
+               y="255.26479"
+               x="269.15533"
+               transform="matrix(0,1,1,0,0,0)"
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text27657">
+              <tspan
+                 x="269.15533"
+                 y="255.26479"
+                 sodipodi:role="line"
+                 id="tspan27659">Mantid Learning (# Trials)</tspan>
+            </text>
           </g>
         </g>
       </g>
       <g
          id="g27886"
          inkscape:label="Palatability-two-panel-Mantid.Memory.Retention"
-         transform="matrix(1.25,0,0,-1.25,96.454417,760.97205)">
+         transform="matrix(1.25,0,0,-1.25,96.454417,760.97205)"
+         inkscape:export-filename="/home/jcoliver/Desktop/fig-3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
         <g
            id="g27888" />
         <g
@@ -9501,21 +9500,19 @@
             </g>
           </g>
           <g
-             id="g27940">
+             id="g27942"
+             clip-path="none"
+             transform="translate(1.5869311,0)">
             <g
-               clip-path="url(#clipPath27944)"
-               id="g27942">
-              <g
-                 transform="matrix(7.56,0,0,100.8,45.36,302.4)"
-                 id="g27948">
-                <image
-                   id="image27950"
-                   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkCAYAAABHLFpgAAAABHNCSVQICAgIfAhkiAAAAGRJREFUGJWNj0EOgDAIBHGhFH/jv/z/WS92MYFDb5OZDU0lrvuBiAhkhBTyxjVVh31kSd64hpy7MUBSVi0udzN3pJnVmmqrBnfRuLOtR3EOXlYUcmUF/8Zquu4ZSLv15/Yq330BWzYEt8/kAMgAAAAASUVORK5CYII="
-                   transform="matrix(1,0,0,-1,0,1)"
-                   preserveAspectRatio="none"
-                   height="1"
-                   width="1" />
-              </g>
+               id="g27948"
+               transform="matrix(7.56,0,0,100.8,45.36,302.4)">
+              <image
+                 width="1"
+                 height="1"
+                 preserveAspectRatio="none"
+                 transform="matrix(1,0,0,-1,0,1)"
+                 xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkCAYAAABHLFpgAAAABHNCSVQICAgIfAhkiAAAAGRJREFUGJWNj0EOgDAIBHGhFH/jv/z/WS92MYFDb5OZDU0lrvuBiAhkhBTyxjVVh31kSd64hpy7MUBSVi0udzN3pJnVmmqrBnfRuLOtR3EOXlYUcmUF/8Zquu4ZSLv15/Yq330BWzYEt8/kAMgAAAAASUVORK5CYII="
+                 id="image27950" />
             </g>
           </g>
           <g
@@ -9524,100 +9521,112 @@
                inkscape:connector-curvature="0"
                id="path27954"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,314.44 0,87.67" />
+               d="m 54.506931,314.44 0,87.67" />
             <path
                inkscape:connector-curvature="0"
                id="path27956"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,314.44 5.98,0" />
+               d="m 54.506931,314.44 5.98,0" />
             <path
                inkscape:connector-curvature="0"
                id="path27958"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,331.98 5.98,0" />
+               d="m 54.506931,331.98 5.98,0" />
             <path
                inkscape:connector-curvature="0"
                id="path27960"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,349.51 5.98,0" />
+               d="m 54.506931,349.51 5.98,0" />
             <path
                inkscape:connector-curvature="0"
                id="path27962"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,367.04 5.98,0" />
+               d="m 54.506931,367.04 5.98,0" />
             <path
                inkscape:connector-curvature="0"
                id="path27964"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,384.57 5.98,0" />
+               d="m 54.506931,384.57 5.98,0" />
             <path
                inkscape:connector-curvature="0"
                id="path27966"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 52.92,402.11 5.98,0" />
+               d="m 54.506931,402.11 5.98,0" />
             <text
                id="text27968"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,310.85)">
+               transform="scale(1,-1)"
+               x="61.69614"
+               y="-310.85001">
               <tspan
                  id="tspan27970"
-                 y="0"
-                 x="0">6</tspan>
+                 y="-310.85001"
+                 x="61.69614">6</tspan>
             </text>
             <text
                id="text27972"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,328.39)">
+               transform="scale(1,-1)"
+               x="61.69614"
+               y="-328.39001">
               <tspan
                  id="tspan27974"
-                 y="0"
-                 x="0">8</tspan>
+                 y="-328.39001"
+                 x="61.69614">8</tspan>
             </text>
             <text
                id="text27976"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,345.92)">
+               transform="scale(1,-1)"
+               x="61.69614"
+               y="-345.92001">
               <tspan
                  id="tspan27978"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">10</tspan>
+                 y="-345.92001"
+                 x="61.69614 67.256142">10</tspan>
             </text>
             <text
                id="text27980"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,363.45)">
+               transform="scale(1,-1)"
+               x="61.69614"
+               y="-363.45001">
               <tspan
                  id="tspan27982"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">12</tspan>
+                 y="-363.45001"
+                 x="61.69614 67.256142">12</tspan>
             </text>
             <text
                id="text27984"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,380.98)">
+               transform="scale(1,-1)"
+               x="61.69614"
+               y="-380.98001">
               <tspan
                  id="tspan27986"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">14</tspan>
+                 y="-380.98001"
+                 x="61.69614 67.256142">14</tspan>
             </text>
             <text
                id="text27988"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,64.87,398.52)">
+               transform="scale(1,-1)"
+               x="61.69614"
+               y="-398.51999">
               <tspan
                  id="tspan27990"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">16</tspan>
+                 y="-398.51999"
+                 x="61.69614 67.256142">16</tspan>
             </text>
             <path
                inkscape:connector-curvature="0"
                id="path27992"
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-               d="m 45.36,302.4 7.56,0 0,100.8 -7.56,0 0,-100.8" />
+               d="m 46.946931,302.4 7.56,0 0,100.8 -7.56,0 0,-100.8" />
             <text
                id="text27994"
                style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -9970,7 +9979,7 @@
              clip-path="url(#clipPath28224)" />
         </g>
         <g
-           transform="matrix(0.23207904,0,0,0.23207904,36.627435,253.80551)"
+           transform="matrix(0.23207904,0,0,0.23207904,44.662847,249.42257)"
            id="g29131">
           <g
              id="g28158">
@@ -10115,26 +10124,30 @@
             </g>
           </g>
           <g
-             id="g28228">
+             id="g32300">
             <text
+               y="-251.2424"
+               x="317.66956"
                id="text28230"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,330.26,254.39)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan28232"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 7.2199998 12.78 16.51 19.290001">North</tspan>
+                 y="-251.2424"
+                 x="317.66956">North</tspan>
             </text>
             <text
+               y="-251.2424"
+               x="411.55954"
                id="text28234"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,424.15,254.39)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan28236"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 6.6700001 12.23 17.790001 20.57">South</tspan>
+                 y="-251.2424"
+                 x="411.55954">South</tspan>
             </text>
             <path
                inkscape:connector-curvature="0"
@@ -10162,61 +10175,65 @@
                style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
                d="m 287.86,473 -5.98,0" />
             <text
+               y="-303.8924"
+               x="269.62204"
                id="text28248"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,270.34,307.04)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan28250"
-                 y="0"
-                 x="0">5</tspan>
+                 y="-303.8924"
+                 x="269.62204"
+                 style="font-size:19.82988358px">5</tspan>
             </text>
             <text
+               y="-358.01239"
+               x="258.48477"
                id="text28252"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,264.78,361.16)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan28254"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">10</tspan>
+                 y="-358.01239"
+                 x="258.48477">10</tspan>
             </text>
             <text
+               y="-412.13239"
+               x="258.58392"
                id="text28256"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,264.78,415.28)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan28258"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">15</tspan>
+                 y="-412.13239"
+                 x="258.58392">15</tspan>
             </text>
             <text
+               y="-466.26239"
+               x="258.48477"
                id="text28260"
-               style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-               transform="matrix(1,0,0,-1,264.78,469.41)">
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               transform="scale(1,-1)">
               <tspan
                  id="tspan28262"
                  sodipodi:role="line"
-                 y="0"
-                 x="0 5.5599999">20</tspan>
+                 y="-466.26239"
+                 x="258.48477">20</tspan>
             </text>
-          </g>
-          <g
-             id="g28264">
-            <g
-               clip-path="url(#clipPath28268)"
-               id="g28266">
-              <text
-                 id="text28272"
-                 style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="matrix(0,1,1,0,261.56,303.01)">
-                <tspan
-                   id="tspan28274"
-                   sodipodi:role="line"
-                   y="0"
-                   x="0 8.3299999 13.89 19.450001 22.23 24.450001 30.01 32.790001 41.119999 46.68 55.009998 60.57 64.199997 69.199997 71.980003 79.199997 84.760002 87.540001 93.099998 98.660004 101.44 103.66 109.22 114.78 117.56 120.89 126.45 129.23 134.14 137.62 139.84 145.39999 147.62 152.62">Mantid Memory Retention (# Trials)</tspan>
-              </text>
-            </g>
+            <text
+               y="252.11719"
+               x="234.36504"
+               transform="matrix(0,1,1,0,0,0)"
+               style="font-variant:normal;font-weight:normal;font-size:19.82988358px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text28272">
+              <tspan
+                 x="234.36504"
+                 y="252.11719"
+                 sodipodi:role="line"
+                 id="tspan28274">Mantid Memory Retention (# Trials)</tspan>
+            </text>
           </g>
         </g>
       </g>
@@ -10227,7 +10244,10 @@
        x="89.150154"
        y="148.09673"
        id="text6504"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jcoliver/Desktop/fig-3.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan6506"
          x="89.150154"
@@ -10239,7 +10259,10 @@
        x="88.696053"
        y="482.47412"
        id="text6504-3"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jcoliver/Desktop/fig-3.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan6506-6"
          x="88.696053"
