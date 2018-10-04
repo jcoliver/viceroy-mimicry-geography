@@ -5,6 +5,7 @@ Code for analyzing and visualizing chemical defenses in viceroy butterflies.
 
 ## TODO
 + Add asterisks for significant differences in boxplot
++ Clean up figure creation scripts
 
 ### Dependencies
 + `lmerTest`
@@ -16,13 +17,14 @@ Code for analyzing and visualizing chemical defenses in viceroy butterflies.
 + `sp`
 + `RColorBrewer`
 
+Note all these additional packages can be installed by running the script `scripts/setup.R`.
 
 ### Structure
 + `data`: tab-delimited data files for analysis
     + `shapefiles`: shapefiles used for geographic visualization
 + `functions`: generic R functions for analysis and visualization
 + (`output`): not under version control, but assumed as destination for output 
-files
+files; created by running `scripts/setup.R`
 + `scripts`
     + `analysis`: linear analysis R code
     + `data-processing`: pre-processing data, such as converting date formats
