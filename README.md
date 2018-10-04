@@ -4,9 +4,18 @@
 Code for analyzing and visualizing chemical defenses in viceroy butterflies.
 
 ## TODO
-+ Add dependencies to this README
-+ Add setup script for dependencies and output structure
 + Add asterisks for significant differences in boxplot
+
+### Dependencies
++ `lmerTest`
++ `plyr`
++ `rgdal`
++ `ggplot2`
++ `gstat`
++ `raster`
++ `sp`
++ `RColorBrewer`
+
 
 ### Structure
 + `data`: tab-delimited data files for analysis
