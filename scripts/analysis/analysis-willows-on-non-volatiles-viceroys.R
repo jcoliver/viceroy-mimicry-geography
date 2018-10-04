@@ -59,7 +59,7 @@ colnames(viceroy.data)[3:6] <- paste0("v.",colnames(viceroy.data[3:6]))
 all.data <- merge(x = willow.ave.data,
                   y = viceroy.data)
 
-all.data$Year <- factor(format(as.Date(as.character(all.data$Collection.Date), format = "%d-%b-%y"), "%Y"))
+all.data$Year <- factor(format(as.Date(all.data$Collection.Date), "%Y"))
 
 ################################################################################
 # ANALYSES
@@ -84,7 +84,7 @@ for (compound.index in 1:length(compounds)) {
   chem.anova <- anova(chem.model)
   model.results$NumDF[compound.index] <- chem.anova$NumDF
   model.results$DenDF[compound.index] <- chem.anova$DenDF
-  model.results$F.value[compound.index] <- chem.anova$F.value
+  model.results$F.value[compound.index] <- chem.anova$"F value"
   model.results$p[compound.index] <- chem.anova$`Pr(>F)`
 }
 

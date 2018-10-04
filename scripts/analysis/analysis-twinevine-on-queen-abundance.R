@@ -16,7 +16,7 @@ abundance.data <- read.delim(file = "data/abundance-data.txt")
 # Set destination for results
 output.file <- "output/analysis-results/twinevine-on-queen-abundance.txt"
 
-abundance.data$Year <- factor(format(as.Date(as.character(abundance.data$Observation.Date), format = "%d-%b-%y"), "%Y"))
+abundance.data$Year <- factor(format(as.Date(abundance.data$Observation.Date), "%Y"))
 
 ################################################################################
 queen.model <- glmer(Number.Queen.Adults ~ Number.Twinevine.Plants + + (1|Site.Name) + (1|Year),

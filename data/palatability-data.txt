@@ -1,66 +1,65 @@
 Site.Name	Latitude	Longitude	Collection.Date	Species	Sex	Mantid.Learning	Mantid.Memory.Retention
-Corkscrew	26.361423	-81.518688	1-Jul-03	Viceroy	Male	11	4
-Corkscrew	26.361423	-81.518688	10-Aug-03	Viceroy	Male	9	3
-Corkscrew	26.361423	-81.518688	1-Jul-03	Viceroy	Female	12	5
-Corkscrew	26.361423	-81.518688	10-Aug-03	Viceroy	Female	15	9
-Lehigh Acres	26.559808	-81.677623	1-Jul-03	Viceroy	Male	14	5
-Lehigh Acres	26.559808	-81.677623	10-Aug-03	Viceroy	Male	9	10
-Lehigh Acres	26.559808	-81.677623	1-Jul-03	Viceroy	Female	7	7
-Lehigh Acres	26.559808	-81.677623	10-Aug-03	Viceroy	Female	10	6
-Cornwell	27.396333	-81.119833	2-Jul-03	Viceroy	Male	12	8
-Cornwell	27.396333	-81.119833	11-Aug-03	Viceroy	Male	8	2
-Cornwell	27.396333	-81.119833	2-Jul-03	Viceroy	Female	8	11
-Cornwell	27.396333	-81.119833	11-Aug-03	Viceroy	Female	5	5
-Lake Istokpoga	27.296392	-81.296007	2-Jul-03	Viceroy	Male	10	3
-Lake Istokpoga	27.296392	-81.296007	11-Aug-03	Viceroy	Male	7	7
-Lake Istokpoga	27.296392	-81.296007	2-Jul-03	Viceroy	Female	10	5
-Lake Istokpoga	27.296392	-81.296007	11-Aug-03	Viceroy	Female	13	8
-Leesburg	28.787667	-81.894667	3-Jul-03	Viceroy	Male	8	13
-Leesburg	28.787667	-81.894667	12-Aug-03	Viceroy	Male	6	19
-Leesburg	28.787667	-81.894667	3-Jul-03	Viceroy	Female	2	17
-Leesburg	28.787667	-81.894667	12-Aug-03	Viceroy	Female	4	16
-Gainesville	29.6365	-82.2	3-Jul-03	Viceroy	Male	3	14
-Gainesville	29.6365	-82.2	12-Aug-03	Viceroy	Male	1	17
-Gainesville	29.6365	-82.2	3-Jul-03	Viceroy	Female	4	11
-Gainesville	29.6365	-82.2	12-Aug-03	Viceroy	Female	3	9
-Jena	29.666833	-83.184833	4-Jul-03	Viceroy	Male	5	15
-Jena	29.666833	-83.184833	13-Aug-03	Viceroy	Male	4	15
-Jena	29.666833	-83.184833	4-Jul-03	Viceroy	Female	4	14
-Jena	29.666833	-83.184833	13-Aug-03	Viceroy	Female	3	21
-Cedar Key	29.2135	-83.021333	4-Jul-03	Viceroy	Male	6	10
-Cedar Key	29.2135	-83.021333	13-Aug-03	Viceroy	Male	4	9
-Cedar Key	29.2135	-83.021333	4-Jul-03	Viceroy	Female	2	13
-Cedar Key	29.2135	-83.021333	13-Aug-03	Viceroy	Female	5	14
-Corkscrew	26.361423	-81.518688	1-Jul-04	Viceroy	Male	13	2
-Corkscrew	26.361423	-81.518688	8-Aug-04	Viceroy	Male	11	5
-Corkscrew	26.361423	-81.518688	1-Jul-04	Viceroy	Female	10	6
-Corkscrew	26.361423	-81.518688	8-Aug-04	Viceroy	Female	14	3
-Lehigh Acres	26.559808	-81.677623	1-Jul-04	Viceroy	Male	14	6
-Lehigh Acres	26.559808	-81.677623	8-Aug-04	Viceroy	Male	7	5
-Lehigh Acres	26.559808	-81.677623	1-Jul-04	Viceroy	Female	9	5
-Lehigh Acres	26.559808	-81.677623	8-Aug-04	Viceroy	Female	12	8
-Cornwell	27.396333	-81.119833	2-Jul-04	Viceroy	Male	8	4
-Cornwell	27.396333	-81.119833	9-Aug-04	Viceroy	Male	11	6
-Cornwell	27.396333	-81.119833	2-Jul-04	Viceroy	Female	10	8
-Cornwell	27.396333	-81.119833	9-Aug-04	Viceroy	Female	12	11
-Lake Istokpoga	27.296392	-81.296007	2-Jul-04	Viceroy	Male	8	4
-Lake Istokpoga	27.296392	-81.296007	9-Aug-04	Viceroy	Male	9	3
-Lake Istokpoga	27.296392	-81.296007	2-Jul-04	Viceroy	Female	15	9
-Lake Istokpoga	27.296392	-81.296007	9-Aug-04	Viceroy	Female	11	5
-Leesburg	28.787667	-81.894667	3-Jul-04	Viceroy	Male	4	12
-Leesburg	28.787667	-81.894667	10-Aug-04	Viceroy	Male	7	8
-Leesburg	28.787667	-81.894667	3-Jul-04	Viceroy	Female	1	17
-Leesburg	28.787667	-81.894667	10-Aug-04	Viceroy	Female	4	21
-Gainesville	29.6365	-82.2	3-Jul-04	Viceroy	Male	5	15
-Gainesville	29.6365	-82.2	10-Aug-04	Viceroy	Male	3	19
-Gainesville	29.6365	-82.2	3-Jul-04	Viceroy	Female	5	18
-Gainesville	29.6365	-82.2	10-Aug-04	Viceroy	Female	1	15
-Jena	29.666833	-83.184833	4-Jul-04	Viceroy	Male	3	20
-Jena	29.666833	-83.184833	11-Aug-04	Viceroy	Male	6	15
-Jena	29.666833	-83.184833	4-Jul-04	Viceroy	Female	7	13
-Jena	29.666833	-83.184833	11-Aug-04	Viceroy	Female	6	16
-Cedar Key	29.2135	-83.021333	4-Jul-04	Viceroy	Male	3	18
-Cedar Key	29.2135	-83.021333	11-Aug-04	Viceroy	Male	4	16
-Cedar Key	29.2135	-83.021333	4-Jul-04	Viceroy	Female	2	14
-Cedar Key	29.2135	-83.021333	11-Aug-04	Viceroy	Female	3	17
-
+Corkscrew	26.361423	-81.518688	2003-07-01	Viceroy	Male	11	4
+Corkscrew	26.361423	-81.518688	2003-08-10	Viceroy	Male	9	3
+Corkscrew	26.361423	-81.518688	2003-07-01	Viceroy	Female	12	5
+Corkscrew	26.361423	-81.518688	2003-08-10	Viceroy	Female	15	9
+Lehigh Acres	26.559808	-81.677623	2003-07-01	Viceroy	Male	14	5
+Lehigh Acres	26.559808	-81.677623	2003-08-10	Viceroy	Male	9	10
+Lehigh Acres	26.559808	-81.677623	2003-07-01	Viceroy	Female	7	7
+Lehigh Acres	26.559808	-81.677623	2003-08-10	Viceroy	Female	10	6
+Cornwell	27.396333	-81.119833	2003-07-02	Viceroy	Male	12	8
+Cornwell	27.396333	-81.119833	2003-08-11	Viceroy	Male	8	2
+Cornwell	27.396333	-81.119833	2003-07-02	Viceroy	Female	8	11
+Cornwell	27.396333	-81.119833	2003-08-11	Viceroy	Female	5	5
+Lake Istokpoga	27.296392	-81.296007	2003-07-02	Viceroy	Male	10	3
+Lake Istokpoga	27.296392	-81.296007	2003-08-11	Viceroy	Male	7	7
+Lake Istokpoga	27.296392	-81.296007	2003-07-02	Viceroy	Female	10	5
+Lake Istokpoga	27.296392	-81.296007	2003-08-11	Viceroy	Female	13	8
+Leesburg	28.787667	-81.894667	2003-07-03	Viceroy	Male	8	13
+Leesburg	28.787667	-81.894667	2003-08-12	Viceroy	Male	6	19
+Leesburg	28.787667	-81.894667	2003-07-03	Viceroy	Female	2	17
+Leesburg	28.787667	-81.894667	2003-08-12	Viceroy	Female	4	16
+Gainesville	29.6365	-82.2	2003-07-03	Viceroy	Male	3	14
+Gainesville	29.6365	-82.2	2003-08-12	Viceroy	Male	1	17
+Gainesville	29.6365	-82.2	2003-07-03	Viceroy	Female	4	11
+Gainesville	29.6365	-82.2	2003-08-12	Viceroy	Female	3	9
+Jena	29.666833	-83.184833	2003-07-04	Viceroy	Male	5	15
+Jena	29.666833	-83.184833	2003-08-13	Viceroy	Male	4	15
+Jena	29.666833	-83.184833	2003-07-04	Viceroy	Female	4	14
+Jena	29.666833	-83.184833	2003-08-13	Viceroy	Female	3	21
+Cedar Key	29.2135	-83.021333	2003-07-04	Viceroy	Male	6	10
+Cedar Key	29.2135	-83.021333	2003-08-13	Viceroy	Male	4	9
+Cedar Key	29.2135	-83.021333	2003-07-04	Viceroy	Female	2	13
+Cedar Key	29.2135	-83.021333	2003-08-13	Viceroy	Female	5	14
+Corkscrew	26.361423	-81.518688	2004-07-01	Viceroy	Male	13	2
+Corkscrew	26.361423	-81.518688	2004-08-08	Viceroy	Male	11	5
+Corkscrew	26.361423	-81.518688	2004-07-01	Viceroy	Female	10	6
+Corkscrew	26.361423	-81.518688	2004-08-08	Viceroy	Female	14	3
+Lehigh Acres	26.559808	-81.677623	2004-07-01	Viceroy	Male	14	6
+Lehigh Acres	26.559808	-81.677623	2004-08-08	Viceroy	Male	7	5
+Lehigh Acres	26.559808	-81.677623	2004-07-01	Viceroy	Female	9	5
+Lehigh Acres	26.559808	-81.677623	2004-08-08	Viceroy	Female	12	8
+Cornwell	27.396333	-81.119833	2004-07-02	Viceroy	Male	8	4
+Cornwell	27.396333	-81.119833	2004-08-09	Viceroy	Male	11	6
+Cornwell	27.396333	-81.119833	2004-07-02	Viceroy	Female	10	8
+Cornwell	27.396333	-81.119833	2004-08-09	Viceroy	Female	12	11
+Lake Istokpoga	27.296392	-81.296007	2004-07-02	Viceroy	Male	8	4
+Lake Istokpoga	27.296392	-81.296007	2004-08-09	Viceroy	Male	9	3
+Lake Istokpoga	27.296392	-81.296007	2004-07-02	Viceroy	Female	15	9
+Lake Istokpoga	27.296392	-81.296007	2004-08-09	Viceroy	Female	11	5
+Leesburg	28.787667	-81.894667	2004-07-03	Viceroy	Male	4	12
+Leesburg	28.787667	-81.894667	2004-08-10	Viceroy	Male	7	8
+Leesburg	28.787667	-81.894667	2004-07-03	Viceroy	Female	1	17
+Leesburg	28.787667	-81.894667	2004-08-10	Viceroy	Female	4	21
+Gainesville	29.6365	-82.2	2004-07-03	Viceroy	Male	5	15
+Gainesville	29.6365	-82.2	2004-08-10	Viceroy	Male	3	19
+Gainesville	29.6365	-82.2	2004-07-03	Viceroy	Female	5	18
+Gainesville	29.6365	-82.2	2004-08-10	Viceroy	Female	1	15
+Jena	29.666833	-83.184833	2004-07-04	Viceroy	Male	3	20
+Jena	29.666833	-83.184833	2004-08-11	Viceroy	Male	6	15
+Jena	29.666833	-83.184833	2004-07-04	Viceroy	Female	7	13
+Jena	29.666833	-83.184833	2004-08-11	Viceroy	Female	6	16
+Cedar Key	29.2135	-83.021333	2004-07-04	Viceroy	Male	3	18
+Cedar Key	29.2135	-83.021333	2004-08-11	Viceroy	Male	4	16
+Cedar Key	29.2135	-83.021333	2004-07-04	Viceroy	Female	2	14
+Cedar Key	29.2135	-83.021333	2004-08-11	Viceroy	Female	3	17

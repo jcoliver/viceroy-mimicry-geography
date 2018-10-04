@@ -1,66 +1,65 @@
 Site.Name	Latitude	Longitude	Collection.Date	Species	Sex	Total.Phenolics	Salicin	Salicortin	Tremulacin	Total.Volatiles	Salicylaldehyde	Benzaldehyde
-Corkscrew	26.361423	-81.518688	1-Jul-03	Viceroy	Male	28.4	4.2	11.3	12.9	2.8	0.9	1.9
-Corkscrew	26.361423	-81.518688	10-Aug-03	Viceroy	Male	12.7	1.9	4.6	6.2	5.6	3	2.6
-Corkscrew	26.361423	-81.518688	1-Jul-03	Viceroy	Female	17.2	2.3	5.6	9.3	8.4	5.4	3
-Corkscrew	26.361423	-81.518688	10-Aug-03	Viceroy	Female	9.8	2	3.7	4.1	4.7	2.2	2.5
-Lehigh Acres	26.559808	-81.677623	1-Jul-03	Viceroy	Male	15	0.1	6.9	8	5.2	2.7	2.5
-Lehigh Acres	26.559808	-81.677623	10-Aug-03	Viceroy	Male	26.8	6	6.1	14.7	5.1	3.4	1.7
-Lehigh Acres	26.559808	-81.677623	1-Jul-03	Viceroy	Female	19.6	4.6	2.5	12.5	8	4.1	3.9
-Lehigh Acres	26.559808	-81.677623	10-Aug-03	Viceroy	Female	7.9	1.1	1.9	4.9	4	1.8	2.2
-Cornwell	27.396333	-81.119833	2-Jul-03	Viceroy	Male	26.4	1.9	10.3	14.2	5.4	1.6	3.8
-Cornwell	27.396333	-81.119833	11-Aug-03	Viceroy	Male	13.9	0	5.1	8.8	3	0.9	2.1
-Cornwell	27.396333	-81.119833	2-Jul-03	Viceroy	Female	37.1	4.4	15.8	16.9	8	3.5	4.5
-Cornwell	27.396333	-81.119833	11-Aug-03	Viceroy	Female	18.5	1.6	4.9	12	5	2.2	2.8
-Lake Istokpoga	27.296392	-81.296007	2-Jul-03	Viceroy	Male	17.9	4.2	4.9	8.8	8.2	3.6	4.6
-Lake Istokpoga	27.296392	-81.296007	11-Aug-03	Viceroy	Male	14.5	2.9	2.1	9.5	2.2	0.9	1.3
-Lake Istokpoga	27.296392	-81.296007	2-Jul-03	Viceroy	Female	3.5	0.4	2	1.1	4.3	1.7	2.6
-Lake Istokpoga	27.296392	-81.296007	11-Aug-03	Viceroy	Female	15.2	2.1	5.5	7.6	8.2	4.4	3.8
-Leesburg	28.787667	-81.894667	3-Jul-03	Viceroy	Male	44	8.3	5.3	30.4	21	14.8	6.2
-Leesburg	28.787667	-81.894667	12-Aug-03	Viceroy	Male	31.9	5.9	5.1	20.9	15.1	9.6	5.5
-Leesburg	28.787667	-81.894667	3-Jul-03	Viceroy	Female	38.3	4.9	5.6	27.8	21	13.1	7.9
-Leesburg	28.787667	-81.894667	12-Aug-03	Viceroy	Female	46.4	4.1	4.4	37.9	17.3	10.5	6.8
-Gainesville	29.6365	-82.2	3-Jul-03	Viceroy	Male	21.3	2.0	6.2	13.1	20.6	13.7	6.9
-Gainesville	29.6365	-82.2	12-Aug-03	Viceroy	Male	64.1	5.6	20.1	38.4	13.8	8.8	5.0
-Gainesville	29.6365	-82.2	3-Jul-03	Viceroy	Female	40.2	2.8	9.9	27.5	19.5	11.7	7.8
-Gainesville	29.6365	-82.2	12-Aug-03	Viceroy	Female	57.9	4.4	16.3	37.2	21.3	14.6	6.7
-Jena	29.666833	-83.184833	4-Jul-03	Viceroy	Male	58.1	7.9	18.4	31.8	19.7	12.5	7.2
-Jena	29.666833	-83.184833	13-Aug-03	Viceroy	Male	29.7	3.1	10.8	15.8	21.2	15.3	5.9
-Jena	29.666833	-83.184833	4-Jul-03	Viceroy	Female	44.9	5.8	4.5	34.6	14.8	10.4	4.4
-Jena	29.666833	-83.184833	13-Aug-03	Viceroy	Female	60.5	11	7.6	41.9	20.6	13.8	6.8
-Cedar Key	29.2135	-83.021333	4-Jul-03	Viceroy	Male	55.9	5.5	12	38.4	20.4	14.7	5.7
-Cedar Key	29.2135	-83.021333	13-Aug-03	Viceroy	Male	42.6	3.8	7.6	31.2	12.7	5.6	7.1
-Cedar Key	29.2135	-83.021333	4-Jul-03	Viceroy	Female	45.2	3.3	15.8	26.1	19.9	14.3	5.6
-Cedar Key	29.2135	-83.021333	13-Aug-03	Viceroy	Female	58.5	4.8	16.3	37.4	17.8	10.9	6.9
-Corkscrew	26.361423	-81.518688	1-Jul-04	Viceroy	Male	26	2.6	7.3	16.1	5.7	2.2	3.5
-Corkscrew	26.361423	-81.518688	8-Aug-04	Viceroy	Male	12.8	1.4	4.5	6.9	5.4	2.7	2.7
-Corkscrew	26.361423	-81.518688	1-Jul-04	Viceroy	Female	11.7	1.4	4.9	5.4	7.1	1.5	5.6
-Corkscrew	26.361423	-81.518688	8-Aug-04	Viceroy	Female	23.5	3	7.3	13.2	8	3.8	4.2
-Lehigh Acres	26.559808	-81.677623	1-Jul-04	Viceroy	Male	26.2	4.1	7.2	14.9	3.9	0.7	3.2
-Lehigh Acres	26.559808	-81.677623	8-Aug-04	Viceroy	Male	19.6	2.3	4.7	12.6	3.9	1.3	2.6
-Lehigh Acres	26.559808	-81.677623	1-Jul-04	Viceroy	Female	23.5	0.4	7.1	16	6.2	2.5	3.7
-Lehigh Acres	26.559808	-81.677623	8-Aug-04	Viceroy	Female	12.8	2.2	4.9	5.7	6.5	1.6	4.9
-Cornwell	27.396333	-81.119833	2-Jul-04	Viceroy	Male	20.3	2	2.1	16.2	4.8	1.4	3.4
-Cornwell	27.396333	-81.119833	9-Aug-04	Viceroy	Male	8.9	0.8	2.2	5.9	4	1.9	2.1
-Cornwell	27.396333	-81.119833	2-Jul-04	Viceroy	Female	19.1	0.6	3.6	14.9	5.2	3.3	1.9
-Cornwell	27.396333	-81.119833	9-Aug-04	Viceroy	Female	14.8	0	3.5	11.3	5	0.8	4.2
-Lake Istokpoga	27.296392	-81.296007	2-Jul-04	Viceroy	Male	10.5	0.4	3.8	6.3	7.1	3.5	3.6
-Lake Istokpoga	27.296392	-81.296007	9-Aug-04	Viceroy	Male	18.1	2.9	3.8	11.4	7.5	2.4	5.1
-Lake Istokpoga	27.296392	-81.296007	2-Jul-04	Viceroy	Female	12.8	1	5.7	6.1	5.9	1.9	4
-Lake Istokpoga	27.296392	-81.296007	9-Aug-04	Viceroy	Female	23.5	0	5.7	17.8	8.5	4.2	4.3
-Leesburg	28.787667	-81.894667	3-Jul-04	Viceroy	Male	49	5.2	15.6	28.2	14.6	9.7	4.9
-Leesburg	28.787667	-81.894667	10-Aug-04	Viceroy	Male	57.2	5.5	18	33.7	18.7	11.5	7.2
-Leesburg	28.787667	-81.894667	3-Jul-04	Viceroy	Female	73.2	11.8	16	45.4	16.6	8.1	8.5
-Leesburg	28.787667	-81.894667	10-Aug-04	Viceroy	Female	50.8	3.3	10.9	36.6	19.8	13.8	6
-Gainesville	29.6365	-82.2	3-Jul-04	Viceroy	Male	20.8	3.5	6.2	11.1	20.7	14.1	6.6
-Gainesville	29.6365	-82.2	10-Aug-04	Viceroy	Male	59.4	5.5	20.3	33.6	14.8	12	2.8
-Gainesville	29.6365	-82.2	3-Jul-04	Viceroy	Female	46.5	3.5	14.3	28.7	21.2	13.9	7.3
-Gainesville	29.6365	-82.2	10-Aug-04	Viceroy	Female	65.4	8.9	19.7	36.8	13.6	11.7	1.9
-Jena	29.666833	-83.184833	4-Jul-04	Viceroy	Male	46.9	11.2	16.9	18.8	22	14.6	7.4
-Jena	29.666833	-83.184833	11-Aug-04	Viceroy	Male	35.2	3.8	11.3	20.1	18.9	12.7	6.2
-Jena	29.666833	-83.184833	4-Jul-04	Viceroy	Female	63.8	1.7	17.4	44.7	22.7	14.4	8.3
-Jena	29.666833	-83.184833	11-Aug-04	Viceroy	Female	51.2	6.5	8	36.7	15.2	11.5	3.7
-Cedar Key	29.2135	-83.021333	4-Jul-04	Viceroy	Male	43	0.5	14.8	27.7	20.6	15.3	5.3
-Cedar Key	29.2135	-83.021333	11-Aug-04	Viceroy	Male	62.6	2	22.5	38.1	16.5	12.6	3.9
-Cedar Key	29.2135	-83.021333	4-Jul-04	Viceroy	Female	47.5	6.4	15.2	25.9	15.6	7.9	7.7
-Cedar Key	29.2135	-83.021333	11-Aug-04	Viceroy	Female	66.7	3.5	21.5	41.7	19.9	15.8	4.1
-
+Corkscrew	26.361423	-81.518688	2003-07-01	Viceroy	Male	28.4	4.2	11.3	12.9	2.8	0.9	1.9
+Corkscrew	26.361423	-81.518688	2003-08-10	Viceroy	Male	12.7	1.9	4.6	6.2	5.6	3	2.6
+Corkscrew	26.361423	-81.518688	2003-07-01	Viceroy	Female	17.2	2.3	5.6	9.3	8.4	5.4	3
+Corkscrew	26.361423	-81.518688	2003-08-10	Viceroy	Female	9.8	2	3.7	4.1	4.7	2.2	2.5
+Lehigh Acres	26.559808	-81.677623	2003-07-01	Viceroy	Male	15	0.1	6.9	8	5.2	2.7	2.5
+Lehigh Acres	26.559808	-81.677623	2003-08-10	Viceroy	Male	26.8	6	6.1	14.7	5.1	3.4	1.7
+Lehigh Acres	26.559808	-81.677623	2003-07-01	Viceroy	Female	19.6	4.6	2.5	12.5	8	4.1	3.9
+Lehigh Acres	26.559808	-81.677623	2003-08-10	Viceroy	Female	7.9	1.1	1.9	4.9	4	1.8	2.2
+Cornwell	27.396333	-81.119833	2003-07-02	Viceroy	Male	26.4	1.9	10.3	14.2	5.4	1.6	3.8
+Cornwell	27.396333	-81.119833	2003-08-11	Viceroy	Male	13.9	0	5.1	8.8	3	0.9	2.1
+Cornwell	27.396333	-81.119833	2003-07-02	Viceroy	Female	37.1	4.4	15.8	16.9	8	3.5	4.5
+Cornwell	27.396333	-81.119833	2003-08-11	Viceroy	Female	18.5	1.6	4.9	12	5	2.2	2.8
+Lake Istokpoga	27.296392	-81.296007	2003-07-02	Viceroy	Male	17.9	4.2	4.9	8.8	8.2	3.6	4.6
+Lake Istokpoga	27.296392	-81.296007	2003-08-11	Viceroy	Male	14.5	2.9	2.1	9.5	2.2	0.9	1.3
+Lake Istokpoga	27.296392	-81.296007	2003-07-02	Viceroy	Female	3.5	0.4	2	1.1	4.3	1.7	2.6
+Lake Istokpoga	27.296392	-81.296007	2003-08-11	Viceroy	Female	15.2	2.1	5.5	7.6	8.2	4.4	3.8
+Leesburg	28.787667	-81.894667	2003-07-03	Viceroy	Male	44	8.3	5.3	30.4	21	14.8	6.2
+Leesburg	28.787667	-81.894667	2003-08-12	Viceroy	Male	31.9	5.9	5.1	20.9	15.1	9.6	5.5
+Leesburg	28.787667	-81.894667	2003-07-03	Viceroy	Female	38.3	4.9	5.6	27.8	21	13.1	7.9
+Leesburg	28.787667	-81.894667	2003-08-12	Viceroy	Female	46.4	4.1	4.4	37.9	17.3	10.5	6.8
+Gainesville	29.6365	-82.2	2003-07-03	Viceroy	Male	21.3	2	6.2	13.1	20.6	13.7	6.9
+Gainesville	29.6365	-82.2	2003-08-12	Viceroy	Male	64.1	5.6	20.1	38.4	13.8	8.8	5
+Gainesville	29.6365	-82.2	2003-07-03	Viceroy	Female	40.2	2.8	9.9	27.5	19.5	11.7	7.8
+Gainesville	29.6365	-82.2	2003-08-12	Viceroy	Female	57.9	4.4	16.3	37.2	21.3	14.6	6.7
+Jena	29.666833	-83.184833	2003-07-04	Viceroy	Male	58.1	7.9	18.4	31.8	19.7	12.5	7.2
+Jena	29.666833	-83.184833	2003-08-13	Viceroy	Male	29.7	3.1	10.8	15.8	21.2	15.3	5.9
+Jena	29.666833	-83.184833	2003-07-04	Viceroy	Female	44.9	5.8	4.5	34.6	14.8	10.4	4.4
+Jena	29.666833	-83.184833	2003-08-13	Viceroy	Female	60.5	11	7.6	41.9	20.6	13.8	6.8
+Cedar Key	29.2135	-83.021333	2003-07-04	Viceroy	Male	55.9	5.5	12	38.4	20.4	14.7	5.7
+Cedar Key	29.2135	-83.021333	2003-08-13	Viceroy	Male	42.6	3.8	7.6	31.2	12.7	5.6	7.1
+Cedar Key	29.2135	-83.021333	2003-07-04	Viceroy	Female	45.2	3.3	15.8	26.1	19.9	14.3	5.6
+Cedar Key	29.2135	-83.021333	2003-08-13	Viceroy	Female	58.5	4.8	16.3	37.4	17.8	10.9	6.9
+Corkscrew	26.361423	-81.518688	2004-07-01	Viceroy	Male	26	2.6	7.3	16.1	5.7	2.2	3.5
+Corkscrew	26.361423	-81.518688	2004-08-08	Viceroy	Male	12.8	1.4	4.5	6.9	5.4	2.7	2.7
+Corkscrew	26.361423	-81.518688	2004-07-01	Viceroy	Female	11.7	1.4	4.9	5.4	7.1	1.5	5.6
+Corkscrew	26.361423	-81.518688	2004-08-08	Viceroy	Female	23.5	3	7.3	13.2	8	3.8	4.2
+Lehigh Acres	26.559808	-81.677623	2004-07-01	Viceroy	Male	26.2	4.1	7.2	14.9	3.9	0.7	3.2
+Lehigh Acres	26.559808	-81.677623	2004-08-08	Viceroy	Male	19.6	2.3	4.7	12.6	3.9	1.3	2.6
+Lehigh Acres	26.559808	-81.677623	2004-07-01	Viceroy	Female	23.5	0.4	7.1	16	6.2	2.5	3.7
+Lehigh Acres	26.559808	-81.677623	2004-08-08	Viceroy	Female	12.8	2.2	4.9	5.7	6.5	1.6	4.9
+Cornwell	27.396333	-81.119833	2004-07-02	Viceroy	Male	20.3	2	2.1	16.2	4.8	1.4	3.4
+Cornwell	27.396333	-81.119833	2004-08-09	Viceroy	Male	8.9	0.8	2.2	5.9	4	1.9	2.1
+Cornwell	27.396333	-81.119833	2004-07-02	Viceroy	Female	19.1	0.6	3.6	14.9	5.2	3.3	1.9
+Cornwell	27.396333	-81.119833	2004-08-09	Viceroy	Female	14.8	0	3.5	11.3	5	0.8	4.2
+Lake Istokpoga	27.296392	-81.296007	2004-07-02	Viceroy	Male	10.5	0.4	3.8	6.3	7.1	3.5	3.6
+Lake Istokpoga	27.296392	-81.296007	2004-08-09	Viceroy	Male	18.1	2.9	3.8	11.4	7.5	2.4	5.1
+Lake Istokpoga	27.296392	-81.296007	2004-07-02	Viceroy	Female	12.8	1	5.7	6.1	5.9	1.9	4
+Lake Istokpoga	27.296392	-81.296007	2004-08-09	Viceroy	Female	23.5	0	5.7	17.8	8.5	4.2	4.3
+Leesburg	28.787667	-81.894667	2004-07-03	Viceroy	Male	49	5.2	15.6	28.2	14.6	9.7	4.9
+Leesburg	28.787667	-81.894667	2004-08-10	Viceroy	Male	57.2	5.5	18	33.7	18.7	11.5	7.2
+Leesburg	28.787667	-81.894667	2004-07-03	Viceroy	Female	73.2	11.8	16	45.4	16.6	8.1	8.5
+Leesburg	28.787667	-81.894667	2004-08-10	Viceroy	Female	50.8	3.3	10.9	36.6	19.8	13.8	6
+Gainesville	29.6365	-82.2	2004-07-03	Viceroy	Male	20.8	3.5	6.2	11.1	20.7	14.1	6.6
+Gainesville	29.6365	-82.2	2004-08-10	Viceroy	Male	59.4	5.5	20.3	33.6	14.8	12	2.8
+Gainesville	29.6365	-82.2	2004-07-03	Viceroy	Female	46.5	3.5	14.3	28.7	21.2	13.9	7.3
+Gainesville	29.6365	-82.2	2004-08-10	Viceroy	Female	65.4	8.9	19.7	36.8	13.6	11.7	1.9
+Jena	29.666833	-83.184833	2004-07-04	Viceroy	Male	46.9	11.2	16.9	18.8	22	14.6	7.4
+Jena	29.666833	-83.184833	2004-08-11	Viceroy	Male	35.2	3.8	11.3	20.1	18.9	12.7	6.2
+Jena	29.666833	-83.184833	2004-07-04	Viceroy	Female	63.8	1.7	17.4	44.7	22.7	14.4	8.3
+Jena	29.666833	-83.184833	2004-08-11	Viceroy	Female	51.2	6.5	8	36.7	15.2	11.5	3.7
+Cedar Key	29.2135	-83.021333	2004-07-04	Viceroy	Male	43	0.5	14.8	27.7	20.6	15.3	5.3
+Cedar Key	29.2135	-83.021333	2004-08-11	Viceroy	Male	62.6	2	22.5	38.1	16.5	12.6	3.9
+Cedar Key	29.2135	-83.021333	2004-07-04	Viceroy	Female	47.5	6.4	15.2	25.9	15.6	7.9	7.7
+Cedar Key	29.2135	-83.021333	2004-08-11	Viceroy	Female	66.7	3.5	21.5	41.7	19.9	15.8	4.1

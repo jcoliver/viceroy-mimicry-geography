@@ -28,7 +28,7 @@ responses <- c("Total.Volatiles",
 colnames(abundance.data)[which(colnames(abundance.data) == "Observation.Date")] <- "Collection.Date"
 all.data <- merge(x = chem.data, 
                   y = abundance.data)
-all.data$Year <- factor(format(as.Date(as.character(all.data$Collection.Date), format = "%d-%b-%y"), "%Y"))
+all.data$Year <- factor(format(as.Date(all.data$Collection.Date), "%Y"))
 
 ################################################################################
 # ANALYSES
