@@ -3,9 +3,6 @@
 
 Code for analyzing and visualizing chemical defenses in viceroy butterflies.
 
-## TODO
-+ Clean up figure creation scripts
-
 ### Dependencies
 + lmerTest
 + plyr
@@ -111,11 +108,7 @@ Note most of the code sources provide incomplete graphical objects that were fur
     + Description: Abundance maps for insects (viceroys & queens) and their 
     respective host plants (willows & twinevine)
     + Code source: scripts/visualization/map-abundance.R
-    + Shape: 2 x 2:
-        | Insects | Plants    |
-        |:--------|:----------|
-        | Viceroy | Willow    |
-        | Queen   | Twinevine |
+    + Shape: 2 x 2
     + Size: Half column width
     + Location: svg/figure-1.svg
 + Figure 2
@@ -141,4 +134,3 @@ Note most of the code sources provide incomplete graphical objects that were fur
     + Shape: 1 x 3
     + Size: Two column width
     + Location: svg/figure-ED1.svg
-
