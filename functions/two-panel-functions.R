@@ -8,7 +8,8 @@ source(file = "functions/boxplot-functions.R")
 source(file = "scripts/visualization/plotting-globals.R")
 
 ################################################################################
-TwoPanelPlot <- function(datafile, outputfile, varname, vartext, delim = "\t") {
+TwoPanelPlot <- function(datafile, outputfile, varname, vartext, delim = "\t",
+                         mapcolors = NULL) {
   # Load data
   plot.data <- read.table(file = datafile, header = TRUE, sep = delim)
   
@@ -30,11 +31,15 @@ TwoPanelPlot <- function(datafile, outputfile, varname, vartext, delim = "\t") {
   
   # Map
   par(mar = c(0, 0, 0, 0))
-  
+
+  if (is.null(mapcolors)) {
+    mapcolors <- plotting.globals$map.colors
+  }
+cat("Color 1: ", mapcolors[1], "\n", sep = "")    
   MakeFloridaMap(plot.data = plot.data,
                  variable.name = variable.name,
                  variable.text = variable.text,
-                 map.shade.colors = plotting.globals$map.colors,
+                 map.shade.colors = mapcolors,
                  map.point.outline = plotting.globals$map.point.outline,
                  map.point.cex = plotting.globals$map.point.cex,
                  groups = plotting.globals$groups,

@@ -41,9 +41,11 @@ separate.files <- TRUE
 #     Draw map
 #     Draw boxplot
 
+source(file = "scripts/visualization/plotting-globals.R")
+
 if (separate.files) {
   source(file = "functions/two-panel-functions.R")
-  
+
   for (variable in 1:length(vars$var.name)) {
     outfile <- paste0(output.file, "-", vars$var.name[variable])
     
@@ -57,8 +59,7 @@ if (separate.files) {
   # Load dependancies
   source(file = "functions/mapping-functions.R")
   source(file = "functions/boxplot-functions.R")
-  source(file = "scripts/visualization/plotting-globals.R")
-  
+
   # Read data with latitude, longitude, and whatever variable(s) to graph
   plot.data <- read.delim(file = data.file)
   
