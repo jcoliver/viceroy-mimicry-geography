@@ -80,7 +80,9 @@ PlotMap <- function(geo.data, point.data, main.title = "", legend.label = "",
        bty = "n",
        box = FALSE,
        ylab = NULL,
-       legend.args = list(text = legend.label, side = 2, cex = legend.label.cex))
+       # the raster.plot function (modeled after image.plot) doesn't handle 
+       # expression(exp) well (the argument passed to text here)
+       legend.args = list(text = parse(text = legend.label), side = 2, cex = legend.label.cex))
   # Add points
   points(x = point.data$x,
          y = point.data$y,

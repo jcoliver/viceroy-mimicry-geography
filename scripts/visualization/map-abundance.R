@@ -19,18 +19,19 @@ rm(list = ls())
 # Add information unique to this set of figures
 data.file <- "data/abundance-data.txt"
 output.file <- "output/visualization/Abundance-map-only"
-vars <- data.frame(var.name <- c("Number.Viceroy.Adults", 
-                                 "Number.Carolina.Willow.Plants", 
-                                 "Number.Queen.Adults", 
-                                 "Number.Twinevine.Plants"),
-                   var.text <- c("Viceroys (# inds.)", 
-                                 "Willows (# inds.)", 
-                                 "Queens (# inds.)", 
-                                 "Twinevines (# inds.)"),
-                   stringsAsFactors = FALSE)
+vars <- list(var.name = c("Number.Viceroy.Adults", 
+                          "Number.Carolina.Willow.Plants", 
+                          "Number.Queen.Adults", 
+                          "Number.Twinevine.Plants"),
+             var.text = list(expression("Viceroys (# inds.)"), 
+                             expression("Willows (# inds.)"), 
+                             expression("Queens (# inds.)"), 
+                             expression("Twinevines (# inds.)")
+             )
+)
 separate.files <- FALSE
 multi.panel.dims <- c(2,2)
-file.format <- "svg"
+file.format <- "pdf"
 
 ################################################################################
 # SHOULD NOT NEED TO EDIT ANYTHING BELOW HERE
@@ -56,16 +57,14 @@ plot.data <- read.table(file = data.file, header = TRUE, sep = "\t")
 
 if (separate.files) {
   
-  for (variable in 1:nrow(vars)) {
+  for (variable in 1:length(vars$var.name)) {
     outfile <- paste0(output.file, "-", vars$var.name[variable], ".", file.format)
 
     # Set file format
     if (file.format == "pdf") {
-      pdf(file = outfile, useDingbats = FALSE)
+      pdf(file = outfile, useDingbats = FALSE, family = "Helvetica")
     } else if (file.format == "png") {
       png(filename = outfile, width = 1200, height = 1200, units = "px", res = 150)
-    } else if (file.format == "svg") {
-      svg(filename = outfile)
     }
 
     MakeFloridaMap(plot.data = plot.data,
@@ -93,18 +92,16 @@ if (separate.files) {
   
   # Set file format
   if (file.format == "pdf") {
-    pdf(file = output.file, useDingbats = FALSE)
+    pdf(file = output.file, useDingbats = FALSE, family = "Helvetica")
   } else if (file.format == "png") {
     png(filename = output.file, width = 1200, height = 1200, units = "px", res = 150)
-  } else if (file.format == "svg") {
-    svg(filename = output.file)
   }
   
   # Setup multi-panel plot dimensions
   par(mfrow = multi.panel.dims)
   
   # Loop over each variable to plot
-  for (variable in 1:nrow(vars)) {
+  for (variable in 1:length(vars$var.name)) {
     variable.name <- vars$var.name[variable]
     variable.text <- vars$var.text[variable]
     

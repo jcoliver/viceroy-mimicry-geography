@@ -14,13 +14,14 @@ rm(list = ls())
 # Add information unique to this set of figures
 data.file <- "data/chemistry-viceroy-data.txt"
 output.file <- "output/visualization/Viceroy-volatile-two-panel"
-vars <- data.frame(var.name <- c("Total.Volatiles",
-                                 "Salicylaldehyde",
-                                 "Benzaldehyde"),
-                   var.text <- c("Total Volatiles (uL/mL)",
-                                 "Salicylaldehyde (uL/mL)",
-                                 "Benzaldehyde (uL/mL)"),
-                   stringsAsFactors = FALSE)
+vars <- list(var.name = c("Total.Volatiles",
+                          "Salicylaldehyde",
+                          "Benzaldehyde"),
+             var.text = list(expression("Total Volatiles " ~ (mu ~ L ~ mL^{-1})),
+                             expression("Salicylaldehyde " ~ (mu ~ L ~ mL^{-1})),
+                             expression("Benzaldehyde " ~ (mu ~ L ~ mL^{-1}))
+             )
+)
 separate.files <- TRUE
 
 ################################################################################
@@ -45,7 +46,7 @@ separate.files <- TRUE
 if (separate.files) {
   source(file = "functions/two-panel-functions.R")
 
-  for (variable in 1:nrow(vars)) {
+  for (variable in 1:length(vars$var.name)) {
     outfile <- paste0(output.file, "-", vars$var.name[variable])
 
     TwoPanelPlot(datafile = data.file, 
@@ -75,10 +76,10 @@ if (separate.files) {
   }
   
   # Setup multi-panel plot dimensions
-  par(mfrow = c(nrow(vars), 2))
+  par(mfrow = c(length(vars$var.name), 2))
   
   # Loop over each variable to plot
-  for (variable in 1:nrow(vars)) {
+  for (variable in 1:length(vars$var.name)) {
     variable.name <- vars$var.name[variable]
     variable.text <- vars$var.text[variable]
     

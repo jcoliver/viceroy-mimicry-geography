@@ -104,7 +104,7 @@ files; created by running `scripts/setup.R`
 ### Figure list
 Note most of the code sources provide incomplete graphical objects that were further edited in [Inkscape](https://inkscape.org/en/).
 
-+ Figure
++ Figure 1
     + Description: Abundance maps for insects (viceroys & queens) and their 
     respective host plants (willows & twinevine)
     + Code source: scripts/visualization/map-abundance.R
@@ -113,24 +113,23 @@ Note most of the code sources provide incomplete graphical objects that were fur
     + Location: svg/figure-1.svg
 + Figure 2
     + Description: Chemical defense (non- volatile) in viceroys and willows, 
-    shown as both a map and an inset boxplot
+    shown as both a map and a boxplot
     + Code source:
         + scripts/visualization/map-and-boxplot-viceroy-non-volatiles.R
         + scripts/visualization/map-and-boxplot-willow-non-volatiles.R
-    + Shape: 4 x 2
-    + Size: One column width
+    + Shape: 4 x 4
+    + Size: Two column width
     + Location: svg/figure-2.svg
 + Figure 3
-    + Description: Palatability of viceroys, shown as both a map and an inset 
-    box plot
+    + Description: Palatability of viceroys, shown as both a map and a box plot
     + Code source: scripts/visualization/map-and-boxplot-palatability.R
-    + Shape: 1 x 2
+    + Shape: 2 x 2
     + Size: One column width (two column width?)
     + Location: svg/figure-3.svg
 + Figure ED1:
     + Description: Chemical defense (volatiles) in viceroys, shown as both a 
-    map and an inset box plot
+    map and a box plot
     + Code source: scripts/visualization/map-and-boxplot-viceroys-volatiles.R
-    + Shape: 1 x 3
+    + Shape: 3 x 2
     + Size: Two column width
     + Location: svg/figure-ED1.svg

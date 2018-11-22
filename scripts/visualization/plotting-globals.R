@@ -4,7 +4,7 @@
 # 2017-02-15
 
 plotting.globals <- list()
-plotting.globals$output.format <- "pdf" # "png"
+plotting.globals$output.format <- "pdf" # c("pdf", "png")
 plotting.globals$map.colors <- NULL
 if (!require(package = "RColorBrewer")) {
   warning("Mapping globals requires RColorBrewer package; some colors may not display correctly")

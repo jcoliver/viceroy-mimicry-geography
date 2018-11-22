@@ -14,15 +14,16 @@ rm(list = ls())
 # Add information unique to this set of figures
 data.file <- "data/chemistry-willow-data.txt"
 output.file <- "output/visualization/Willow-non-volatile-two-panel"
-vars <- data.frame(var.name <- c("Total.Phenolics",
-                                 "Salicin",
-                                 "Salicortin",
-                                 "Tremulacin"),
-                   var.text <- c("Total Phenolics (mg/g)",
-                                 "Salicin (mg/g)",
-                                 "Salicortin (mg/g)",
-                                 "Tremulacin (mg/g)"),
-                   stringsAsFactors = FALSE)
+vars <- list(var.name = c("Total.Phenolics",
+                          "Salicin",
+                          "Salicortin",
+                          "Tremulacin"),
+             var.text = list(expression("Total Phenolics " ~ (mg ~ g^{-1})),
+                             expression("Salicin " ~ (mg ~ g^{-1})),
+                             expression("Salicortin " ~ (mg ~ g^{-1})),
+                             expression("Tremulacin " ~ (mg ~ g^{-1})))
+)
+
 separate.files <- TRUE
 
 ################################################################################
@@ -47,7 +48,7 @@ separate.files <- TRUE
 if (separate.files) {
   source(file = "functions/two-panel-functions.R")
   
-  for (variable in 1:nrow(vars)) {
+  for (variable in 1:length(vars$var.name)) {
     outfile <- paste0(output.file, "-", vars$var.name[variable])
     
     TwoPanelPlot(datafile = data.file, 
@@ -77,10 +78,10 @@ if (separate.files) {
   }
   
   # Setup multi-panel plot dimensions
-  par(mfrow = c(nrow(vars), 2))
+  par(mfrow = c(length(vars$var.name), 2))
   
   # Loop over each variable to plot
-  for (variable in 1:nrow(vars)) {
+  for (variable in 1:length(vars$var.name)) {
     variable.name <- vars$var.name[variable]
     variable.text <- vars$var.text[variable]
     

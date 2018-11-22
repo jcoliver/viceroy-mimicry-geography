@@ -14,11 +14,12 @@ rm(list = ls())
 # Add information unique to this set of figures
 data.file <- "data/palatability-data.txt"
 output.file <- "output/visualization/Palatability-two-panel"
-vars <- data.frame(var.name <- c("Mantid.Learning",
-                                 "Mantid.Memory.Retention"),
-                   var.text <- c("Mantid Learning (# Trials)",
-                                 "Mantid Memory Retention (# Trials)"),
-                   stringsAsFactors = FALSE)
+vars <- list(var.name = c("Mantid.Learning",
+                          "Mantid.Memory.Retention"),
+             var.text = list(expression("Mantid Learning (# Trials)"),
+                             expression("Mantid Memory Retention (# Trials)")
+             )
+)
 separate.files <- TRUE
 
 ################################################################################
@@ -43,17 +44,13 @@ separate.files <- TRUE
 if (separate.files) {
   source(file = "functions/two-panel-functions.R")
   
-  for (variable in 1:nrow(vars)) {
+  for (variable in 1:length(vars$var.name)) {
     outfile <- paste0(output.file, "-", vars$var.name[variable])
     
     TwoPanelPlot(datafile = data.file,
                  outputfile = outfile,
                  varname = vars$var.name[variable],
                  vartext = vars$var.text[variable])
-    # MapWithInsetBoxplot(datafile = data.file,
-    #                     outputfile = outfile,
-    #                     varname = vars$var.name[variable],
-    #                     vartext = vars$var.text[variable])
   }
   
 } else {
@@ -77,10 +74,10 @@ if (separate.files) {
   }
   
   # Setup multi-panel plot dimensions
-  par(mfrow = c(nrow(vars), 2))
+  par(mfrow = c(length(vars$var.name), 2))
   
   # Loop over each variable to plot
-  for (variable in 1:nrow(vars)) {
+  for (variable in 1:length(vars$var.name)) {
     variable.name <- vars$var.name[variable]
     variable.text <- vars$var.text[variable]
     
