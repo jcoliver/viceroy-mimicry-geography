@@ -120,16 +120,16 @@ Note most of the code sources provide incomplete graphical objects that were fur
     + Shape: 4 x 4
     + Size: Two column width
     + Location: svg/figure-2.svg
-+ Figure 3
-    + Description: Palatability of viceroys, shown as both a map and a box plot
-    + Code source: scripts/visualization/map-and-boxplot-palatability.R
-    + Shape: 2 x 2
-    + Size: One column width (two column width?)
-    + Location: svg/figure-3.svg
-+ Figure ED1:
++ Figure 3:
     + Description: Chemical defense (volatiles) in viceroys, shown as both a 
     map and a box plot
     + Code source: scripts/visualization/map-and-boxplot-viceroys-volatiles.R
     + Shape: 3 x 2
     + Size: Two column width
-    + Location: svg/figure-ED1.svg
+    + Location: svg/figure-3.svg
++ Figure 4
+    + Description: Palatability of viceroys, shown as both a map and a box plot
+    + Code source: scripts/visualization/map-and-boxplot-palatability.R
+    + Shape: 2 x 2
+    + Size: One column width (two column width?)
+    + Location: svg/figure-4.svg
