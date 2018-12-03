@@ -8915,18 +8915,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="428.04812"
-     inkscape:cy="948.10647"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="582.47564"
+     inkscape:cy="827.09821"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="mm"
      inkscape:object-nodes="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1052"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:window-height="1025"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -9597,10 +9597,10 @@
              y="40.68"
              x="296.21234"
              transform="matrix(0,1,1,0,0,0)"
-             style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-style:normal;font-stretch:normal;"
              id="text58175">
             <tspan
-               x="296.21234 304.54233 310.10233 315.66232 318.44232 320.66232 326.22232 329.00232 334.56232 340.12231 345.68234 349.26233 354.82233 357.04233 362.60233 368.16232 370.94232 374.27234 379.83234 382.61234 387.52234 391.00232 393.22232 398.78232 401.00232 406.00232"
+               x="296.21234"
                y="40.68"
                sodipodi:role="line"
                id="tspan58173">Mantid Learning (# Trials)</tspan>
@@ -10417,10 +10417,10 @@
              y="40.68"
              x="274.79733"
              transform="matrix(0,1,1,0,0,0)"
-             style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-style:normal;font-stretch:normal;"
              id="text58802">
             <tspan
-               x="274.79733 283.12732 288.68735 294.24734 297.02734 299.24734 304.80734 307.58734 315.91733 321.47733 329.80734 335.36734 338.99731 343.99731 346.77734 353.99731 359.55734 362.33734 367.89734 373.45734 376.23734 378.45734 384.01733 389.57733 392.35733 395.68732 401.24731 404.02731 408.93732 412.41733 414.63733 420.19733 422.41733 427.41733"
+               x="274.79733"
                y="40.68"
                sodipodi:role="line"
                id="tspan58800">Mantid Memory Retention (# Trials)</tspan>
