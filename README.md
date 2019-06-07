@@ -1,7 +1,7 @@
 # Variation in model abundance drives a mimicry continuum
 ## Statistical analyses and data visualization
 
-Code for analyzing and visualizing chemical defenses in viceroy butterflies.
+Code for analyzing and visualizing chemical defenses in viceroy butterflies. This code accompanies Prudic _et al._ (2019) _Communications Biology_, available at [doi 10.1038/s42003-019-0303-z](https://doi.org/10.1038/s42003-019-0303-z).
 
 ### Dependencies
 + lmerTest
